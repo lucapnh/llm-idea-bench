@@ -51,6 +51,7 @@ AVAILABLE_LLMS = [
     "gemini-2.0-flash",
     "gemini-2.5-flash-preview-04-17",
     "gemini-2.5-pro-preview-03-25",
+    "deepseek-r1:671b",
 ]
 
 
@@ -148,6 +149,27 @@ def get_batch_responses_from_llm(
         new_msg_history = [
             new_msg_history + [{"role": "assistant", "content": c}] for c in content
         ]
+    elif model == "deepseek-r1:671b":
+        new_msg_history = msg_history + [{"role": "user", "content": msg}]
+        content = []
+        new_histories = []
+        for _ in range(n_responses):
+            payload = {
+                "model": "deepseek-r1:671b",
+                "messages": [
+                    {"role": "system", "content": system_message},
+                    *new_msg_history,
+                ],
+                "temperature": temperature,
+                "stream": False,
+            }
+            response = client.post("http://localhost:11434/api/chat", json=payload)
+            if response.status_code != 200:
+                raise ValueError(f"Ollama error: {response.text}")
+            reply = response.json()["message"]["content"]
+            content.append(reply)
+            new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
+        new_msg_history = new_histories
     else:
         content, new_msg_history = [], []
         for _ in range(n_responses):
@@ -371,6 +393,22 @@ def get_response_from_llm(
         )
         content = response.choices[0].message.content
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
+    elif model == "deepseek-r1:671b":
+        new_msg_history = msg_history + [{"role": "user", "content": msg}]
+        payload = {
+            "model": "deepseek-r1:671b",
+            "messages": [
+                {"role": "system", "content": system_message},
+                *new_msg_history,
+            ],
+            "temperature": temperature,
+            "stream": False,
+        }
+        response = client.post("http://localhost:11434/api/chat", json=payload)
+        if response.status_code != 200:
+            raise ValueError(f"Ollama error: {response.text}")
+        content = response.json()["message"]["content"]
+        new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
     else:
         raise ValueError(f"Model {model} not supported.")
 
@@ -471,5 +509,9 @@ def create_client(model) -> tuple[Any, str]:
             ),
             model,
         )
+    elif model == "deepseek-r1:671b":
+        import requests
+        print(f"Using Ollama API for model {model}.")
+        return requests.Session(), model
     else:
         raise ValueError(f"Model {model} not supported.")
