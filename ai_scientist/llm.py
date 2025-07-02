@@ -394,21 +394,26 @@ def get_response_from_llm(
         content = response.choices[0].message.content
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
     elif model == "deepseek-r1:671b":
-        new_msg_history = msg_history + [{"role": "user", "content": msg}]
-        payload = {
-            "model": "deepseek-r1:671b",
-            "messages": [
-                {"role": "system", "content": system_message},
-                *new_msg_history,
-            ],
-            "temperature": temperature,
-            "stream": False,
-        }
-        response = client.post("http://localhost:11434/api/chat", json=payload)
-        if response.status_code != 200:
-            raise ValueError(f"Ollama error: {response.text}")
-        content = response.json()["message"]["content"]
-        new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
+        messages = [
+            {"role": "system", "content": "Only perform the task. No extra text."},
+            {"role": "user", "content": prompt},
+        ]
+        response = client.chat(messages, temperature=temperature)
+        content = response["choices"][0]["message"]["content"]
+        new_msg_history = msg_history + [{"role": "user", "content": prompt}] + [{"role": "assistant", "content": content}]
+        if print_debug:
+            print(f"DeepSeek-R1 response: {content}")
+        return content, new_msg_history
+
+    # For llama3.1-405b with Ollama chat
+    elif model == "llama3.1-405b":
+        messages = [{"role": "system", "content": system_message}] + msg_history + [{"role": "user", "content": prompt}]
+        response = client.chat(messages, temperature=temperature)
+        content = response["choices"][0]["message"]["content"]
+        new_msg_history = msg_history + [{"role": "user", "content": prompt}] + [{"role": "assistant", "content": content}]
+        if print_debug:
+            print(f"Llama3.1-405b response: {content}")
+        return content, new_msg_history
     else:
         raise ValueError(f"Model {model} not supported.")
 
@@ -510,8 +515,59 @@ def create_client(model) -> tuple[Any, str]:
             model,
         )
     elif model == "deepseek-r1:671b":
+        print(f"Using Ollama API with {model}.")
+        # Minimal wrapper client for Ollama
         import requests
-        print(f"Using Ollama API for model {model}.")
-        return requests.Session(), model
+
+        class OllamaClient:
+            def __init__(self, base_url="http://localhost:11434"):
+                self.base_url = base_url
+
+            def chat(self, messages, temperature=0.2):
+                response = requests.post(
+                    f"{self.base_url}/api/chat",
+                    json={
+                        "model": "deepseek-r1",
+                        "messages": messages,
+                        "temperature": temperature,
+                    },
+                )
+                response.raise_for_status()
+                return response.json()
+
+            def generate(self, prompt, temperature=0.2):
+                response = requests.post(
+                    f"{self.base_url}/api/generate",
+                    json={
+                        "model": "deepseek-r1",
+                        "prompt": prompt,
+                        "temperature": temperature,
+                    },
+                )
+                response.raise_for_status()
+                return response.json()
+
+        return OllamaClient(), "deepseek-r1"
+    elif model == "llama3.1-405b":
+        print(f"Using Ollama API with {model}.")
+        import requests
+
+        class OllamaClient:
+            def __init__(self, base_url="http://localhost:11434"):
+                self.base_url = base_url
+
+            def chat(self, messages, temperature=0.7):
+                response = requests.post(
+                    f"{self.base_url}/api/chat",
+                    json={
+                        "model": "llama3.1-405b",
+                        "messages": messages,
+                        "temperature": temperature,
+                    },
+                )
+                response.raise_for_status()
+                return response.json()
+
+        return OllamaClient(), "llama3.1-405b"
     else:
         raise ValueError(f"Model {model} not supported.")
