@@ -170,6 +170,21 @@ def get_batch_responses_from_llm(
             content.append(reply)
             new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
         new_msg_history = new_histories
+    elif model == "llama3.1-405b":
+        new_msg_history = msg_history + [{"role": "user", "content": msg}]
+        content = []
+        new_histories = []
+        for _ in range(n_responses):
+            messages = [{"role": "system", "content": system_message}] + new_msg_history
+            response = client.chat(messages, temperature=temperature)
+            if "choices" in response and len(response["choices"]) > 0:
+                reply = response["choices"][0]["message"]["content"]
+            else:
+                raise ValueError("Unexpected response format from Ollama Llama3.1-405b")
+            content.append(reply)
+            new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
+        new_msg_history = new_histories
+
     else:
         content, new_msg_history = [], []
         for _ in range(n_responses):
