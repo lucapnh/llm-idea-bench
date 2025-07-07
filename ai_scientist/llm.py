@@ -1,13 +1,14 @@
 import json
 import os
 import re
+import requests
 from typing import Any
 from ai_scientist.utils.token_tracker import track_token_usage
 
 import anthropic
 import backoff
 import openai
-import requests
+
 
 MAX_NUM_TOKENS = 4096
 
