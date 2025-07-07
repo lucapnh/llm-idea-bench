@@ -1,7 +1,6 @@
 import json
 import os
 import re
-import requests
 from typing import Any
 from ai_scientist.utils.token_tracker import track_token_usage
 
@@ -412,6 +411,7 @@ def get_response_from_llm(
 
     # For llama3.1-405b with Ollama chat
     elif model == "llama3.1:405b":
+        import requests
         # Use Ollama local endpoint
         payload = {
             "model": "llama3.1:405b",
