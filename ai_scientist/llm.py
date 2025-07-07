@@ -399,17 +399,6 @@ def get_response_from_llm(
         )
         content = response.choices[0].message.content
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
-    elif model == "deepseek-r1:671b":
-        messages = [
-            {"role": "system", "content": "Only perform the task. No extra text."},
-            {"role": "user", "content": prompt},
-        ]
-        response = client.chat(messages, temperature=temperature)
-        content = response["choices"][0]["message"]["content"]
-        new_msg_history = msg_history + [{"role": "user", "content": prompt}] + [{"role": "assistant", "content": content}]
-        if print_debug:
-            print(f"DeepSeek-R1 response: {content}")
-        return content, new_msg_history
 
     # For llama3.1-405b with Ollama chat
     elif model == "llama3.1:405b":
@@ -426,7 +415,8 @@ def get_response_from_llm(
             stop=None,
             seed=0,
         )
-        content = response.choices[0].message.content     
+        content = response.choices[0].message.content 
+        new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
     else:
         raise ValueError(f"Model {model} not supported.")
 
