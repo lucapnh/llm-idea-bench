@@ -426,6 +426,7 @@ def get_response_from_llm(
             json=payload
         )
         response.raise_for_status()
+        print("Raw response text:", response.text)
         content = response.json()["message"]["content"]
 
         new_msg_history = msg_history + [
