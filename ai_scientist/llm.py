@@ -257,6 +257,19 @@ def make_llm_call(client, model, temperature, system_message, prompt):
         anthropic.RateLimitError,
     ),
 )
+
+def extract_full_message_from_ollama(response_text: str) -> str:
+    message_parts = []
+    for line in response_text.strip().splitlines():
+        try:
+            obj = json.loads(line)
+            part = obj.get("message", {}).get("content")
+            if part:
+                message_parts.append(part)
+        except json.JSONDecodeError:
+            continue  # Ignore malformed lines
+    return "".join(message_parts)
+
 def get_response_from_llm(
     prompt,
     client,
@@ -427,7 +440,7 @@ def get_response_from_llm(
         )
         response.raise_for_status()
         print("Raw response text:", response.text)
-        content = response.json()["message"]["content"]
+        content = extract_full_message_from_ollama(response.text)
 
         new_msg_history = msg_history + [
             {"role": "user", "content": msg},
