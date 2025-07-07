@@ -151,9 +151,6 @@ def get_batch_responses_from_llm(
             new_msg_history + [{"role": "assistant", "content": c}] for c in content
         ]
     elif model == "llama3.1:405b":
-        if msg_history is None:
-            msg_history = []
-        content, new_msg_history = [], []
         for _ in range(n_responses):
             c, hist = get_response_from_llm(
                 msg,
@@ -176,7 +173,6 @@ def get_batch_responses_from_llm(
             print(content)
             print("*" * 21 + " LLM END " + "*" * 21)
             print()
-        return content, new_msg_history
 
     else:
         content, new_msg_history = [], []
