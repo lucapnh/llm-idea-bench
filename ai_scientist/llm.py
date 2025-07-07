@@ -529,44 +529,14 @@ def create_client(model) -> tuple[Any, str]:
             ),
             model,
         )
-    elif model == "deepseek-r1:671b":
-        print(f"Using Ollama API with {model}.")
-        # Minimal wrapper client for Ollama
-        import requests
-
-        class OllamaClient:
-            def __init__(self, base_url="http://localhost:11434"):
-                self.base_url = base_url
-
-            def chat(self, messages, temperature=0.2):
-                response = requests.post(
-                    f"{self.base_url}/api/chat",
-                    json={
-                        "model": "deepseek-r1",
-                        "messages": messages,
-                        "temperature": temperature,
-                    },
-                )
-                response.raise_for_status()
-                return response.json()
-
-            def generate(self, prompt, temperature=0.2):
-                response = requests.post(
-                    f"{self.base_url}/api/generate",
-                    json={
-                        "model": "deepseek-r1",
-                        "prompt": prompt,
-                        "temperature": temperature,
-                    },
-                )
-                response.raise_for_status()
-                return response.json()
-
-        return OllamaClient(), "deepseek-r1"
     elif model == "llama3.1:405b":
         print(f"Using local Ollama for {model}.")
-        return openai.OpenAI(base_url='http://localhost:11434/v1/',
-                             api_key='ollama', # required but ignored
-                             )
+        return (
+            openai.OpenAI(
+                base_url='http://localhost:11434/v1/',
+                api_key='ollama', # required but ignored
+            ),
+            model,
+        )
     else:
         raise ValueError(f"Model {model} not supported.")
