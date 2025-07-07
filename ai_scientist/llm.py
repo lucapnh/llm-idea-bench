@@ -170,7 +170,7 @@ def get_batch_responses_from_llm(
             content.append(reply)
             new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
         new_msg_history = new_histories
-    elif model == "llama3.1-405b":
+    elif model == "llama3.1:405b":
         # Simple loop to get multiple responses if needed
         contents = []
         histories = []
@@ -409,7 +409,7 @@ def get_response_from_llm(
         return content, new_msg_history
 
     # For llama3.1-405b with Ollama chat
-    elif model == "llama3.1-405b":
+    elif model == "llama3.1:405b":
         # Use Ollama local endpoint
         payload = {
             "model": "llama3.1:405b",
@@ -555,7 +555,7 @@ def create_client(model) -> tuple[Any, str]:
                 return response.json()
 
         return OllamaClient(), "deepseek-r1"
-    elif model == "llama3.1-405b":
+    elif model == "llama3.1:405b":
         print(f"Using local Ollama for {model}.")
         return None, model
     else:
