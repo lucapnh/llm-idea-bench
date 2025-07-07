@@ -150,44 +150,33 @@ def get_batch_responses_from_llm(
         new_msg_history = [
             new_msg_history + [{"role": "assistant", "content": c}] for c in content
         ]
-    elif model == "deepseek-r1:671b":
-        new_msg_history = msg_history + [{"role": "user", "content": msg}]
-        content = []
-        new_histories = []
-        for _ in range(n_responses):
-            payload = {
-                "model": "deepseek-r1:671b",
-                "messages": [
-                    {"role": "system", "content": system_message},
-                    *new_msg_history,
-                ],
-                "temperature": temperature,
-                "stream": False,
-            }
-            response = client.post("http://localhost:11434/api/chat", json=payload)
-            if response.status_code != 200:
-                raise ValueError(f"Ollama error: {response.text}")
-            reply = response.json()["message"]["content"]
-            content.append(reply)
-            new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
-        new_msg_history = new_histories
     elif model == "llama3.1:405b":
-        # Simple loop to get multiple responses if needed
-        contents = []
-        histories = []
+        if msg_history is None:
+            msg_history = []
+        content, new_msg_history = [], []
         for _ in range(n_responses):
-            content, hist = get_response_from_llm(
-                prompt,
+            c, hist = get_response_from_llm(
+                msg,
                 client,
                 model,
                 system_message,
-                print_debug,
-                msg_history,
-                temperature
-            )
-            contents.append(content)
-            histories.append(hist)
-        return contents, histories
+                print_debug=False,
+                msg_history=None,
+                temperature=temperature,
+        )
+        content.append(c)
+        new_msg_history.append(hist)
+
+        if print_debug:
+            # Just print the first one.
+            print()
+            print("*" * 20 + " LLM START " + "*" * 20)
+            for j, msg in enumerate(new_msg_history[0]):
+                print(f'{j}, {msg["role"]}: {msg["content"]}')
+            print(content)
+            print("*" * 21 + " LLM END " + "*" * 21)
+            print()
+        return content, new_msg_history
 
     else:
         content, new_msg_history = [], []
