@@ -424,28 +424,20 @@ def get_response_from_llm(
 
     # For llama3.1-405b with Ollama chat
     elif model == "llama3.1:405b":
-        import requests
-        # Use Ollama local endpoint
-        payload = {
-            "model": "llama3.1:405b",
-            "messages": [
+        assert client, "To use an Ollama model, set up the client."
+        new_msg_history = msg_history + [{"role": "user", "content": msg}]
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
                 {"role": "system", "content": system_message},
-                {"role": "user", "content": msg},
+                *new_msg_history,
             ],
-            "temperature": temperature,
-        }
-        response = requests.post(
-            "http://localhost:11434/api/chat",
-            json=payload
+            temperature=temperature,
+            max_tokens=MAX_NUM_TOKENS,
+            stop=None,
+            seed=0,
         )
-        response.raise_for_status()
-        print("Raw response text:", response.text)
-        content = extract_full_message_from_ollama(response.text)
-
-        new_msg_history = msg_history + [
-            {"role": "user", "content": msg},
-            {"role": "assistant", "content": content},
-        ]
+        content = response.choices[0].message.content     
     else:
         raise ValueError(f"Model {model} not supported.")
 
@@ -573,6 +565,8 @@ def create_client(model) -> tuple[Any, str]:
         return OllamaClient(), "deepseek-r1"
     elif model == "llama3.1:405b":
         print(f"Using local Ollama for {model}.")
-        return None, model
+        return openai.OpenAI(base_url='http://localhost:11434/v1/',
+                             api_key='ollama', # required but ignored
+                             )
     else:
         raise ValueError(f"Model {model} not supported.")
