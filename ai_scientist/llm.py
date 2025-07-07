@@ -33,8 +33,8 @@ AVAILABLE_LLMS = [
     # DeepSeek Models
     "deepseek-coder-v2-0724",
     "deepcoder-14b",
-    # Llama 3 models
-    "llama3.1-405b",
+    # Llama 3 models Ollama
+    "llama3.1:405b",
     # Anthropic Claude models via Amazon Bedrock
     "bedrock/anthropic.claude-3-sonnet-20240229-v1:0",
     "bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
