@@ -171,19 +171,22 @@ def get_batch_responses_from_llm(
             new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
         new_msg_history = new_histories
     elif model == "llama3.1-405b":
-        new_msg_history = msg_history + [{"role": "user", "content": msg}]
-        content = []
-        new_histories = []
+        # Simple loop to get multiple responses if needed
+        contents = []
+        histories = []
         for _ in range(n_responses):
-            messages = [{"role": "system", "content": system_message}] + new_msg_history
-            response = client.chat(messages, temperature=temperature)
-            if "choices" in response and len(response["choices"]) > 0:
-                reply = response["choices"][0]["message"]["content"]
-            else:
-                raise ValueError("Unexpected response format from Ollama Llama3.1-405b")
-            content.append(reply)
-            new_histories.append(new_msg_history + [{"role": "assistant", "content": reply}])
-        new_msg_history = new_histories
+            content, hist = get_response_from_llm(
+                prompt,
+                client,
+                model,
+                system_message,
+                print_debug,
+                msg_history,
+                temperature
+            )
+            contents.append(content)
+            histories.append(hist)
+        return contents, histories
 
     else:
         content, new_msg_history = [], []
@@ -379,21 +382,6 @@ def get_response_from_llm(
                 raise ValueError(f"Error from HuggingFace API: {response.text}")
 
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
-    elif model in ["meta-llama/llama-3.1-405b-instruct", "llama-3-1-405b-instruct"]:
-        new_msg_history = msg_history + [{"role": "user", "content": msg}]
-        response = client.chat.completions.create(
-            model="meta-llama/llama-3.1-405b-instruct",
-            messages=[
-                {"role": "system", "content": system_message},
-                *new_msg_history,
-            ],
-            temperature=temperature,
-            max_tokens=MAX_NUM_TOKENS,
-            n=1,
-            stop=None,
-        )
-        content = response.choices[0].message.content
-        new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
     elif 'gemini' in model:
         new_msg_history = msg_history + [{"role": "user", "content": msg}]
         response = client.chat.completions.create(
@@ -422,13 +410,26 @@ def get_response_from_llm(
 
     # For llama3.1-405b with Ollama chat
     elif model == "llama3.1-405b":
-        messages = [{"role": "system", "content": system_message}] + msg_history + [{"role": "user", "content": prompt}]
-        response = client.chat(messages, temperature=temperature)
-        content = response["choices"][0]["message"]["content"]
-        new_msg_history = msg_history + [{"role": "user", "content": prompt}] + [{"role": "assistant", "content": content}]
-        if print_debug:
-            print(f"Llama3.1-405b response: {content}")
-        return content, new_msg_history
+        # Use Ollama local endpoint
+        payload = {
+            "model": "llama3.1:405b",
+            "messages": [
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": msg},
+            ],
+            "temperature": temperature,
+        }
+        response = requests.post(
+            "http://localhost:11434/api/chat",
+            json=payload
+        )
+        response.raise_for_status()
+        content = response.json()["message"]["content"]
+
+        new_msg_history = msg_history + [
+            {"role": "user", "content": msg},
+            {"role": "assistant", "content": content},
+        ]
     else:
         raise ValueError(f"Model {model} not supported.")
 
@@ -511,15 +512,6 @@ def create_client(model) -> tuple[Any, str]:
             ),
             model,
         )
-    elif model == "llama3.1-405b":
-        print(f"Using OpenAI API with {model}.")
-        return (
-            openai.OpenAI(
-                api_key=os.environ["OPENROUTER_API_KEY"],
-                base_url="https://openrouter.ai/api/v1",
-            ),
-            "meta-llama/llama-3.1-405b-instruct",
-        )
     elif 'gemini' in model:
         print(f"Using OpenAI API with {model}.")
         return (
@@ -564,25 +556,7 @@ def create_client(model) -> tuple[Any, str]:
 
         return OllamaClient(), "deepseek-r1"
     elif model == "llama3.1-405b":
-        print(f"Using Ollama API with {model}.")
-        import requests
-
-        class OllamaClient:
-            def __init__(self, base_url="http://localhost:11434"):
-                self.base_url = base_url
-
-            def chat(self, messages, temperature=0.7):
-                response = requests.post(
-                    f"{self.base_url}/api/chat",
-                    json={
-                        "model": "llama3.1-405b",
-                        "messages": messages,
-                        "temperature": temperature,
-                    },
-                )
-                response.raise_for_status()
-                return response.json()
-
-        return OllamaClient(), "llama3.1-405b"
+        print(f"Using local Ollama for {model}.")
+        return None, model
     else:
         raise ValueError(f"Model {model} not supported.")
