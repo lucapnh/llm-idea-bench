@@ -527,7 +527,7 @@ def create_client(model) -> tuple[Any, str]:
             ),
             model,
         )
-    elif model == "llama3.1:405b" or modell == "deepseek-r1:671b":
+    elif model == "llama3.1:405b" or model == "deepseek-r1:671b":
         print(f"Using local Ollama for {model}.")
         return (
             openai.OpenAI(
