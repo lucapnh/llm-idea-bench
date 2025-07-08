@@ -219,6 +219,8 @@ def generate_temp_free_idea(
                         try:
                             # Assuming the arguments match the parameters of the tool
                             result = tool.use_tool(**arguments_json)
+                            # Debug
+                            print("SemanticSchoolar Result:", result)
                             last_tool_results = result
                         except Exception as e:
                             last_tool_results = f"Error using tool {action}: {str(e)}"
