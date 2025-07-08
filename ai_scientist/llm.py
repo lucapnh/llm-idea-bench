@@ -8,6 +8,7 @@ import anthropic
 import backoff
 import openai
 
+show_thoughts = False;
 
 MAX_NUM_TOKENS = 4096
 
@@ -430,7 +431,7 @@ def get_response_from_llm(
         content = response.choices[0].message.content
         thought, content = content.split("</think>")
         content = content[2:]
-        if false: #Show thoughts
+        if show_thoughts: #Show thoughts
             print("\n\n[Showing thought process STARTs here]")
             print(thought.split("<think>")[1][1:]) if thought.startswith("<think>") else print(thought)
             print("[Showing thought process ENDs here]\n\n")
