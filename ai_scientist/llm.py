@@ -150,7 +150,7 @@ def get_batch_responses_from_llm(
         new_msg_history = [
             new_msg_history + [{"role": "assistant", "content": c}] for c in content
         ]
-    elif model == "llama3.1:405b":
+    elif model == "llama3.1:405b" or model == "deepseek-r1:671b":
         for _ in range(n_responses):
             c, hist = get_response_from_llm(
                 msg,
@@ -172,8 +172,7 @@ def get_batch_responses_from_llm(
                 print(f'{j}, {msg["role"]}: {msg["content"]}')
             print(content)
             print("*" * 21 + " LLM END " + "*" * 21)
-            print()
-
+            print()  
     else:
         content, new_msg_history = [], []
         for _ in range(n_responses):
@@ -413,6 +412,30 @@ def get_response_from_llm(
         )
         content = response.choices[0].message.content 
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
+
+    elif model == "deepseek-r1:671b":
+        assert client, "To use an Ollama model, set up the client."
+        new_msg_history = msg_history + [{"role": "user", "content": msg}]
+        response = client.chat.completions.create(
+            model=model_or_pipe,
+            messages=[
+                {"role": "system", "content": system_message},
+                *new_msg_history,
+            ],
+            temperature=temperature,
+            max_tokens=MAX_NUM_TOKENS,
+            stop=None,
+            seed=0,
+        )
+        content = response.choices[0].message.content
+        thought, content = content.split("</think>")
+        content = content[2:]
+        if false: #Show thoughts
+            print("\n\n[Showing thought process STARTs here]")
+            print(thought.split("<think>")[1][1:]) if thought.startswith("<think>") else print(thought)
+            print("[Showing thought process ENDs here]\n\n")
+        new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
+    
     else:
         raise ValueError(f"Model {model} not supported.")
 
@@ -504,7 +527,7 @@ def create_client(model) -> tuple[Any, str]:
             ),
             model,
         )
-    elif model == "llama3.1:405b":
+    elif model == "llama3.1:405b" or modell == "deepseek-r1:671b":
         print(f"Using local Ollama for {model}.")
         return (
             openai.OpenAI(
