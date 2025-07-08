@@ -211,8 +211,8 @@ def generate_temp_free_idea(
                         tool = tools_dict[action]
                         # Parse arguments
                         try:
+                            print("LLM Arguments JSON:\n", arguments_text)
                             arguments_json = json.loads(arguments_text)
-                            print("Arguments JSON: ", arguments_json)
                         except json.JSONDecodeError:
                             raise ValueError(f"Invalid arguments JSON for {action}.")
 
