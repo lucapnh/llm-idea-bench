@@ -212,7 +212,7 @@ def generate_temp_free_idea(
                         # Parse arguments
                         try:
                             arguments_json = json.loads(arguments_text)
-                            Print("Arguments JSON: ", arguments_json)
+                            print("Arguments JSON: ", arguments_json)
                         except json.JSONDecodeError:
                             raise ValueError(f"Invalid arguments JSON for {action}.")
 
