@@ -417,7 +417,7 @@ def get_response_from_llm(
         assert client, "To use an Ollama model, set up the client."
         new_msg_history = msg_history + [{"role": "user", "content": msg}]
         response = client.chat.completions.create(
-            model=model_or_pipe,
+            model=model,
             messages=[
                 {"role": "system", "content": system_message},
                 *new_msg_history,
