@@ -85,7 +85,7 @@ IDEA JSON:
     "Short Hypothesis": "...",
     "Related Work": "...",
     "Abstract": "...",
-    "Experiments": "...",
+    "Experiments": ["...","..."],
     "Risk Factors and Limitations": "..."
   }}
 }}
