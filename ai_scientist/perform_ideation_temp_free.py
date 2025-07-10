@@ -86,7 +86,7 @@ IDEA JSON:
     "Related Work": "...",
     "Abstract": "...",
     "Experiments": ["...","..."],
-    "Risk Factors and Limitations": "..."
+    "Risk Factors and Limitations": ["...", "..."]
   }}
 }}
 ```
