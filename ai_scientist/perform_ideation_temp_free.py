@@ -116,6 +116,7 @@ Ensure the proposal is clear and concise, and the JSON is in the correct format.
 Do not make things overly complicated.
 In the next attempt, try to refine and improve your proposal.
 Stick to the spirit of the original idea unless there are glaring issues.
+Only Output the JSON.
 
 If you have new information from tools, such as literature search results, incorporate them into your reflection and refine your proposal accordingly.
 
