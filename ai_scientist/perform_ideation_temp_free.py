@@ -72,7 +72,7 @@ ACTION:
 <The action to take, exactly one of {tool_names_str}>
 
 ARGUMENTS:
-<If ACTION is "SearchSemanticScholar", provide the search query as {{"query": "your search query"}} - nothing else. If ACTION is "FinalizeIdea", provide the idea details as {{"idea": {{ ... }}}} with the IDEA JSON specified below.>
+<If ACTION is "SearchSemanticScholar", provide the search query as {{"query": "your search query"}} - not more context. If ACTION is "FinalizeIdea", provide the idea details as {{"idea": {{ ... }}}} with the IDEA JSON specified below.>
 
 If you choose to finalize your idea, provide the IDEA JSON in the arguments:
 
@@ -221,7 +221,7 @@ def generate_temp_free_idea(
                             # Assuming the arguments match the parameters of the tool
                             result = tool.use_tool(**arguments_json)
                             # Debug
-                            print("SemanticSchoolar Result:", result)
+                            print("SemanticScholar Result:", result)
                             last_tool_results = result
                         except Exception as e:
                             last_tool_results = f"Error using tool {action}: {str(e)}"
