@@ -80,6 +80,14 @@ class SemanticScholarSearchTool(BaseTool):
             return None
 
         papers = results.get("data", [])
+
+        # Exclude specific papers by their IDs
+        original_count = len(papers)
+        excluded_ids = {"dc185e9974367145c0f37d196f2c8ffdd23da4d5", "another_id"}
+        papers = [p for p in papers if p.get("paperId") not in excluded_ids]
+        if len(papers) < original_count:
+            print(f"{original_count - len(papers)} paper(s) were excluded based on ID.")
+
         # Sort papers by citationCount in descending order
         papers.sort(key=lambda x: x.get("citationCount", 0), reverse=True)
         return papers
