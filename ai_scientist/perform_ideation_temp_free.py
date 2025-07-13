@@ -7,6 +7,9 @@ from typing import Any, Dict, List
 
 import sys
 
+import uuid
+from datetime import datetime
+
 sys.path.append(osp.join(osp.dirname(__file__), ".."))
 from ai_scientist.llm import (
     AVAILABLE_LLMS,
@@ -125,6 +128,16 @@ Results from your last action (if any):
 {last_tool_results}
 """
 
+#Save search results to a file with a timestamp and sanitized query
+def save_search_result(result: Any, query: str, output_dir: str = "semantic_scholar_logs"):
+    os.makedirs(output_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
+    filename = f"{timestamp}_{safe_query}_{uuid.uuid4().hex[:8]}.json"
+    filepath = osp.join(output_dir, filename)
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump({"query": query, "result": result}, f, indent=4)
+    return filepath
 
 def generate_temp_free_idea(
     idea_fname: str,
@@ -223,6 +236,12 @@ def generate_temp_free_idea(
                             # Debug
                             print("SemanticScholar Result:", result)
                             last_tool_results = result
+
+                            # Save Semantic Scholar results to file
+                            query = arguments_json.get("query", "unknown_query")
+                            result_file = save_search_result(result, query)
+                            print(f"Saved SemanticScholar result to {result_file}")
+
                         except Exception as e:
                             last_tool_results = f"Error using tool {action}: {str(e)}"
                     elif action == "FinalizeIdea":
