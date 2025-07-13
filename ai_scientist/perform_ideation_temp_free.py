@@ -131,6 +131,7 @@ Results from your last action (if any):
 
 #Save search results to a file with a timestamp and sanitized query
 def save_search_result(result: Any, query: str, output_dir: str = "semantic_scholar_logs"):
+    print(f"Saving search result to directory '{output_dir}'...")
     os.makedirs(output_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
@@ -240,6 +241,7 @@ def generate_temp_free_idea(
 
                             # Save Semantic Scholar results to file
                             query = arguments_json.get("query", "unknown_query")
+                            print(f"Saving SemanticScholar result for query: {query}")
                             result_file = save_search_result(result, query)
                             print(f"Saved SemanticScholar result to {result_file}")
 
