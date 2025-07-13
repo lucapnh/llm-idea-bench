@@ -137,8 +137,27 @@ def save_search_result(result: Any, query: str, output_dir: str = "semantic_scho
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
     filename = f"{timestamp}_{safe_query}_{uuid.uuid4().hex[:8]}.json"
     filepath = osp.join(output_dir, filename)
+
+    # Split the results by numbered sections if it's a string
+    if isinstance(result, str):
+        # Split on patterns like "1: ", "2: ", etc.
+        split_result = re.split(r'\n*(\d+):\s*', result)
+        # re.split returns something like: ['', '1', 'First result...', '2', 'Second result...', ...]
+        if len(split_result) > 2:
+            result_dict = {
+                num: content.strip()
+                for num, content in zip(split_result[1::2], split_result[2::2])
+            }
+        else:
+            result_dict = {"full_result": result}
+    else:
+        # If it's already structured data, don't change it
+        result_dict = result
+
+    # Save to file
     with open(filepath, "w", encoding="utf-8") as f:
-        json.dump({"query": query, "result": result}, f, indent=4)
+        json.dump({"query": query, "result": result_dict}, f, indent=4)
+
     return filepath
 
 def generate_temp_free_idea(
