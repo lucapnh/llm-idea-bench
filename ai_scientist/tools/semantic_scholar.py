@@ -83,7 +83,7 @@ class SemanticScholarSearchTool(BaseTool):
 
         # Exclude specific papers by their IDs
         original_count = len(papers)
-        excluded_ids = {"dc185e9974367145c0f37d196f2c8ffdd23da4d5", "another_id"}
+        excluded_ids = {"8e075a4d68cb9682003dd7f7e1c73b17efffa37b", "another_id"}
         papers = [p for p in papers if p.get("paperId") not in excluded_ids]
         if len(papers) < original_count:
             print(f"{original_count - len(papers)} paper(s) were excluded based on ID.")
