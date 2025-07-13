@@ -135,7 +135,7 @@ def save_search_result(result: Any, query: str, output_dir: str = "semantic_scho
     os.makedirs(output_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
-    filename = f"{timestamp}_{safe_query}_{uuid.uuid4().hex[:8]}.json"
+    filename = f"{timestamp}_{safe_query}.json"
     filepath = osp.join(output_dir, filename)
 
     # Split the results by numbered sections if it's a string
