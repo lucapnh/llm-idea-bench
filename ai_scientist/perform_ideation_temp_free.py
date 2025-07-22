@@ -70,7 +70,7 @@ You have access to the following tools:
 
 {tool_descriptions}
 
-Respond in the following format:
+Respond in the exact following format:
 
 ACTION:
 <The action to take, exactly one of {tool_names_str}>
@@ -120,7 +120,7 @@ Ensure the proposal is clear and concise, and the JSON is in the correct given f
 Do not make things overly complicated.
 In the next attempt, try to refine and improve your proposal.
 Stick to the spirit of the original idea unless there are glaring issues.
-Only Output the JSON in the given format.
+Only Output the JSON.
 
 If you have new information from tools, such as literature search results, incorporate them into your reflection and refine your proposal accordingly.
 
