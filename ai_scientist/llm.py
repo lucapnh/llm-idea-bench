@@ -37,6 +37,7 @@ AVAILABLE_LLMS = [
     "deepcoder-14b",
     # Llama 3 models Ollama
     "llama3.1:405b",
+    "llama3:70b",
     # Anthropic Claude models via Amazon Bedrock
     "bedrock/anthropic.claude-3-sonnet-20240229-v1:0",
     "bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
@@ -54,8 +55,7 @@ AVAILABLE_LLMS = [
     "gemini-2.5-flash-preview-04-17",
     "gemini-2.5-pro-preview-03-25",
     "deepseek-r1:671b",
-    # Qwen
-    "qwen3:235b",
+    
 ]
 
 
