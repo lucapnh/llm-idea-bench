@@ -35,6 +35,7 @@ AVAILABLE_LLMS = [
     # DeepSeek Models
     "deepseek-coder-v2-0724",
     "deepcoder-14b",
+    "deepseek-v2:236b",
     # Llama 3 models Ollama
     "llama3.1:405b",
     "llama3.1:70b",
@@ -153,7 +154,7 @@ def get_batch_responses_from_llm(
         new_msg_history = [
             new_msg_history + [{"role": "assistant", "content": c}] for c in content
         ]
-    elif model == "llama3.1:405b" or model == "deepseek-r1:671b" or "llama3.1:70b":
+    elif model == "llama3.1:405b" or model == "deepseek-r1:671b" or "deepseek-v2:236b":
         for _ in range(n_responses):
             c, hist = get_response_from_llm(
                 msg,
@@ -399,7 +400,7 @@ def get_response_from_llm(
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
 
     # For llama3.1-405b with Ollama chat
-    elif model == "llama3.1:405b" or "llama3.1:70b":
+    elif model == "llama3.1:405b" or "deepseek-v2:236b":
         assert client, "To use an Ollama model, set up the client."
         new_msg_history = msg_history + [{"role": "user", "content": msg}]
         response = client.chat.completions.create(
@@ -530,7 +531,7 @@ def create_client(model) -> tuple[Any, str]:
             ),
             model,
         )
-    elif model == "llama3.1:405b" or model == "deepseek-r1:671b" or "llama3.1:70b":
+    elif model == "llama3.1:405b" or model == "deepseek-r1:671b" or "deepseek-v2:236b":
         print(f"Using local Ollama for {model}.")
         return (
             openai.OpenAI(
