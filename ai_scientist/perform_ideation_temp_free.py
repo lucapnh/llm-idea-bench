@@ -95,7 +95,7 @@ IDEA JSON:
 }}
 ```
 
-Ensure the JSON is properly formatted for automatic parsing.
+Ensure the JSON is properly formatted {{"idea": {{ ... }}}} for automatic parsing.
 
 Note: You should perform at least one SearchSemanticScholar ACTION before finalizing your idea to ensure it is well-informed by existing research."""
 
