@@ -135,14 +135,14 @@ def save_search_result(
     result: Any,
     query: str,
     output_dir: str = "semantic_scholar_logs",
-    idea_source: str = None,      # path or name of the ideas.json
-    md_source: str = None,        # path or name of the .md input file
+    idea_source: str = None,      # path or name of ideas.json (used for subfolder + metadata)
+    md_source: str = None,        # path or name of the .md input file (WILL NOT be logged in cleartext)
     proposal_number: Any = None,  # e.g., 3 (int) or "3" (str)
 ):
     print(f"Saving search result to directory '{output_dir}'...")
     os.makedirs(output_dir, exist_ok=True)
 
-    # Build (optional) per-idea subfolder
+    # Optional per-idea subfolder (kept for provenance)
     source_stem = None
     if idea_source:
         basename = osp.splitext(osp.basename(idea_source))[0]
@@ -150,15 +150,18 @@ def save_search_result(
         output_dir = osp.join(output_dir, source_stem)
         os.makedirs(output_dir, exist_ok=True)
 
-    # Sanitize md source and proposal number for filename use
-    md_stem = None
+    # NEVER include the md_source name in filename or payload; only keep a hash for matching if provided
+    md_hash = None
     if md_source:
-        md_base = osp.splitext(osp.basename(md_source))[0]
-        md_stem = re.sub(r"[^\w\-]+", "_", md_base.strip())[:80]
+        try:
+            import hashlib
+            md_hash = hashlib.sha1(md_source.encode("utf-8")).hexdigest()  # stable, non-reversible enough for this use
+        except Exception:
+            md_hash = "unavailable"
 
+    # Sanitize proposal number for filename use
     proposal_token = None
     if proposal_number is not None:
-        # keep only digits/word chars/hyphen; trim
         prop_str = str(proposal_number).strip()
         prop_str = re.sub(r"[^\w\-]+", "_", prop_str)[:20]
         if prop_str:
@@ -167,13 +170,11 @@ def save_search_result(
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
 
-    # Build filename components
+    # Build filename WITHOUT md name
     parts = [timestamp]
     if source_stem: parts.append(source_stem)
-    if md_stem: parts.append(md_stem)
     if proposal_token: parts.append(proposal_token)
     parts.append(safe_query)
-
     filename = "_".join(parts) + ".json"
     filepath = osp.join(output_dir, filename)
 
@@ -190,7 +191,7 @@ def save_search_result(
     else:
         result_dict = result
 
-    # Save with rich metadata (including md file + proposal number)
+    # Save metadata; exclude md_source string entirely
     payload = {
         "query": query,
         "result": result_dict,
@@ -198,15 +199,16 @@ def save_search_result(
     }
     if idea_source:
         payload["idea_source"] = idea_source
-    if md_source:
-        payload["md_source"] = md_source
     if proposal_number is not None:
         payload["proposal_number"] = proposal_number
+    if md_hash is not None:
+        payload["md_source_sha1"] = md_hash  # hashed only, no plaintext title/path
 
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=4)
 
     return filepath
+
 
 
 
