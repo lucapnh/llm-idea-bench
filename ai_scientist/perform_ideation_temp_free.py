@@ -129,12 +129,32 @@ Results from your last action (if any):
 """
 
 #Save search results to a file with a timestamp and sanitized query
-def save_search_result(result: Any, query: str, output_dir: str = "semantic_scholar_logs"):
+# Save search results to a file with a timestamp and sanitized query,
+# annotated with the source ideas.json so you can trace provenance.
+def save_search_result(
+    result: Any,
+    query: str,
+    output_dir: str = "semantic_scholar_logs",
+    idea_source: str = None,  # pass the path or name of the ideas.json here
+):
     print(f"Saving search result to directory '{output_dir}'...")
     os.makedirs(output_dir, exist_ok=True)
+
+    # If provided, sanitize the source ideas.json name and optionally nest logs
+    source_stem = None
+    if idea_source:
+        # keep just the filename without extension, then sanitize
+        basename = osp.splitext(osp.basename(idea_source))[0]
+        source_stem = re.sub(r"[^\w\-]+", "_", basename.strip())[:80]
+        # create a subfolder per idea source to keep things organized
+        output_dir = osp.join(output_dir, source_stem)
+        os.makedirs(output_dir, exist_ok=True)
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
-    filename = f"{timestamp}_{safe_query}.json"
+    # include the source prefix in the filename for quick grepping
+    filename_prefix = f"{source_stem}_" if source_stem else ""
+    filename = f"{timestamp}_{filename_prefix}{safe_query}.json"
     filepath = osp.join(output_dir, filename)
 
     # Split the results by numbered sections if it's a string
@@ -153,11 +173,20 @@ def save_search_result(result: Any, query: str, output_dir: str = "semantic_scho
         # If it's already structured data, don't change it
         result_dict = result
 
-    # Save to file
+    # Save to file with source metadata
+    payload = {
+        "query": query,
+        "result": result_dict,
+        "created_at": datetime.now().isoformat(),
+    }
+    if idea_source:
+        payload["idea_source"] = idea_source  # full path or name you passed in
+
     with open(filepath, "w", encoding="utf-8") as f:
-        json.dump({"query": query, "result": result_dict}, f, indent=4)
+        json.dump(payload, f, indent=4)
 
     return filepath
+
 
 def generate_temp_free_idea(
     idea_fname: str,
