@@ -76,7 +76,7 @@ ACTION:
 <The action to take, exactly one of {tool_names_str}>
 
 ARGUMENTS:
-<If ACTION is "SearchSemanticScholar", provide the search query as {{"query": "your search query"}} - not more context or information. If ACTION is "FinalizeIdea", provide the idea details as single valid JSON object {{"idea": {{ ... }}}} with the IDEA JSON specified below without any more information.>
+<If ACTION is "SearchSemanticScholar", provide the search query as {{"query": "your search query"}} - not more context or information. If ACTION is "FinalizeIdea", provide the idea details as single valid JSON object {{"idea": {{ ... }}}} with the IDEA JSON specified below. Do not print any analysis, reflections, explanations, or trailing text before or after the JSON.>
 
 If you choose to finalize your idea, provide the IDEA JSON in the arguments:
 
