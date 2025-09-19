@@ -129,58 +129,19 @@ Results from your last action (if any):
 """
 
 #Save search results to a file with a timestamp and sanitized query
-# Save search results to a file with a timestamp and sanitized query,
-# annotated with the source ideas.json so you can trace provenance.
-def save_search_result(
-    result: Any,
-    query: str,
-    output_dir: str = "semantic_scholar_logs",
-    idea_source: str = None,      # path or name of ideas.json (used for subfolder + metadata)
-    md_source: str = None,        # path or name of the .md input file (WILL NOT be logged in cleartext)
-    proposal_number: Any = None,  # e.g., 3 (int) or "3" (str)
-):
+def save_search_result(result: Any, query: str, output_dir: str = "semantic_scholar_logs"):
     print(f"Saving search result to directory '{output_dir}'...")
     os.makedirs(output_dir, exist_ok=True)
-
-    # Optional per-idea subfolder (kept for provenance)
-    source_stem = None
-    if idea_source:
-        basename = osp.splitext(osp.basename(idea_source))[0]
-        source_stem = re.sub(r"[^\w\-]+", "_", basename.strip())[:80]
-        output_dir = osp.join(output_dir, source_stem)
-        os.makedirs(output_dir, exist_ok=True)
-
-    # NEVER include the md_source name in filename or payload; only keep a hash for matching if provided
-    md_hash = None
-    if md_source:
-        try:
-            import hashlib
-            md_hash = hashlib.sha1(md_source.encode("utf-8")).hexdigest()  # stable, non-reversible enough for this use
-        except Exception:
-            md_hash = "unavailable"
-
-    # Sanitize proposal number for filename use
-    proposal_token = None
-    if proposal_number is not None:
-        prop_str = str(proposal_number).strip()
-        prop_str = re.sub(r"[^\w\-]+", "_", prop_str)[:20]
-        if prop_str:
-            proposal_token = f"p{prop_str}"
-
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
-
-    # Build filename WITHOUT md name
-    parts = [timestamp]
-    if source_stem: parts.append(source_stem)
-    if proposal_token: parts.append(proposal_token)
-    parts.append(safe_query)
-    filename = "_".join(parts) + ".json"
+    filename = f"{timestamp}_{safe_query}.json"
     filepath = osp.join(output_dir, filename)
 
     # Split the results by numbered sections if it's a string
     if isinstance(result, str):
+        # Split on patterns like "1: ", "2: ", etc.
         split_result = re.split(r'\n*(\d+):\s*', result)
+        # re.split returns something like: ['', '1', 'First result...', '2', 'Second result...', ...]
         if len(split_result) > 2:
             result_dict = {
                 num: content.strip()
@@ -189,26 +150,14 @@ def save_search_result(
         else:
             result_dict = {"full_result": result}
     else:
+        # If it's already structured data, don't change it
         result_dict = result
 
-    # Save metadata; exclude md_source string entirely
-    payload = {
-        "query": query,
-        "result": result_dict,
-        "created_at": datetime.now().isoformat(),
-    }
-    if idea_source:
-        payload["idea_source"] = idea_source
-    if proposal_number is not None:
-        payload["proposal_number"] = proposal_number
-    if md_hash is not None:
-        payload["md_source_sha1"] = md_hash  # hashed only, no plaintext title/path
-
+    # Save to file
     with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=4)
+        json.dump({"query": query, "result": result_dict}, f, indent=4)
 
     return filepath
-
 
 
 
