@@ -135,33 +135,51 @@ def save_search_result(
     result: Any,
     query: str,
     output_dir: str = "semantic_scholar_logs",
-    idea_source: str = None,  # pass the path or name of the ideas.json here
+    idea_source: str = None,      # path or name of the ideas.json
+    md_source: str = None,        # path or name of the .md input file
+    proposal_number: Any = None,  # e.g., 3 (int) or "3" (str)
 ):
     print(f"Saving search result to directory '{output_dir}'...")
     os.makedirs(output_dir, exist_ok=True)
 
-    # If provided, sanitize the source ideas.json name and optionally nest logs
+    # Build (optional) per-idea subfolder
     source_stem = None
     if idea_source:
-        # keep just the filename without extension, then sanitize
         basename = osp.splitext(osp.basename(idea_source))[0]
         source_stem = re.sub(r"[^\w\-]+", "_", basename.strip())[:80]
-        # create a subfolder per idea source to keep things organized
         output_dir = osp.join(output_dir, source_stem)
         os.makedirs(output_dir, exist_ok=True)
 
+    # Sanitize md source and proposal number for filename use
+    md_stem = None
+    if md_source:
+        md_base = osp.splitext(osp.basename(md_source))[0]
+        md_stem = re.sub(r"[^\w\-]+", "_", md_base.strip())[:80]
+
+    proposal_token = None
+    if proposal_number is not None:
+        # keep only digits/word chars/hyphen; trim
+        prop_str = str(proposal_number).strip()
+        prop_str = re.sub(r"[^\w\-]+", "_", prop_str)[:20]
+        if prop_str:
+            proposal_token = f"p{prop_str}"
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_query = re.sub(r"[^\w\-]+", "_", query.strip())[:50]
-    # include the source prefix in the filename for quick grepping
-    filename_prefix = f"{source_stem}_" if source_stem else ""
-    filename = f"{timestamp}_{filename_prefix}{safe_query}.json"
+
+    # Build filename components
+    parts = [timestamp]
+    if source_stem: parts.append(source_stem)
+    if md_stem: parts.append(md_stem)
+    if proposal_token: parts.append(proposal_token)
+    parts.append(safe_query)
+
+    filename = "_".join(parts) + ".json"
     filepath = osp.join(output_dir, filename)
 
     # Split the results by numbered sections if it's a string
     if isinstance(result, str):
-        # Split on patterns like "1: ", "2: ", etc.
         split_result = re.split(r'\n*(\d+):\s*', result)
-        # re.split returns something like: ['', '1', 'First result...', '2', 'Second result...', ...]
         if len(split_result) > 2:
             result_dict = {
                 num: content.strip()
@@ -170,22 +188,26 @@ def save_search_result(
         else:
             result_dict = {"full_result": result}
     else:
-        # If it's already structured data, don't change it
         result_dict = result
 
-    # Save to file with source metadata
+    # Save with rich metadata (including md file + proposal number)
     payload = {
         "query": query,
         "result": result_dict,
         "created_at": datetime.now().isoformat(),
     }
     if idea_source:
-        payload["idea_source"] = idea_source  # full path or name you passed in
+        payload["idea_source"] = idea_source
+    if md_source:
+        payload["md_source"] = md_source
+    if proposal_number is not None:
+        payload["proposal_number"] = proposal_number
 
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=4)
 
     return filepath
+
 
 
 def generate_temp_free_idea(
