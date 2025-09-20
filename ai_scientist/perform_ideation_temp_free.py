@@ -123,8 +123,6 @@ Stick to the spirit of the original idea unless there are glaring issues.
 
 If you have new information from tools, such as literature search results, incorporate them into your reflection and refine your proposal accordingly.
 
-Note: You must perform at least one SearchSemanticScholar ACTION before finalizing your idea to ensure it is well-informed by existing research.
-
 Results from your last action (if any):
 
 {last_tool_results}
