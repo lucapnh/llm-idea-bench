@@ -121,6 +121,10 @@ Do not make things overly complicated.
 In the next attempt, try to refine and improve your proposal.
 Stick to the spirit of the original idea unless there are glaring issues.
 
+**Search enforcement for this idea:**
+- If you have **not yet** performed **SearchSemanticScholar** for this idea in earlier rounds, you **must do so now** before considering FinalizeIdea.
+- If you already searched at least once, you may either search again (with a refined query) or proceed to FinalizeIdea.
+
 If you have new information from tools, such as literature search results, incorporate them into your reflection and refine your proposal accordingly.
 
 Results from your last action (if any):
