@@ -97,7 +97,7 @@ IDEA JSON:
 
 Ensure the JSON is properly formatted with double curly braces for automatic parsing.
 
-Note: You should perform at least one SearchSemanticScholar ACTION before finalizing your idea to ensure it is well-informed by existing research."""
+Note: You must perform at least one SearchSemanticScholar ACTION before finalizing your idea to ensure it is well-informed by existing research."""
 
 # Define the initial idea generation prompt
 idea_generation_prompt = """{workshop_description}
