@@ -97,10 +97,6 @@ IDEA JSON:
 
 Ensure the JSON is properly formatted with double curly braces for automatic parsing.
 
-**Search enforcement for this idea:**
-- If you have **not yet** performed **SearchSemanticScholar** for this idea in earlier rounds, you **must do so now** before considering FinalizeIdea.
-- If you already searched at least once, you may either search again (with a refined query) or proceed to FinalizeIdea.
-
 Note: You must perform at least one SearchSemanticScholar ACTION before finalizing your idea to ensure it is well-informed by existing research."""
 
 # Define the initial idea generation prompt
