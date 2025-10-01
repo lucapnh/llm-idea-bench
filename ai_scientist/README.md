@@ -1,3 +1,68 @@
+# Adaptation Notice & Local Ollama Support
+
+**This repository is an adaptation of the upstream project; it is *not* my original work.**  
+All credit for the system, research, and documentation belongs to the original authors (see **Original README** below). I only added **optional local model support via [Ollama]** and minimal wiring so the pipeline can run against locally hosted LLMs.
+
+## What’s new in this adaptation
+
+- **Local (Ollama) backend** alongside the cloud APIs used by the original project.  
+- **Tested local model tags** (via Ollama):  
+  - `deepseek-v2:236b`  
+  - `llama3.1:405b`  
+  - `deepseek-v3:671b`  
+  *(More can be added easily by running `ollama pull <model:tag>` and using the same model flags shown below.)*
+- **No changes to the scientific pipeline** itself—only the model invocation layer was adapted so you can choose Ollama-hosted models.
+
+> **Licensing/Attribution:** This repo remains under the same license and attribution requirements as the upstream project. Please cite and credit the original work as instructed in the Original README.
+
+---
+
+## Using Ollama (Local Models)
+
+### 1) Install and run Ollama
+- Install Ollama from the official instructions for your OS.
+- Start the Ollama service (it typically runs automatically). If you use a non-default host/port, set `OLLAMA_HOST` accordingly (e.g., `http://localhost:11434`).
+
+### 2) Pull one or more supported models
+```bash
+ollama pull deepseek-v2:236b
+ollama pull llama3.1:405b
+ollama pull deepseek-v3:671b
+# …plus any other models you want to try
+```
+
+### 3) Select local models when launching experiments
+This adaptation lets you pass **the same model flags** as in the upstream README, but you can supply **Ollama model IDs** directly. For example:
+
+```bash
+# Ideation (example)
+python ai_scientist/perform_ideation_temp_free.py   --workshop-file "ai_scientist/ideas/my_research_topic.md"   --model deepseek-v2:236b   --max-num-generations 10   --num-reflections 3
+
+# Full pipeline (example)
+python launch_scientist_bfts.py   --load_ideas "ai_scientist/ideas/my_research_topic.json"   --load_code   --add_dataset_ref   --model_writeup llama3.1:405b   --model_citation deepseek-v3:671b   --model_review deepseek-v3:671b   --num_cite_rounds 10
+```
+
+- **API keys:** Not required for Ollama-hosted models.
+- **Mix & match:** You can combine local (Ollama) models with cloud models if desired.
+- **VRAM & performance:** Very large local models may require significant GPU memory; if you hit OOM, switch to a smaller tag.
+
+---
+
+## (Optional) Insert under “Supported Models and API Keys”
+
+### Local Models via Ollama
+
+You can run models locally using **Ollama** instead of cloud APIs.
+
+- **Setup:** Install and run Ollama; (optional) set `OLLAMA_HOST` if you don’t use the default port.
+- **Supported/tested tags:** `deepseek-v2:236b`, `llama3.1:405b`, `deepseek-v3:671b`. Additional models can be used by pulling them with `ollama pull <model:tag>`.
+- **Usage:** Pass the Ollama model ID to the existing `--model`, `--model_writeup`, `--model_citation`, `--model_review`, etc. flags. Example: `--model_writeup llama3.1:405b`.
+- **API keys:** Not needed for Ollama.
+
+---
+
+# Original README (unchanged, for reference)
+
 <div align="center">
   <a href="https://github.com/SakanaAI/AI-Scientist_v2/blob/main/docs/logo_v1.jpg">
     <img src="docs/logo_v1.png" width="215" alt="AI Scientist v2 Logo" />
@@ -195,4 +260,5 @@ The tree search component implemented within the `ai_scientist` directory is bui
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=SakanaAI/AI-Scientist-v2&type=Date)](https://star-history.com/#SakanaAI/AI-Scientist-v2&Date)
+
 
