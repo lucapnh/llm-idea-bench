@@ -1,4 +1,4 @@
-# merge_compare — README
+# Benchmark — README
 
 A small command‑line tool to **merge LLM judge ratings with bibliographic similarity/novelty signals**, compute summary metrics, and produce diagnostic plots. Useful for comparing models and checking whether judged quality tracks with literature‑based novelty.
 
