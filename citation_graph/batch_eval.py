@@ -71,10 +71,10 @@ def append_to_master(master_csv: Path, source_csv: Path):
             writer.writerow(r)
 
 def main():
-    p = argparse.ArgumentParser(description="Batch-run citation_graph_sbert_enhanced_summ.py for each seed and annotate summaries.")
+    p = argparse.ArgumentParser(description="Batch-run citation_graph.py for each seed and annotate summaries.")
     p.add_argument("--logs-root", required=True, help="Root dir that contains <SeedPaperName>/...JSON logs")
     p.add_argument("--results-root", required=True, help="Where to store per-seed outputs and merged summary_all.csv")
-    p.add_argument("--script", default="citation_graph_sbert_enhanced_summ.py", help="Path to evaluator script")
+    p.add_argument("--script", default="citation_graph.py", help="Path to evaluator script")
     p.add_argument("--alpha", type=float, default=0.6)
     p.add_argument("--sbert-threshold", type=float, default=0.55)
     p.add_argument("--hybrid-threshold", type=float, default=0.25)
