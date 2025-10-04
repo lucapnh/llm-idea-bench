@@ -1,7 +1,7 @@
 
 ---
 
-# LLM-Idea-Bench
+# LLM-Idea-Bench: Benchmarking LLM-Based Research Assistants
 
 Tools and scaffolding to **generate research ideas with LLM agents** and **evaluate them** against both **human/LLM judge ratings** and **literature-based novelty signals**. The repo is organized as three focused components:
 
