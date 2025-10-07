@@ -1,0 +1,78 @@
+[
+    {
+        "Name": "consistency_models_for_music_generation",
+        "Title": "Consistency Models for High-Fidelity One-Step Music Generation",
+        "Short Hypothesis": "Can consistency models, which map noisy samples directly to clean data in one step, be extended to music generation while maintaining high fidelity and enabling zero-shot editing tasks like tempo adjustment and style transfer?",
+        "Related Work": "Existing work on consistency models (e.g., Yang et al. 2023) has shown success in image and video generation by reducing sampling steps without sacrificing quality. FlashAudio (Liu et al. 2024) explored rectified flows for text-to-audio but struggled with one-step performance due to curved trajectories. This proposal extends the consistency model framework to music, leveraging its efficiency and zero-shot capabilities.",
+        "Abstract": "Consistency models have demonstrated remarkable success in image and video generation by enabling high-quality synthesis in a single step. However, their application to music generation remains unexplored. In this work, we propose extending consistency models to generate high-fidelity music from text or latent representations while maintaining the ability for zero-shot editing tasks such as tempo adjustment, style transfer, and instrument substitution. By leveraging stochastic interpolants and flow map matching principles, our model learns a direct mapping between noisy samples and clean music data in one step. We evaluate the proposed framework on benchmark datasets for music generation, demonstrating its superior efficiency and fidelity compared to traditional diffusion-based models."
+    },
+    {
+        "Name": "cross_modal_consistency",
+        "Title": "Enhancing Cross-Modal Consistency in Multi-Modal Tasks Using Transformer-Based Architectures",
+        "Short Hypothesis": "Introducing a lightweight consistency enforcement mechanism into transformer-based models can significantly improve coherence and performance in multi-modal tasks like image-text alignment or summarization.",
+        "Related Work": "Existing works such as Swin Transformer-based GANs (Yan et al., 2022) focus on modality-specific tasks but do not explicitly address cross-modal consistency. Multi-modal frameworks like SpecTra (Nitin & Ray, 2024) generate specifications for code translation but lack a generalized approach to enforce coherence across modalities.",
+        "Abstract": "Multi-modal models often struggle with maintaining coherence across different modalities, such as text and images, leading to inconsistencies that degrade performance in tasks like summarization or alignment. This proposal introduces a novel transformer-based architecture enhanced with a lightweight consistency enforcement mechanism. The model explicitly learns cross-modal relationships by incorporating attention layers that align semantic representations of different modalities. We evaluate our approach on benchmark datasets for image-text alignment and multi-modal summarization, demonstrating improved coherence and task performance compared to state-of-the-art methods. Our results highlight the importance of explicit consistency enforcement in advancing multi-modal applications.",
+        "Experiments": [
+            "Evaluate cross-modal consistency using a transformer-based model with added attention layers for modality alignment on an image-text alignment dataset (e.g., COCO).",
+            "Test the proposed architecture on a multi-modal summarization task, comparing it against baseline models like CLIP and GPT-4.",
+            "Measure coherence scores and task-specific metrics (e.g., BLEU for summarization) to quantify improvements."
+        ],
+        "Evaluation Metrics": [
+            "Coherence score: A human-evaluated metric assessing semantic alignment across modalities.",
+            "Task-specific metrics: BLEU, ROUGE for summarization; accuracy or F1-score for alignment tasks.",
+            "Computation efficiency: Model inference time and memory usage compared to baselines."
+        ]
+    },
+    {
+        "Name": "consistency_models_rl",
+        "Title": "Enhancing Reinforcement Learning with Consistency Models as Policy Representations",
+        "Short Hypothesis": "Using consistency models as policy representations in reinforcement learning (RL) can improve both computational efficiency and performance across offline, offline-to-online, and online RL settings.",
+        "Related Work": "Previous work has explored the use of generative models like diffusion models for RL policies. However, these methods often suffer from slow inference speeds due to iterative sampling processes. Consistency models have been proposed as an alternative that maintains high expressiveness while significantly reducing computational overhead (Ding & Jin, 2023). This proposal builds on their findings but extends the application of consistency models to a broader range of RL settings and investigates novel training strategies to further enhance performance.",
+        "Abstract": "This paper explores the use of consistency models as policy representations in reinforcement learning (RL), aiming to address the computational inefficiencies of existing generative model-based approaches. While diffusion models have shown promise in modeling multi-modal policies, their iterative sampling process can be prohibitively slow for RL applications. Consistency models offer a compelling alternative by enabling efficient one-step or few-step inference while maintaining high expressiveness. We propose an actor-critic style algorithm that leverages consistency models across three key RL settings: offline, offline-to-online, and online learning. Our approach builds on recent advances in consistency model training (e.g., Stable Consistency Tuning) to further improve policy quality and stability. Experiments on benchmark tasks demonstrate significant speedups over diffusion-based policies while achieving competitive or superior performance.",
+        "Experiments": [
+            "Evaluate the proposed method on standard RL benchmarks such as CIFAR-10, ImageNet-64, and Atari games using FID scores and task-specific metrics to compare against baseline approaches like diffusion models.",
+            "Conduct ablation studies to assess the impact of different consistency model training strategies (e.g., Stable Consistency Tuning) on policy performance across offline, offline-to-online, and online settings.",
+            "Measure computational efficiency by comparing wall-clock time for inference between consistency models and traditional generative models in RL tasks."
+        ],
+        "Risk Factors and Limitations": [
+            "Consistency models may struggle with highly complex or high-dimensional action spaces, limiting their applicability to certain RL domains.",
+            "Training stability could be an issue, as consistency models rely on accurate score function estimation. Techniques like variance reduction (e.g., SCT) will need careful tuning.",
+            "The proposed method assumes access to a well-defined state-action space, which may not always hold in real-world applications."
+        ]
+    },
+    {
+        "Name": "zero_shot_video_stylization",
+        "Title": "Zero-Shot Video Stylization via Temporal-Aware Diffusion Models",
+        "Short Hypothesis": "By leveraging temporal-aware diffusion models, we can achieve high-quality zero-shot video stylization without requiring task-specific training or fine-tuning.",
+        "Related Work": "Existing approaches to video editing and stylization often rely on extensive datasets and computational resources for training. Consistency models (Song et al., 2023) have shown promise in one-step generation but are limited by their focus on image synthesis. Vid2vid-zero (Wang et al., 2023) extends text-to-image diffusion models to zero-shot video editing, yet struggles with temporal consistency. Our proposal builds upon these advances by introducing a novel temporal-aware mechanism into diffusion models for stylization.",
+        "Abstract": "Zero-shot video stylization is challenging due to the need for maintaining temporal coherence and high-quality visual output without task-specific training. We propose a new approach that integrates temporal awareness directly into text-to-image diffusion models, enabling them to perform zero-shot video stylization efficiently. Our method employs cross-frame attention mechanisms to ensure consistency across frames while leveraging pre-trained diffusion models for style transfer. By doing so, we avoid the need for extensive computational resources or specific datasets. Through experiments on diverse video datasets, we demonstrate our model's ability to produce temporally coherent and visually appealing styled videos in a zero-shot manner.",
+        "Experiments": [
+            "Evaluate temporal consistency using Mean Squared Error (MSE) between consecutive frames across various stylization tasks.",
+            "Assess visual quality via Frechet Inception Distance (FID) scores compared to baseline models on the DAVIS and UCF101 datasets.",
+            "Conduct user studies to evaluate subjective qualities such as style fidelity and temporal coherence in generated videos."
+        ],
+        "Risk Factors and Limitations": [
+            "Potential failure in maintaining high-quality output for complex dynamic scenes with rapid motion.",
+            "Dependence on the quality of pre-trained text-to-image diffusion models, which may limit generalization across diverse styles.",
+            "Computational overhead from integrating cross-frame attention mechanisms could impact real-time applicability."
+        ]
+    },
+    {
+        "Name": "zero_shot_temporal_consistency",
+        "Title": "Zero-Shot Temporal Consistency in Video Editing Using Diffusion Models with Depth Map Guidance",
+        "Short Hypothesis": "By integrating depth map guidance and temporal consistency constraints into diffusion models, we can achieve efficient zero-shot video editing without the need for task-specific fine-tuning.",
+        "Related Work": "Recent advancements in diffusion models have shown promise in image generation but face challenges when extended to video tasks due to high computational costs and lack of temporal coherence. EVE (Yutao Chen et al., 2023) demonstrated that depth maps and consistency constraints can improve zero-shot video editing, but it still relies on fine-tuning. Our proposal builds upon these ideas by leveraging pre-trained diffusion models without additional training.",
+        "Abstract": "This paper introduces a novel approach to zero-shot video editing using diffusion models enhanced with depth map guidance and temporal consistency constraints. Unlike existing methods that require task-specific fine-tuning or extensive computational resources, our method leverages the generative capabilities of pre-trained diffusion models while ensuring temporal coherence across frames. We propose a lightweight framework where depth maps guide the editing process, and temporal consistency is enforced through iterative refinement during the reverse diffusion process. Experiments on standard video datasets demonstrate that our approach achieves high-quality edits with minimal computational overhead, making it suitable for real-world applications.",
+        "Experiments": [
+            "Evaluate the method on the ZVE-50 dataset (Yutao Chen et al., 2023) to measure editing quality and temporal consistency using metrics like SSIM and PSNR.",
+            "Compare performance against EVE and other zero-shot video editing methods in terms of computational efficiency and edit fidelity.",
+            "Test robustness by applying the method to videos with varying levels of complexity (e.g., motion, texture).",
+            "Perform ablation studies to assess the contribution of depth map guidance and temporal consistency constraints."
+        ],
+        "Risk Factors and Limitations": [
+            "Reliance on pre-trained diffusion models may limit adaptability to specific editing tasks.",
+            "Depth maps might not always provide sufficient guidance for complex edits.",
+            "Temporal consistency enforcement could introduce artifacts in high-motion sequences."
+        ]
+    }
+]

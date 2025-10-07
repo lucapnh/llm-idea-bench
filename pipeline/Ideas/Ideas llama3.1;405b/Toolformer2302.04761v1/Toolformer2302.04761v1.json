@@ -1,0 +1,80 @@
+[
+    {
+        "Name": "self_supervised_api_usage",
+        "Title": "Self-Supervised Learning of API Usage in Language Models",
+        "Short Hypothesis": "Language models can learn to use APIs effectively through self-supervised learning, improving their performance on a range of tasks without requiring explicit supervision or fine-tuning.",
+        "Related Work": "Recent work has explored the use of cycle-consistency losses for refining prompts in multimodal foundation models (Diesendruck et al., 2024), and reinforced model routers for scaling large language model reasoning (Shao et al., 2025). However, these approaches do not address the specific challenge of learning API usage in language models.",
+        "Abstract": "We propose a self-supervised approach to learning API usage in language models. Our method uses a cycle-consistency loss to refine the model's understanding of API calls and their effects, without requiring explicit supervision or fine-tuning. We demonstrate the effectiveness of our approach on a range of tasks, including factual lookup, mathematical reasoning, and question answering.",
+        "Experiments": [
+            "Train a language model on a dataset with API calls and evaluate its performance on a range of tasks",
+            "Compare the performance of the self-supervised approach to a supervised baseline",
+            "Investigate the effect of varying the number of API calls and the complexity of the tasks"
+        ],
+        "Risk Factors and Limitations": [
+            "The self-supervised approach may require large amounts of data to be effective",
+            "The model may struggle to generalize to new APIs or tasks",
+            "The cycle-consistency loss may not be sufficient to capture the full range of API usage scenarios"
+        ]
+    },
+    {
+        "Name": "embodied_language_learning",
+        "Title": "Embodied Language Learning through Interactive Simulation",
+        "Short Hypothesis": "Can embodied language learning be achieved through interactive simulation, and can it improve language understanding and generation capabilities?",
+        "Related Work": "While there have been studies on embodied cognition and language learning, none have explored the use of interactive simulation as a means to achieve embodied language learning. This proposal aims to fill this gap by investigating the effectiveness of interactive simulation in promoting embodied language learning.",
+        "Abstract": "This proposal presents an innovative approach to language learning, leveraging interactive simulation to create an immersive environment that fosters embodied cognition. By integrating language models with simulated environments, we aim to enhance language understanding and generation capabilities. Our experiments will evaluate the effectiveness of this approach in various language tasks and explore its potential applications in human-robot interaction.",
+        "Experiments": [
+            "Develop an interactive simulation platform for language learning",
+            "Integrate language models with the simulation platform",
+            "Evaluate the effectiveness of embodied language learning through interactive simulation",
+            "Compare results with traditional language learning methods"
+        ],
+        "Risk Factors and Limitations": [
+            "Technical challenges in developing the simulation platform",
+            "Limited availability of computational resources",
+            "Potential biases in language models used"
+        ]
+    },
+    {
+        "Name": "meta_api_usage",
+        "Title": "Meta-Learning for Adaptive API Usage in Language Models",
+        "Short Hypothesis": "Language models can learn to adaptively select and use APIs through meta-learning, improving their performance on a range of tasks without requiring explicit supervision or fine-tuning.",
+        "Related Work": "While there have been studies on meta-learning for language models, none have explored the application of meta-learning to adaptive API usage. This proposal aims to fill this gap by investigating the effectiveness of meta-learning in enabling language models to adaptively select and use APIs.",
+        "Abstract": "We propose a meta-learning approach to enable language models to adaptively select and use APIs. Our method uses a meta-learning algorithm to train the model to learn how to select and use APIs based on the task and context, without requiring explicit supervision or fine-tuning. We demonstrate the effectiveness of our approach on a range of tasks, including factual lookup, mathematical reasoning, and question answering.",
+        "Experiments": [
+            "Train a language model using meta-learning to adaptively select and use APIs",
+            "Evaluate the performance of the meta-learning approach on a range of tasks",
+            "Compare the performance of the meta-learning approach to a supervised baseline"
+        ],
+        "Risk Factors and Limitations": [
+            "The meta-learning approach may require large amounts of data to be effective",
+            "The model may struggle to generalize to new APIs or tasks",
+            "The meta-learning algorithm may not be sufficient to capture the full range of API usage scenarios"
+        ]
+    },
+    {
+        "Name": "llm_mathematical_discovery",
+        "Title": "Unlocking Mathematical Discovery with Large Language Models",
+        "Short Hypothesis": "We hypothesize that large language models (LLMs) can be fine-tuned to aid in mathematical discovery by generating novel and valid mathematical theorems, proofs, and conjectures.",
+        "Related Work": "Recent studies have explored the application of LLMs in automated theorem proving and mathematical reasoning. However, these efforts have focused on solving existing problems rather than generating new mathematical discoveries. Our proposal distinguishes itself by investigating the potential of LLMs to contribute to the discovery of novel mathematical concepts and theories.",
+        "Abstract": "We propose a research project that leverages large language models (LLMs) to facilitate mathematical discovery. By fine-tuning LLMs on a dataset of mathematical texts and theorems, we aim to generate novel and valid mathematical theorems, proofs, and conjectures. Our approach involves developing a framework that combines the capabilities of LLMs with proof assistants to formalize and verify the generated mathematical concepts. We envision this project to contribute significantly to the advancement of mathematics and artificial intelligence.",
+        "Experiments": [
+            "Fine-tune a large language model on a dataset of mathematical texts and theorems to generate novel mathematical concepts.",
+            "Develop a framework that integrates the fine-tuned LLM with a proof assistant to formalize and verify the generated mathematical concepts.",
+            "Evaluate the validity and novelty of the generated mathematical concepts using a combination of human expert evaluation and automated verification tools."
+        ],
+        "Risk Factors and Limitations": [
+            "The quality and diversity of the training dataset may significantly impact the performance of the fine-tuned LLM.",
+            "The integration of the LLM with the proof assistant may pose technical challenges, requiring significant expertise in both AI and formal verification.",
+            "The evaluation of the generated mathematical concepts may be subjective and require careful consideration of multiple factors."
+        ]
+    },
+    {
+        "Name": "cognitive_bias_for_agi",
+        "Title": "Cognitive Bias for Artificial General Intelligence: A Neuro-Symbolic Approach",
+        "Short Hypothesis": "Can cognitive biases be used to enhance the performance of artificial general intelligence systems by providing a more human-like reasoning mechanism?",
+        "Related Work": "Existing AGI frameworks, such as CoALA and OGI, focus on modular architectures and multi-modal integration. However, they do not explicitly incorporate cognitive biases as a means to improve reasoning and decision-making.",
+        "Abstract": "We propose a neuro-symbolic approach to artificial general intelligence that incorporates cognitive biases as a fundamental component of the reasoning mechanism. Our framework, CB-AGI, integrates large language models with autonomous agents and incorporates cognitive biases to provide more human-like reasoning capabilities. We demonstrate the efficacy of our approach through experiments on various problem-solving tasks.",
+        "Methodology": "Our framework consists of three key components: (1) a neuro-symbolic reasoning module that incorporates cognitive biases, (2) a large language model for knowledge representation and retrieval, and (3) an autonomous agent for decision-making and action selection. We evaluate our framework on various problem-solving tasks, including medical diagnosis, financial decision-making, and equipment troubleshooting.",
+        "Expected Outcomes": "We expect our framework to demonstrate improved performance on problem-solving tasks compared to existing AGI systems. Additionally, we anticipate that the incorporation of cognitive biases will provide more human-like reasoning capabilities, enabling more effective collaboration between humans and AGI systems."
+    }
+]

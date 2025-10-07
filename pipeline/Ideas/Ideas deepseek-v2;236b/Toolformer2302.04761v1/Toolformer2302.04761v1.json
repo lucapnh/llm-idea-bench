@@ -1,0 +1,36 @@
+[
+    {
+        "Name": "AutoToolchain",
+        "Title": "Efficient Multi-tool Chaining for Language Models through Reinforcement Learning",
+        "Short Hypothesis": "A reinforcement learning approach can effectively train language models to autonomously chain tools, significantly improving their problem-solving capabilities across diverse tasks.",
+        "Related Work": "Existing literature on integrating external tools with language models (e.g., Toolformer) focuses on single-tool invocation. Our proposal introduces a novel method for the model to learn multi-tool chaining through reinforcement learning, which is not covered in current research.",
+        "Abstract": "To enhance the problem-solving abilities of language models across complex tasks, we propose AutoToolchain, an approach that leverages reinforcement learning to enable efficient tool chaining. Our model learns to select and chain tools by proposing candidate sequences within pretraining data, evaluating their effectiveness using a task-specific scoring function, and retaining those that improve performance. This is achieved through a self-supervised training phase where the model interacts with a diverse set of APIs in an environment designed to simulate real-world problem-solving scenarios. Empirical studies on various benchmarks demonstrate significant improvements in tasks requiring sequential tool use, such as complex mathematical reasoning or multi-lingual information retrieval.",
+        "Experiments": [
+            "Design a reinforcement learning framework that incentivizes the model to learn efficient tool chaining through task-specific scoring functions.",
+            "Implement a self-supervised training phase where the model proposes and evaluates candidate tool chains within pretraining data using the designed scoring function.",
+            "Conduct empirical studies across diverse benchmarks, including mathematical reasoning tasks, multi-lingual information retrieval, and complex question answering scenarios that require chaining of search engines and QA systems."
+        ],
+        "Risk Factors and Limitations": [
+            "The reinforcement learning framework requires careful design to balance training efficiency with the complexity of tool chain selection.",
+            "Generalization across different tasks and domains is a key challenge that needs to be addressed through robust experimental design.",
+            "There may be increased computational costs associated with training a model on multi-tool chaining, which need to be managed."
+        ]
+    },
+    {
+        "Name": "IterativeAPIRefiner",
+        "Title": "Enhancing Language Model Problem-Solving through Iterative API Refinement and Generalization",
+        "Short Hypothesis": "An interactive learning framework that allows language models to iteratively refine their interactions with APIs will significantly improve problem-solving capabilities and generalization across diverse tasks.",
+        "Related Work": "Existing literature on integrating external tools into language models often focuses on static tool invocation, lacking the dynamic refinement process proposed in IterativeAPIRefiner. This proposal introduces a novel method for iterative API interaction refinement to enhance model performance and generalization.",
+        "Abstract": "We introduce IterativeAPIRefiner, an approach that enables language models to iteratively refine their interactions with APIs within an interactive learning framework. By leveraging feedback from initial tool invocations, the model learns to adapt its strategies through a reward mechanism designed to promote efficient API usage and accurate task completion. This process allows for continuous improvement in problem-solving capabilities across a wide range of tasks that require dynamic interaction with external resources. We will evaluate IterativeAPIRefiner on benchmarks including complex mathematical problems, real-time information retrieval, and Q&A scenarios where iterative refinement is crucial.",
+        "Experiments": [
+            "Develop an interactive learning framework with a reward mechanism tailored to promote efficient API usage and accurate task completion.",
+            "Implement an adaptive training process that allows the model to iteratively refine its tool use based on feedback from initial interactions.",
+            "Conduct comprehensive evaluations across diverse benchmarks to assess the model's problem-solving capabilities and generalization performance."
+        ],
+        "Risk Factors and Limitations": [
+            "The challenge of designing a reward mechanism that effectively guides the model without excessive computational complexity or overfitting.",
+            "Generalization testing is necessary to ensure the model can apply learned strategies across various tasks and domains.",
+            "Potential increased training costs due to the iterative refinement process, which must be managed for practical deployment."
+        ]
+    }
+]

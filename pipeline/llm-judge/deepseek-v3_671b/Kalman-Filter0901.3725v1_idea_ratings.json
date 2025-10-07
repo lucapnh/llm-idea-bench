@@ -1,0 +1,144 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"topic_01",
+      "title":"A Brief Tutorial on the Ensemble Kalman Filter",
+      "keywords":[
+        "Ensemble Kalman Filter (EnKF)",
+        "Bayesian data assimilation",
+        "sample covariance",
+        "localization",
+        "large-scale geophysical models"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"topic_01",
+      "idea_id":"ensemble_kalman_filter_extensions",
+      "title":"Exploring Nonlinear and Non-Gaussian Extensions to the Ensemble Kalman Filter for High-Dimensional Systems",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.2,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Proposes optimal transport and multifidelity control variates within EnKF",
+        "Benchmarks on Lorenz-96 with RMSE and runtime metrics",
+        "Positions vs RHF and GA-EnKF in related work",
+        "Focus on non-Gaussian scenarios with explicit experiments"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"adaptive_precision_localization",
+      "title":"Adaptive Precision Localization for Ensemble Kalman Filters",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.4,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Introduces adaptive sparsity in precision matrices for localization",
+        "Comparisons against covariance and fixed-precision methods",
+        "Experiments span Lorenz-96 and a high-dimensional geophysical system",
+        "Risk/limitations acknowledge computational overhead and tuning"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"deep_ensemble_kalman_filter",
+      "title":"Deep Learning-Enhanced Ensemble Kalman Filter for Nonlinear Data Assimilation in Chaotic Systems",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":5,
+        "feasibility_resources":3,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.65,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Integrates ResNet with EnKF for chaotic systems (Lorenz-96)",
+        "Evaluates vs standard EnKF and variational DA using RMSE/ACC",
+        "Addresses compute trade-offs with smaller ensembles",
+        "Notes generalization limits beyond the benchmark"
+      ],
+      "red_flags":[
+        "Potential overfitting and heavy training cost"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"adaptive_non-gaussian_enkf",
+      "title":"Adaptive Non-Gaussian Extensions to Ensemble Kalman Filtering for High-Dimensional Systems",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":3,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.85,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Combines GA-EnKF and two-step updates with robust filtering",
+        "Evaluates on Lorenz-96 and real-world flood/air quality cases",
+        "Comparisons planned vs RHF, iRHF, CG-EnKF, NS-EnKF",
+        "Identifies scalability and tuning as limitations"
+      ],
+      "red_flags":[]
+    }
+  ],
+  "ranking_by_overall":[
+    "topic_01/adaptive_precision_localization",
+    "topic_01/ensemble_kalman_filter_extensions",
+    "topic_01/adaptive_non-gaussian_enkf",
+    "topic_01/deep_ensemble_kalman_filter"
+  ],
+  "ranking_by_topic":{
+    "topic_01":[
+      "adaptive_precision_localization",
+      "ensemble_kalman_filter_extensions",
+      "adaptive_non-gaussian_enkf",
+      "deep_ensemble_kalman_filter"
+    ]
+  }
+}

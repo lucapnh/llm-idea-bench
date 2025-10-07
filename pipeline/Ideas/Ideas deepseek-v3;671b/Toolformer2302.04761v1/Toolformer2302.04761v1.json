@@ -1,0 +1,41 @@
+[
+    {
+        "Name": "self_training_tool_use",
+        "Title": "Self-Training Large Language Models for Tool Use Without Demonstrations",
+        "Short Hypothesis": "Large language models can autonomously learn to use external tools effectively through self-training, without requiring curated demonstrations or explicit supervision.",
+        "Related Work": "Recent work has shown that LLMs can be augmented with tools to mitigate factual inaccuracies and computational errors. However, these approaches often rely on curated tool-use demonstrations (e.g., Toolformer) or supervised fine-tuning (e.g., ToRL). Our proposal distinguishes itself by exploring self-training methods where the model synthesizes its own tool-use traces, reducing reliance on external supervision.",
+        "Abstract": "Large language models (LLMs) remain prone to factual inaccuracies and computational errors. While augmenting LLMs with tools can mitigate these issues, existing approaches often require curated demonstrations or explicit supervision. In this work, we propose a self-training method where the model autonomously synthesizes tool-use traces without external demonstrations. We explore zero-shot prompting strategies and fine-tuning techniques using datasets like TriviaQA and GSM8K. Our experiments demonstrate that LLMs can effectively learn to use tools through self-training, improving performance on tasks requiring long-tail knowledge while addressing challenges in generalizability.",
+        "Methodology": [
+            "1. Zero-shot Prompting: Develop zero-shot strategies to guide LLMs in tool utilization without demonstrations.",
+            "2. Self-Training Traces: Use the LLM itself to synthesize tool-use traces, creating a self-supervised dataset for fine-tuning.",
+            "3. Fine-Tuning Techniques: Compare supervised and preference-based fine-tuning methods using datasets like TriviaQA and GSM8K.",
+            "4. Evaluation: Assess performance on tasks requiring external tools, focusing on long-tail knowledge and generalizability."
+        ],
+        "Expected Outcomes": [
+            "LLMs can autonomously learn to use tools effectively without curated demonstrations.",
+            "Improved performance on tasks requiring long-tail knowledge (e.g., PopQA).",
+            "Insights into the challenges of integrating external tools into LLMs, particularly in terms of generalizability and mixed results across datasets."
+        ]
+    },
+    {
+        "Name": "self_training_llm_for_tool_use",
+        "Title": "Self-Training Large Language Models for Tool Use Without Demonstrations in Real-World Applications",
+        "Short Hypothesis": "Large language models (LLMs) can autonomously learn to use external tools effectively without requiring curated demonstrations, through self-training and zero-shot prompting strategies.",
+        "Related Work": "Recent work such as 'Toolformer' and 'GPT4Tools' has shown that LLMs can be augmented with tool-use capabilities using supervised methods or hand-crafted prompts. However, these approaches often require extensive human-curated demonstrations or complex fine-tuning procedures. Our proposal distinguishes itself by eliminating the need for curated demonstrations and focusing on self-training techniques to enable autonomous tool use in real-world applications.",
+        "Abstract": "Large language models (LLMs) have shown significant potential in leveraging external tools to enhance their capabilities, such as performing calculations or retrieving factual information. However, existing methods often rely on human-curated demonstrations or complex fine-tuning procedures, limiting scalability and practicality. In this work, we propose a novel self-training framework that enables LLMs to autonomously learn tool use without requiring curated demonstrations. We explore zero-shot prompting strategies combined with self-generated training data to guide the model in utilizing tools effectively. Our experiments focus on real-world applications where external APIs are commonly used, such as weather forecasting and financial analysis. Preliminary results indicate that our approach can achieve comparable performance to supervised methods while significantly reducing the need for human intervention.",
+        "Experiments": [
+            {
+                "name": "Zero-shot Prompting",
+                "description": "Evaluate the effectiveness of zero-shot prompting strategies in guiding LLMs to use tools without prior demonstrations."
+            },
+            {
+                "name": "Self-Training Data Generation",
+                "description": "Generate self-training data by having the LLM produce tool-use traces on a variety of tasks, such as mathematical reasoning and information retrieval."
+            },
+            {
+                "name": "Fine-tuning Techniques",
+                "description": "Compare supervised fine-tuning and preference-based fine-tuning techniques using datasets like TriviaQA and GSM8K to assess their impact on tool-use performance."
+            }
+        ]
+    }
+]

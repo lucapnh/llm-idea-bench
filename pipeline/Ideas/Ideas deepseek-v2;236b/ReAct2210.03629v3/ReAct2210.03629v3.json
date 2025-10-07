@@ -1,0 +1,79 @@
+[
+    {
+        "Name": "ARIA",
+        "Title": "Adaptive Response Integration Approach for AI in Healthcare",
+        "Short Hypothesis": "AI-driven healthcare assistants can significantly improve patient care by adapting to individual medical scenarios and providing contextually relevant recommendations.",
+        "Related Work": "The proposal distinguishes itself from related works like 'clickBrick Prompt Engineering' (Verhees et al., 2025) which focuses on clinical psychiatry, and 'ElderEase AR' (Song et al., 2024) that targets elderly support. Our approach is more general, aiming to enhance healthcare assistance across various medical domains using an adaptive response integration framework.",
+        "Abstract": "The rapid advancement of AI in healthcare has led to the development of numerous applications aimed at improving patient care. However, achieving a high level of personalization and context-awareness remains challenging. This proposal introduces the Adaptive Response Integration Approach (ARIA), a novel framework designed to enhance AI assistants' ability to provide tailored recommendations across diverse medical scenarios. ARIA leverages large language models and prompt engineering techniques to adapt responses based on patient data, clinical guidelines, and real-time feedback from healthcare professionals. We hypothesize that by integrating these elements, we can create more effective and adaptive AI systems for healthcare assistance. The proposed experiments will evaluate the efficacy of ARIA in various medical scenarios and compare its performance with existing AI assistants.",
+        "Experiments": [
+            "Develop a prototype of the ARIA framework using large language models like GPT-4 and implement prompt engineering techniques to adapt responses based on patient data and clinical guidelines.",
+            "Conduct a controlled experiment involving healthcare professionals who will use both the ARIA system and existing AI assistants to address common medical scenarios, comparing their performance in terms of response accuracy, relevance, and timeliness.",
+            "Collect feedback from users about the ease-of-use, adaptability, and overall satisfaction with the ARIA framework compared to current AI healthcare assistants.",
+            "Perform a longitudinal study where patients use the ARIA system for medical consultations over several months. Analyze data on patient outcomes, adherence to treatment plans, and user engagement metrics."
+        ],
+        "References": [
+            {
+                "title": "clickBrick Prompt Engineering: Optimizing Large Language Model Performance in Clinical Psychiatry",
+                "authors": [
+                    "F. G. Verhees et al."
+                ]
+            },
+            {
+                "title": "ElderEase AR: Enhancing Elderly Daily Living with the Multimodal Large Language Model and Augmented Reality",
+                "authors": [
+                    "T. Song, Z. Liu, R. Zhao, J. Fu"
+                ]
+            }
+        ]
+    },
+    {
+        "Name": "REASONAID",
+        "Title": "Enhancing AI Healthcare Assistants through Integrative Reasoning and Action Sequencing for Informed Decision-Making",
+        "Short Hypothesis": "An integrative approach that sequences actions informed by deep reasoning can significantly improve the decision-making capabilities of AI healthcare assistants, leading to more accurate diagnoses and personalized treatment plans.",
+        "Related Work": "While existing research like ARIA focuses on adapting responses based on patient data, REASONAID distinguishes itself by proposing a systematic method that sequences actions tailored to specific medical scenarios. This approach aims to bridge the gap between general medical knowledge and individual health cases through the use of large language models (LLMs) and domain-specific knowledge bases.",
+        "Abstract": "The integration of artificial intelligence into healthcare is transforming patient care, yet aligning generalized AI capabilities with the nuanced requirements of individual health cases remains a challenge. This proposal introduces REASONAID, an innovative framework that leverages advanced reasoning techniques within AI systems to sequence actions tailored to specific medical scenarios. By employing LLMs and incorporating domain-specific knowledge bases, REASONAID aims to enhance decision-making processes in healthcare by providing a structured approach to diagnosis and treatment plan generation. Our hypothesis is that systematic integration of deep reasoning with action sequencing will achieve more accurate and personalized outcomes for patients. Experiments will be designed to test the efficacy of REASONAID in real-world medical scenarios, comparing its performance against existing AI healthcare assistants.",
+        "Experiments": [
+            "Develop a prototype of the REASONAID framework that utilizes LLMs to perform deep reasoning on patient data and clinical guidelines to generate action sequences for diagnosis and treatment planning.",
+            "Conduct a cross-comparison study with other leading AI healthcare systems, evaluating REASONAID's performance in terms of diagnostic accuracy, personalized treatment plan generation, and overall adherence to medical best practices.",
+            "Implement a simulated environment where healthcare professionals interact with the REASONAID system to assess its usability and effectiveness in various clinical scenarios.",
+            "Perform a longitudinal study involving patients who receive care guided by the REASONAID system. Analyze patient outcomes, treatment plan compliance, and feedback on the personalized nature of recommendations."
+        ],
+        "Risk Factors and Limitations": [
+            "The potential for over-reliance on AI systems in critical decision-making processes without sufficient human oversight.",
+            "Difficulty in accurately representing complex medical scenarios within a simulated environment that may not fully capture real-world intricacies.",
+            "Ethical considerations regarding patient data privacy and the responsibility of healthcare providers when using AI-generated recommendations."
+        ],
+        "Mitigation Strategies": [
+            "Implement strict protocols for human oversight and validation of AI-generated treatment plans before implementation.",
+            "Develop a robust ethical framework that includes informed consent from patients and clear guidelines on how their data is used and protected.",
+            "Collaborate with healthcare providers to create realistic simulations that accurately reflect clinical scenarios."
+        ]
+    },
+    {
+        "Name": "HEAL-THYSELF",
+        "Title": "Self-Evolutionary Adaptation and Learning for AI in Personalized Healthcare Trajectories",
+        "Short Hypothesis": "AI systems equipped with self-evolutionary adaptation capabilities can autonomously improve their diagnostic accuracy and personalized treatment recommendations over time through continuous learning from diverse patient outcomes.",
+        "Related Work": "The proposed HEAL-THYSELF system distinguishes itself by focusing on the AI's autonomous evolution, leveraging advanced machine learning techniques to continuously refine its healthcare recommendations without predefined frameworks or human intervention.",
+        "Abstract": "This proposal introduces HEAL-THYSELF, an AI system designed for self-evolutionary adaptation and learning within personalized healthcare trajectories. By employing reinforcement learning and meta-learning, it aims to autonomously improve diagnostic accuracy and treatment personalization based on diverse patient outcomes. We hypothesize that this approach will lead to more accurate diagnoses and treatments as the system learns from a wide range of cases.",
+        "Experiments": [
+            "Develop a prototype incorporating advanced machine learning techniques for self-evolutionary adaptation.",
+            "Conduct an initial benchmark against existing AI systems in terms of diagnostic accuracy and treatment personalization.",
+            "Implement a longitudinal study to monitor the system's performance over time across various medical scenarios.",
+            "Evaluate generalizability through cross-domain tests post-adaptation phase."
+        ],
+        "Risk Factors and Limitations": [
+            "Potential for AI overfitting, leading to reduced generalizability in new cases.",
+            "Ethical concerns around AI autonomy in healthcare decisions without human oversight.",
+            "Challenges in ensuring data diversity for training that accurately represents all potential clinical scenarios."
+        ],
+        "Mitigation Strategies": [
+            "Regular audits and cross-validation to prevent overfitting.",
+            "Clear protocols for human oversight when recommendations deviate significantly from standard care or raise ethical concerns.",
+            "Collaboration with multiple healthcare providers to ensure a diverse training dataset that encompasses various medical specialties."
+        ],
+        "Ethical Considerations": [
+            "Informed consent process for patients regarding AI's learning and decision-making autonomy.",
+            "Establishment of an ethics committee to oversee the development and deployment of HEAL-THYSELF within healthcare settings."
+        ]
+    }
+]

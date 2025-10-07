@@ -1,0 +1,91 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"event_study",
+      "title":"Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects",
+      "keywords":[
+        "difference-in-differences",
+        "two-way fixed effects",
+        "event study",
+        "heterogeneous treatment effects",
+        "dynamic treatment effects",
+        "pretrend tests&#x20"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"event_study",
+      "idea_id":"HeuristicDynamicTreatmentEstimation",
+      "title":"Enhancing Interpretability and Robustness in Dynamic Treatment Effect Estimation through Heuristic Approaches",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":4.15,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Experiments include simulations and comparative evaluation vs TWFE",
+        "Introduces heuristic rules to reflect cohort-specific effects",
+        "Positions against TWFE and connects to group-time ATT literature"
+      ],
+      "red_flags":[
+        "Potential subjective bias from heuristic design"
+      ]
+    },
+    {
+      "topic_id":"event_study",
+      "idea_id":"AdaptiveCohortDTEFramework",
+      "title":"Advancing Dynamic Treatment Effect Estimation with an Adaptive Cohort-Specific Modeling Framework",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":4.15,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Experiments include simulations and comparative evaluation vs TWFE",
+        "Adapts parameters to cohort-specific attributes in staggered adoption",
+        "Positions against TWFE and connects to group-time ATT literature"
+      ],
+      "red_flags":[
+        "Risk of overfitting without careful calibration"
+      ]
+    }
+  ],
+  "ranking_by_overall":[
+    "event_study/HeuristicDynamicTreatmentEstimation",
+    "event_study/AdaptiveCohortDTEFramework"
+  ],
+  "ranking_by_topic":{
+    "event_study":[
+      "HeuristicDynamicTreatmentEstimation",
+      "AdaptiveCohortDTEFramework"
+    ]
+  }
+}

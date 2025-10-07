@@ -1,0 +1,20 @@
+=== deepseekv2 ===
+ideas_total=159, judge_scored=159
+novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = -0.187
+Mean judge overall = 3.664 [3.604,3.721]
+Mean biblio_novelty_seed = 0.351 [0.337,0.365]
+Verdicts: {'revise': 128, 'reject': 25, 'accept': 6}
+
+=== deepseekv3 ===
+ideas_total=251, judge_scored=251
+novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = 0.066
+Mean judge overall = 4.023 [3.981,4.063]
+Mean biblio_novelty_seed = 0.330 [0.320,0.342]
+Verdicts: {'revise': 180, 'accept': 70, 'reject': 1}
+
+=== llama3.1 ===
+ideas_total=181, judge_scored=181
+novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = -0.112
+Mean judge overall = 3.682 [3.615,3.748]
+Mean biblio_novelty_seed = 0.354 [0.338,0.370]
+Verdicts: {'revise': 141, 'reject': 28, 'accept': 12}

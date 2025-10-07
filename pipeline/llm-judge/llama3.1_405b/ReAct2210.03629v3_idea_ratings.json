@@ -1,0 +1,114 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"react",
+      "title":"Title: ReAct: Synergizing Reasoning and Acting in Language Models",
+      "keywords":[
+        "reasoning-and-acting",
+        "chain-of-thought",
+        "decision-making agents",
+        "retrieval-augmented LM",
+        "few-shot prompting"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"react",
+      "idea_id":"embodied_reasoning",
+      "title":"Embodied Reasoning in Large Language Models for Decision-Making and Control",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":4,
+        "feasibility_resources":3,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.55,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Proposes integrating embodied cognition with large language models for control",
+        "Outlines framework and comparative evaluation against LM baselines",
+        "Acknowledges complexity and compute needs as limitations"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"react",
+      "idea_id":"neural_symbolic_integration_for_explainable_decision_making",
+      "title":"Neural-Symbolic Integration for Explainable Decision-Making in Critical Domains",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":3,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.6,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Targets explainability via neural-symbolic methods in critical domains",
+        "Clear experimental comparisons with LIME/SHAP on healthcare/finance datasets",
+        "Feasible setup with standard datasets and methods"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"react",
+      "idea_id":"adversarial_attacks_on_embodied_language_models",
+      "title":"Adversarial Attacks on Embodied Language Models: A New Frontier in AI Security",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":3,
+        "potential_impact":5,
+        "clarity_specificity":4,
+        "safety_ethics_risk":2
+      },
+      "overall_weighted_score":3.9,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Defines taxonomy, benchmark (ANNIEBench), and task-aware attacks (ANNIE-Attack)",
+        "Directly addresses safety of embodied LM actions in physical settings",
+        "Concrete evaluation plan on representative embodied AI models"
+      ],
+      "red_flags":[
+        "Dual-use risks from releasing attack methods"
+      ]
+    }
+  ],
+  "ranking_by_overall":[
+    "react/adversarial_attacks_on_embodied_language_models",
+    "react/neural_symbolic_integration_for_explainable_decision_making",
+    "react/embodied_reasoning"
+  ],
+  "ranking_by_topic":{
+    "react":[
+      "adversarial_attacks_on_embodied_language_models",
+      "neural_symbolic_integration_for_explainable_decision_making",
+      "embodied_reasoning"
+    ]
+  }
+}

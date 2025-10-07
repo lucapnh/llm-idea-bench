@@ -1,0 +1,150 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"gap",
+      "title":"Gaussian Approximation Potentials: a brief tutorial",
+      "keywords":[
+        "Gaussian process regression",
+        "interatomic potentials",
+        "SOAP descriptors",
+        "machine learning for materials",
+        "QUIP"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"gap",
+      "idea_id":"GP-SOAPFusion",
+      "title":"Enhancing Interatomic Potential Models through Gaussian Process Regression and SOAP Descriptor Fusion for Multi-Scale Data Integration",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":5,
+        "methodological_rigor":5,
+        "literature_grounding":4,
+        "potential_impact":5,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.5,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Abstract outlines approach and validation across datasets.",
+        "Experiments specify training, benchmarking, and transferability tests.",
+        "Positions against GAP/SOAP in Related Work.",
+        "Risks discuss data coverage and computational complexity."
+      ],
+      "red_flags":[
+        "Heterogeneous data integration and coverage may be insufficient."
+      ]
+    },
+    {
+      "topic_id":"gap",
+      "idea_id":"GP-SOAPAdaptiveV2",
+      "title":"Enhancing Dynamic Materials Simulations with an Adaptive Gaussian Process Regression Framework and SOAP Descriptors",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":5,
+        "feasibility_resources":3,
+        "testability_falsifiability":5,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":5,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.45,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Abstract outlines approach and validation across datasets.",
+        "Experiments specify training, benchmarking, and transferability tests.",
+        "Positions against GAP/SOAP in Related Work.",
+        "Risks discuss data coverage and computational complexity."
+      ],
+      "red_flags":[
+        "Real-time adaptation stability and overhead uncertain."
+      ]
+    },
+    {
+      "topic_id":"gap",
+      "idea_id":"GP-SOAPQuantumBridge",
+      "title":"Bridging Quantum Mechanics and Coarse-Grained Simulations with an Integrated Gaussian Process Regression Framework using SOAP Descriptors",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":3,
+        "testability_falsifiability":5,
+        "methodological_rigor":5,
+        "literature_grounding":4,
+        "potential_impact":5,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.35,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Abstract outlines approach and validation across datasets.",
+        "Experiments specify training, benchmarking, and transferability tests.",
+        "Positions against GAP/SOAP in Related Work.",
+        "Risks discuss data coverage and computational complexity."
+      ],
+      "red_flags":[
+        "Accuracy loss in mapping to coarse-grained force fields."
+      ]
+    },
+    {
+      "topic_id":"gap",
+      "idea_id":"GP-SOAPSymUnifier",
+      "title":"Harmonizing Symmetry in Multi-Scale Interatomic Potential Models using Gaussian Process Regression and SOAP Descriptors",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":3,
+        "testability_falsifiability":5,
+        "methodological_rigor":5,
+        "literature_grounding":4,
+        "potential_impact":5,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.35,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Abstract outlines approach and validation across datasets.",
+        "Experiments specify training, benchmarking, and transferability tests.",
+        "Positions against GAP/SOAP in Related Work.",
+        "Risks discuss data coverage and computational complexity."
+      ],
+      "red_flags":[
+        "Heterogeneous data integration and coverage may be insufficient."
+      ]
+    }
+  ],
+  "ranking_by_overall":[
+    "gap/GP-SOAPFusion",
+    "gap/GP-SOAPAdaptiveV2",
+    "gap/GP-SOAPQuantumBridge",
+    "gap/GP-SOAPSymUnifier"
+  ],
+  "ranking_by_topic":{
+    "gap":[
+      "GP-SOAPFusion",
+      "GP-SOAPAdaptiveV2",
+      "GP-SOAPQuantumBridge",
+      "GP-SOAPSymUnifier"
+    ]
+  }
+}

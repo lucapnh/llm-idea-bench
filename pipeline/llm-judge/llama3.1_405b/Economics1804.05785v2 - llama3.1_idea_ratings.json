@@ -1,0 +1,144 @@
+{
+  "seed_summaries": [
+    {
+      "topic_id": "topic_01",
+      "title": "Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects",
+      "keywords": [
+        "difference-in-differences",
+        "event study",
+        "two-way fixed effects",
+        "heterogeneous treatment effects",
+        "pretrend test",
+        "interaction-weighted estimator"
+      ]
+    }
+  ],
+  "weights_used": {
+    "originality_novelty": 0.2,
+    "relevance_alignment": 0.15,
+    "feasibility_resources": 0.15,
+    "testability_falsifiability": 0.1,
+    "methodological_rigor": 0.1,
+    "literature_grounding": 0.1,
+    "potential_impact": 0.1,
+    "clarity_specificity": 0.05,
+    "safety_ethics_risk": 0.05
+  },
+  "ideas": [
+    {
+      "topic_id": "topic_01",
+      "idea_id": "heterogeneous_treatment_effects_with_machine_learning",
+      "title": "Estimating Heterogeneous Treatment Effects with Machine Learning",
+      "scores": {
+        "originality_novelty": 3,
+        "relevance_alignment": 3,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 1,
+        "methodological_rigor": 2,
+        "literature_grounding": 2,
+        "potential_impact": 4,
+        "clarity_specificity": 1,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 2.85,
+      "verdict": "reject",
+      "justification_evidence": [
+        "Hypothesis/description: Machine learning algorithms can be used to estimate heterogeneous treatment effects in the presence of staggered adoption and heterogeneous cohorts.",
+        "Positions vs prior work: Abraham and Sun (2018) proposed an interaction-weighted estimator for estimating dynamic treatment effects. Our approach builds on this work by using machine le",
+        "Methodology plan: We will use a combination of causal machine learning algorithms, such as the DR-learner and R-learner, to estimate the heterogeneous treatment effects. We will"
+      ],
+      "red_flags": [
+        "Experiments/evaluation plan under-specified"
+      ]
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "machine_learning_for_staggered_adoption_heterogeneous_treatment_effects",
+      "title": "Machine Learning for Estimating Heterogeneous Treatment Effects with Staggered Adoption",
+      "scores": {
+        "originality_novelty": 3,
+        "relevance_alignment": 3,
+        "feasibility_resources": 3,
+        "testability_falsifiability": 2,
+        "methodological_rigor": 2,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 3,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 3.0,
+      "verdict": "reject",
+      "justification_evidence": [
+        "Hypothesis/description: Machine learning algorithms can be used to estimate heterogeneous treatment effects in the presence of staggered adoption, providing more accurate and interpret",
+        "Positions vs prior work: Recent studies have proposed machine learning-based methods for estimating heterogeneous treatment effects in the staggered adoption setting, such as MLDID and",
+        "Experiments outlined: Evaluate the performance of different machine learning algorithms for estimating heterogeneous treatment effects in simulated datasets with staggered adoption.,",
+        "Abstract signals scope: This study proposes a machine learning-based approach for estimating heterogeneous treatment effects in the presence of staggered adoption. We explore the use o"
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "machine_learning_for_dynamic_treatment_effects",
+      "title": "Estimating Dynamic Treatment Effects with Machine Learning: A Convex Average Approach",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 3,
+        "testability_falsifiability": 2,
+        "methodological_rigor": 2,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 3,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 3.2,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Hypothesis/description: Machine learning algorithms can be used to estimate dynamic treatment effects in event studies with heterogeneous treatment effects, providing more accurate and",
+        "Positions vs prior work: Abraham and Sun (2018) proposed an interaction-weighted estimator for estimating dynamic treatment effects. Our approach builds on this work by using machine le",
+        "Experiments outlined: Evaluate the performance of different machine learning algorithms for estimating dynamic treatment effects in simulated datasets with staggered adoption., Apply",
+        "Abstract signals scope: This study proposes a machine learning-based approach for estimating dynamic treatment effects in event studies with heterogeneous treatment effects. We explore"
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "causal_inference_with_staggered_adoption",
+      "title": "Causal Inference with Staggered Adoption: A Machine Learning Approach for Estimating Heterogeneous Treatment Effects",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 3,
+        "testability_falsifiability": 2,
+        "methodological_rigor": 2,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 3,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 3.2,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Hypothesis/description: This proposal aims to develop a novel machine learning approach for estimating heterogeneous treatment effects in the presence of staggered adoption, where unit",
+        "Positions vs prior work: Recent studies have proposed various methods for estimating heterogeneous treatment effects, but most of these approaches assume that all units are treated simu",
+        "Experiments outlined: Simulation study: Evaluate the performance of our proposed algorithm using simulated data with known treatment effects and staggered adoption designs., Empirica",
+        "Abstract signals scope: This project proposes a novel approach for causal inference with staggered adoption designs. We develop a machine learning algorithm that leverages Bayesian Add"
+      ],
+      "red_flags": []
+    }
+  ],
+  "ranking_by_overall": [
+    "topic_01/machine_learning_for_dynamic_treatment_effects",
+    "topic_01/causal_inference_with_staggered_adoption",
+    "topic_01/machine_learning_for_staggered_adoption_heterogeneous_treatment_effects",
+    "topic_01/heterogeneous_treatment_effects_with_machine_learning"
+  ],
+  "ranking_by_topic": {
+    "topic_01": [
+      "machine_learning_for_dynamic_treatment_effects",
+      "causal_inference_with_staggered_adoption",
+      "machine_learning_for_staggered_adoption_heterogeneous_treatment_effects",
+      "heterogeneous_treatment_effects_with_machine_learning"
+    ]
+  }
+}

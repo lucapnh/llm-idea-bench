@@ -1,0 +1,76 @@
+[
+    {
+        "Name": "symmetry_aware_gpr",
+        "Title": "Symmetry-Aware Gaussian Process Regression for Materials Science",
+        "Short Hypothesis": "Can symmetry-aware descriptors improve the accuracy of Gaussian process regression in materials science?",
+        "Related Work": "While there has been significant research on machine learning for materials science, the use of symmetry-aware descriptors with Gaussian process regression is a relatively unexplored area.",
+        "Abstract": "We propose a novel approach to materials science prediction using symmetry-aware descriptors and Gaussian process regression. Our method leverages the symmetries present in materials to improve the accuracy of predictions. We evaluate our approach on a range of materials science datasets and demonstrate its effectiveness.",
+        "Experiments": [
+            "Experiment 1: Evaluate the performance of symmetry-aware GPR on a dataset of material properties",
+            "Experiment 2: Compare the results of symmetry-aware GPR with traditional GPR methods"
+        ],
+        "Risk Factors and Limitations": [
+            "The proposed method may require significant computational resources to compute symmetry-aware descriptors",
+            "The method may not generalize well to materials with complex symmetries"
+        ]
+    },
+    {
+        "Name": "transfer_learning_gpr",
+        "Title": "Transfer Learning for Gaussian Process Regression in Materials Science",
+        "Short Hypothesis": "Can transfer learning improve the accuracy of Gaussian process regression in materials science by leveraging pre-trained models on related datasets?",
+        "Related Work": "While there has been significant research on machine learning for materials science, the use of transfer learning with Gaussian process regression is a relatively unexplored area.",
+        "Abstract": "We propose a novel approach to materials science prediction using transfer learning and Gaussian process regression. Our method leverages pre-trained models on related datasets to improve the accuracy of predictions on new datasets. We evaluate our approach on a range of materials science datasets and demonstrate its effectiveness.",
+        "Experiments": [
+            "Experiment 1: Evaluate the performance of transfer learning GPR on a dataset of material properties",
+            "Experiment 2: Compare the results of transfer learning GPR with traditional GPR methods"
+        ],
+        "Risk Factors and Limitations": [
+            "The proposed method may require significant computational resources to train pre-trained models",
+            "The method may not generalize well to materials with complex structures"
+        ]
+    },
+    {
+        "Name": "uncertainty_quantification_in_materials_science",
+        "Title": "Uncertainty Quantification in Materials Science with Limited Data using Bayesian Neural Networks",
+        "Short Hypothesis": "Bayesian neural networks can effectively quantify uncertainty in materials science predictions, even with limited data, by integrating knowledge from governing laws and providing physically consistent predictions.",
+        "Related Work": "Existing methods for uncertainty quantification in materials science often rely on Gaussian Process Regression or other conventional UQ methods. Our approach distinguishes itself by using Bayesian neural networks, which can integrate knowledge from governing laws and provide more accurate uncertainty estimations.",
+        "Abstract": "Uncertainty quantification is crucial in materials science to ensure reliable predictions and informed decision-making. However, limited data availability poses significant challenges. This proposal explores the application of Bayesian neural networks for uncertainty quantification in materials science, leveraging their ability to integrate knowledge from governing laws and provide physically consistent predictions. We will evaluate our approach using case studies on creep rupture life prediction of steel alloys and compare its performance with conventional UQ methods.",
+        "Experiments": [
+            "Train a Bayesian neural network on a dataset of creep tests for steel alloys",
+            "Evaluate the performance of the Bayesian neural network in predicting creep rupture life and uncertainty estimation",
+            "Compare the results with conventional UQ methods, such as Gaussian Process Regression"
+        ],
+        "Risk Factors and Limitations": [
+            "Limited availability of high-quality datasets for materials science applications",
+            "Potential difficulties in integrating knowledge from governing laws into the Bayesian neural network framework"
+        ]
+    },
+    {
+        "Name": "interpretable_ml_materials",
+        "Title": "Interpretable Machine Learning for Materials Science: A Feature-Assisted Approach",
+        "Short Hypothesis": "By incorporating physics-informed descriptors and feature engineering techniques, we can develop more accurate and interpretable machine learning models for materials science applications.",
+        "Related Work": "While there have been efforts to apply machine learning to materials science, most existing approaches focus on predictive power rather than interpretability. Our approach aims to bridge this gap by integrating physics-informed descriptors and feature engineering techniques to improve model interpretability.",
+        "Abstract": "We propose a feature-assisted machine learning approach for materials science applications, which incorporates physics-informed descriptors and feature engineering techniques to improve model accuracy and interpretability. Our approach is evaluated on several materials science datasets, demonstrating its effectiveness in predicting material properties and identifying key features governing material behavior.",
+        "Experiments": [
+            "Experiment 1: Evaluate the performance of our feature-assisted machine learning approach on a dataset of binary semiconductors, comparing its accuracy and interpretability to existing machine learning models.",
+            "Experiment 2: Apply our approach to a dataset of high-entropy nitride ceramics, investigating the relationship between material composition and entropy forming ability."
+        ]
+    },
+    {
+        "Name": "mol_prop_pred_with_grammar_induced_geometry",
+        "Title": "Hierarchical Grammar-Induced Geometry for Data-Efficient Molecular Property Prediction",
+        "Short Hypothesis": "By utilizing a learnable hierarchical molecular grammar to generate molecules from grammar production rules, we can induce an explicit geometry of the space of molecular graphs, which provides an informative prior on molecular structural similarity and improves data efficiency in molecular property prediction.",
+        "Related Work": "Existing methods for molecular property prediction often rely on graph neural networks or other deep learning architectures. However, these methods typically require large amounts of labeled data to achieve good performance. Our approach distinguishes itself by leveraging a learnable hierarchical molecular grammar to induce an explicit geometry of the space of molecular graphs, which provides a more informative prior on molecular structural similarity.",
+        "Abstract": "We propose a data-efficient property predictor for molecular property prediction tasks by utilizing a learnable hierarchical molecular grammar that can generate molecules from grammar production rules. The induced geometry of the space of molecular graphs provides an informative prior on molecular structural similarity and improves data efficiency in molecular property prediction. Our evaluation shows that this approach outperforms a wide spectrum of baselines, including supervised and pre-trained graph neural networks.",
+        "Experiments": [
+            "Evaluate the performance of our approach on small and large datasets for molecular property prediction tasks",
+            "Compare our approach with existing state-of-the-art methods, including supervised and pre-trained graph neural networks",
+            "Conduct an ablation study to analyze the effect of different components of our approach"
+        ],
+        "Risk Factors and Limitations": [
+            "The performance of our approach may be affected by the quality of the learnable hierarchical molecular grammar",
+            "Our approach may not generalize well to molecules with very different structures or properties",
+            "The computational cost of our approach may be higher than existing methods due to the need to generate molecules from grammar production rules"
+        ]
+    }
+]

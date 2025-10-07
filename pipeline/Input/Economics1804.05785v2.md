@@ -1,0 +1,13 @@
+# Title: Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects
+
+## Keywords
+
+difference-in-differences; two-way fixed effects; event study; heterogeneous treatment effects; dynamic treatment effects; pretrend tests&#x20;
+
+## TL;DR
+
+In staggered-adoption settings, the popular two-way fixed effects (TWFE) event-study with leads/lags produces “contaminated” coefficients that mix effects from other periods and cohorts. The paper derives the implicit weights that cause this problem, shows why standard pretrend tests can be misleading, and proposes an interaction-weighted estimator that delivers interpretable cohort-share averages; an application to hospitalization replicates broad conclusions but avoids TWFE pathologies.&#x20;
+
+## Abstract
+
+Event-study designs with staggered treatment timing are ubiquitous, and researchers often estimate dynamic effects using TWFE regressions that include indicators for leads and lags relative to first treatment. Sun and Abraham show that when treatment effects vary across adoption cohorts, each coefficient on a given lead or lag is a non-convex weighted average of cohort- and period-specific effects—including effects from *other* relative periods and even excluded periods. Consequently, coefficients intended to reflect a single dynamic effect may be “contaminated,” and nonzero pre-treatment coefficients can arise even under parallel trends and no anticipation, undermining conventional pretrend tests. The authors derive the exact weights via an auxiliary regression and provide software (the `eventstudyweights` Stata package) to diagnose the issue in practice. Building on this analysis, they propose an alternative, regression-based interaction-weighted estimator: first estimate cohort-by-relative-time effects (CATTs) and then aggregate them using transparent cohort-share weights, yielding convex, easy-to-interpret averages; the approach connects to recent group-time ATT frameworks and can accommodate covariates with standard adjustments. An empirical illustration revisiting the economic consequences of hospitalization (HRS data) demonstrates that, while the qualitative pattern mirrors prior work—earnings fall much more persistently than out-of-pocket spending rises—the conventional TWFE path can lie outside the convex hull of underlying effects, whereas the interaction-weighted estimates, by construction, do not. Overall, the paper clarifies when and why TWFE event-study coefficients fail under heterogeneity and offers a practical, more robust alternative for tracing dynamic treatment paths.&#x20;

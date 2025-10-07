@@ -1,0 +1,20 @@
+COMPUTER SCIENCE (9)
+1) Toolformer: Language Models Can Teach Themselves to Use Tools — arXiv:2302.04761
+2) ReAct: Synergizing Reasoning and Acting in Language Models — arXiv:2210.03629
+3) AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework — arXiv:2308.08155
+4) Self-Consistency Improves Chain-of-Thought Reasoning — arXiv:2203.11171
+5) Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection — arXiv:2310.11511
+6) Tree of Thoughts: Deliberate Problem Solving with Large Language Models — arXiv:2305.10601
+7) Consistency Models — arXiv:2303.01469
+8) Decision Transformer: Reinforcement Learning via Sequence Modeling — arXiv:2106.01345
+9) GNNExplainer: Generating Explanations for Graph Neural Networks — arXiv:1903.03894
+
+NON-CS METHODS (3)
+Economics / Econometrics:
+10)Sun, Liyang; Abraham, Sarah — Estimating Dynamic Treatment Effects in Event Studies with Staggered Adoption — arXiv:1804.05785
+
+Geosciences / Applied Mathematics:
+11)Mandel, Jan; Cobb, Loren; Beezley, Jonathan D. — A Brief Tutorial on the Ensemble Kalman Filter — arXiv:0901.3725
+
+Materials Science / Chemical Physics:
+12)Bartók, Albert P.; Csányi, Gábor — Gaussian Approximation Potentials: a brief tutorial introduction — arXiv:1502.01366

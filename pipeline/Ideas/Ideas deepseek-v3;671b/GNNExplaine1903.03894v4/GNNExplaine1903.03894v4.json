@@ -1,0 +1,73 @@
+[
+    {
+        "Name": "mutual_info_gnn_explain",
+        "Title": "Mutual Information-Driven Explanations for Graph Neural Networks via Subgraph Distillation",
+        "Short Hypothesis": "A mutual information-based framework can distill interpretable subgraphs and node features that explain GNN predictions while preserving model faithfulness and computational efficiency.",
+        "Related Work": "Existing methods like TempME and FACExplainer focus on motif discovery or spatial activation maps for explanations, but they often lack a unified approach to balancing interpretability and faithfulness. This proposal integrates mutual information maximization with subgraph distillation to address this gap.",
+        "Abstract": "We propose a novel framework for explaining GNN predictions by distilling interpretable subgraphs and node features that maximize mutual information between the explanation and model output. The method employs a continuous relaxation of edge masking combined with feature attribution, optimized via an information bottleneck principle to ensure sparsity and faithfulness. Experiments on synthetic benchmarks (e.g., BA-Shapes) and real-world datasets (e.g., MUTAG) demonstrate significant improvements in both explanation accuracy and computational efficiency compared to gradient-based and attention-based baselines.",
+        "Experiments": [
+            "Evaluate explanation accuracy on synthetic benchmarks (BA-Shapes, Tree-Cycles) using ground-truth motifs as reference.",
+            "Test on real-world datasets (MUTAG, Reddit) by comparing extracted subgraphs with domain-relevant structures (e.g., NO\u2082 groups in molecules).",
+            "Compare computational efficiency against state-of-the-art explainers like GNNExplainer and FACExplainer using runtime metrics.",
+            "Measure faithfulness by assessing how well explanations align with model predictions via fidelity scores."
+        ],
+        "Risk Factors and Limitations": [
+            "The method may struggle with highly dense graphs due to increased complexity in subgraph distillation.",
+            "Ground-truth explanations for real-world datasets are often unavailable, making evaluation challenging.",
+            "Optimizing mutual information can be computationally intensive for very large graphs."
+        ]
+    },
+    {
+        "Name": "inductive_counterfactual_gnn",
+        "Title": "Inductive Counterfactual Explanations for Graph Neural Networks with Minimal Perturbations",
+        "Short Hypothesis": "An inductive approach to generating counterfactual explanations for GNNs by incorporating both edge deletions and additions can improve explanation quality and computational efficiency compared to existing methods.",
+        "Related Work": "Existing methods like CF-GNNExplainer focus on minimal perturbations but are limited to edge deletions. Recent work such as INDUCE introduces an inductive model but lacks comprehensive evaluation across diverse datasets. Our proposal extends these ideas by combining both edge modifications in a computationally efficient, inductive framework.",
+        "Abstract": "Graph Neural Networks (GNNs) have shown remarkable success in various applications, yet their decision-making processes remain opaque. Counterfactual explanations offer insights into how predictions can change with minimal input perturbations, enhancing interpretability. While existing methods primarily focus on edge deletions or require instance-specific training, we propose an inductive approach that incorporates both edge additions and deletions for generating counterfactual explanations. This method not only improves the quality of explanations by considering a broader range of perturbations but also enhances computational efficiency through its inductive nature. We evaluate our approach across multiple datasets, demonstrating superior performance in terms of explanation fidelity, robustness, and scalability compared to state-of-the-art methods.",
+        "Experiments": [
+            "Compare the proposed method against CF-GNNExplainer and INDUCE on benchmark datasets (e.g., Cora, Citeseer) using metrics like counterfactual accuracy, perturbation size, and runtime efficiency.",
+            "Evaluate the robustness of explanations by introducing noise to the input graphs and measuring the stability of generated counterfactuals.",
+            "Assess scalability by testing the method on large-scale graph datasets and comparing computational resources required.",
+            "Conduct user studies to measure the interpretability and usefulness of the generated explanations for domain experts."
+        ],
+        "Risk Factors and Limitations": [
+            "The proposed method may face challenges in generating meaningful counterfactuals for highly complex graphs with dense connections.",
+            "Incorporating both edge additions and deletions could increase computational overhead, though inductive modeling aims to mitigate this.",
+            "Evaluation of interpretability relies on subjective user studies, which may introduce bias."
+        ]
+    },
+    {
+        "Name": "self_explainable_temporal_gnn",
+        "Title": "Self-Explainable Temporal Graph Neural Networks via Dynamic Information Bottleneck",
+        "Short Hypothesis": "By integrating the principles of the Information Bottleneck theory into a temporal graph neural network, we can achieve simultaneous prediction and explanation in an end-to-end manner without compromising model efficiency or accuracy.",
+        "Related Work": "Recent work has focused on post-hoc explanations for temporal graphs (e.g., TGIB) but lacks built-in explainability. Our proposal distinguishes itself by embedding the Information Bottleneck theory directly into the network architecture, enabling real-time predictions with inherent interpretability. This approach avoids the limitations of separate prediction and explanation models.",
+        "Abstract": "Temporal Graph Neural Networks (TGNNs) have become essential for modeling dynamic graphs but often lack transparency in their decision-making processes. Existing explainability methods rely on post-hoc techniques that are inefficient and may not accurately reflect model behavior. We propose a novel self-explainable TGNN framework based on the Information Bottleneck theory, which introduces stochasticity into temporal events to provide built-in explanations alongside predictions. This end-to-end approach ensures both high predictive accuracy and interpretability without requiring additional models for explanation. Experiments on real-world datasets demonstrate that our method outperforms state-of-the-art techniques in terms of prediction performance and explainability.",
+        "Experiments": [
+            "Evaluate link prediction accuracy on temporal graph datasets (e.g., social networks, transportation systems) using standard metrics such as AUC-ROC and F1-score.",
+            "Assess the quality of explanations by comparing generated explanations with ground-truth causal relationships in synthetic datasets where causality is known.",
+            "Conduct ablation studies to measure the impact of Information Bottleneck components on both prediction accuracy and explanation clarity.",
+            "Compare our framework against state-of-the-art post-hoc explainers (e.g., TGIB) in terms of computational efficiency and user trust through human evaluation studies."
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of stochasticity via the Information Bottleneck may introduce noise, potentially degrading prediction accuracy.",
+            "Scalability to very large graphs could be a challenge due to increased computational complexity from dynamic information processing.",
+            "Ground-truth explanations for real-world datasets are often unavailable, making it difficult to quantitatively evaluate explanation quality."
+        ]
+    },
+    {
+        "Name": "global_concept_detection_gnns",
+        "Title": "Global Concept Detection in Graph Neural Networks via Neuron-Level Analysis and Lightweight Subgraph Extraction",
+        "Short Hypothesis": "GNN neurons can detect high-level semantic concepts, enabling global interpretability when combined with lightweight subgraph extraction techniques.",
+        "Related Work": "Current GNN explainability methods focus on local explanations (e.g., Xuanyuan Han et al. 2022) or post-hoc techniques like GraphXAIN. This proposal distinguishes itself by combining neuron-level concept detection with scalable subgraph extraction to achieve global interpretability, addressing scalability and generalization issues in prior work.",
+        "Methodology": [
+            "Analyze GNN neurons to identify high-level semantic concepts using clustering and feature attribution methods.",
+            "Develop a lightweight subgraph extraction technique based on entropy-regularized random walks for efficient concept detection.",
+            "Integrate neuron-level analysis with post-hoc explainers like GraphXAIN to generate coherent global explanations."
+        ],
+        "Evaluation": [
+            "Fidelity: Compare predicted concepts against ground truth annotations (e.g., graph labels or expert knowledge).",
+            "Interpretability: Conduct user studies to assess the clarity and usefulness of generated explanations.",
+            "Scalability: Measure computational efficiency on large-scale graphs compared to baseline methods like ProtGNN."
+        ],
+        "Impact": "This work will enhance the trustworthiness and interpretability of GNNs, enabling their deployment in high-stakes applications such as drug discovery, urban planning, and recommender systems."
+    }
+]

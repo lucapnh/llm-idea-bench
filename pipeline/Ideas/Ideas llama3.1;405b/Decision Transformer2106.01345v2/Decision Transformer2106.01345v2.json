@@ -1,0 +1,55 @@
+[
+    {
+        "title": "Graph-Based Multi-Agent Reinforcement Learning with Transformer Architecture",
+        "description": "A novel approach to multi-agent reinforcement learning that combines graph-based coordination with transformer architecture, enabling efficient and scalable decision-making in complex environments.",
+        "keywords": [
+            "multi-agent systems",
+            "reinforcement learning",
+            "graph neural networks",
+            "transformer architecture"
+        ],
+        "references": [
+            {
+                "title": "MAGT-toll: A multi-agent reinforcement learning approach to dynamic traffic congestion pricing",
+                "authors": [
+                    "Jiaming Lu, Chuanyang Hong, Rui Wang"
+                ],
+                "journal": "PLoS ONE",
+                "year": 2024
+            },
+            {
+                "title": "Enhancing Multi-Agent Systems via Reinforcement Learning with LLM-Based Planner and Graph-Based Policy",
+                "authors": [
+                    "Ziqi Jia, Junjie Li, Xiaoyang Qu, Jianzong Wang"
+                ],
+                "conference": "IEEE International Conference on Robotics and Automation",
+                "year": 2025
+            }
+        ]
+    },
+    {
+        "Name": "multimodal_sequence_modeling",
+        "Title": "Multimodal Sequence Modeling for Offline Reinforcement Learning",
+        "Description": "This project proposes a novel approach to offline reinforcement learning by leveraging multimodal sequence modeling. The goal is to develop an algorithm that can effectively learn from offline datasets and make decisions in complex, dynamic environments.",
+        "Methodology": "The proposed approach will combine the strengths of sequence modeling and multimodal fusion techniques. Specifically, we will use a Decision Transformer-like architecture as the backbone and incorporate multimodal fusion mechanisms to handle different types of input data (e.g., text, images, audio).",
+        "Expected_Outcomes": "We expect the proposed approach to outperform existing offline RL methods in terms of performance and robustness, especially in scenarios with limited or corrupted data.",
+        "Evaluation_Metrics": "The algorithm will be evaluated on a range of offline RL benchmarks, including MuJoCo, Kitchen, and Adroit tasks. We will also assess its robustness against data corruption and compare its performance with state-of-the-art methods."
+    },
+    {
+        "Name": "cognitive_architectures_for_rl",
+        "Title": "Cognitive Architectures for Reinforcement Learning: Integrating Symbolic and Subsymbolic AI",
+        "Short Hypothesis": "Can reinforcement learning be improved by integrating symbolic and subsymbolic AI through cognitive architectures, enabling more robust, explainable, and adaptable decision-making?",
+        "Related Work": "While there have been efforts to combine symbolic and subsymbolic AI in various domains, the application of cognitive architectures to reinforcement learning is relatively unexplored. Our work builds upon existing research in cognitive architectures, such as the Robotic Skill Acquisition (RSA) architecture, and seeks to integrate these concepts with state-of-the-art reinforcement learning methods.",
+        "Abstract": "This project proposes a novel approach to reinforcement learning by integrating symbolic and subsymbolic AI through cognitive architectures. By combining the strengths of both paradigms, we aim to develop more robust, explainable, and adaptable decision-making systems. Our architecture will incorporate elements from cognitive architectures, such as attention mechanisms and working memory, with deep reinforcement learning methods.",
+        "Experiments": [
+            "Implement a cognitive architecture for reinforcement learning that integrates symbolic and subsymbolic AI",
+            "Evaluate the performance of our approach on a range of reinforcement learning benchmarks, including Atari games and robotics tasks",
+            "Compare our results to state-of-the-art reinforcement learning methods and analyze the benefits of integrating cognitive architectures"
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of symbolic and subsymbolic AI may introduce additional complexity and computational overhead",
+            "The choice of cognitive architecture and its components may significantly impact performance",
+            "The evaluation metrics used to assess the success of our approach may not fully capture the benefits of integrating cognitive architectures"
+        ]
+    }
+]

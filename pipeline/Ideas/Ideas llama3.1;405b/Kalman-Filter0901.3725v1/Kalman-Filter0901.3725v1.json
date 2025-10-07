@@ -1,0 +1,32 @@
+[
+    {
+        "Name": "non_gaussian_enkf",
+        "Title": "Robust Ensemble Kalman Filter for Non-Gaussian Distributions",
+        "Short Hypothesis": "The Ensemble Kalman Filter (EnKF) can be adapted to handle non-Gaussian distributions by incorporating robust statistical methods, such as trimmed ensemble Kalman filter or Gaussian mixture ensemble Kalman filter.",
+        "Related Work": "Existing EnKF variants for non-Gaussian distributions have limitations, such as the need for extensive parameterization or assumptions about the distribution. Our approach aims to address these limitations by developing a more robust and flexible method.",
+        "Abstract": "We propose a novel Ensemble Kalman Filter (EnKF) variant that can effectively handle non-Gaussian distributions in high-dimensional systems. By incorporating robust statistical methods, such as trimmed ensemble Kalman filter or Gaussian mixture ensemble Kalman filter, our approach aims to provide a more accurate and reliable state estimation method for complex systems.",
+        "Experiments": [
+            "Compare the performance of our proposed EnKF variant with existing EnKF variants on synthetic datasets with non-Gaussian distributions",
+            "Evaluate the effectiveness of our approach in real-world applications, such as atmospheric chemistry models or distribution systems"
+        ],
+        "Risk Factors and Limitations": [
+            "High computational cost due to the incorporation of robust statistical methods",
+            "Potential difficulties in tuning hyperparameters for optimal performance"
+        ]
+    },
+    {
+        "Name": "kalman_transfer_learning",
+        "Title": "Kalman Filter-Based Transfer Learning for Domain Adaptation",
+        "Short Hypothesis": "Can we leverage Kalman filters to improve transfer learning in domain adaptation by modeling the uncertainty of feature distributions?",
+        "Related Work": "Existing methods, such as IDAT and DANE, focus on ensemble learning and attention mechanisms. Our approach differs by incorporating Kalman filters to model uncertainty in feature distributions, providing a more robust and adaptive method for domain adaptation.",
+        "Abstract": "We propose a novel transfer learning framework that integrates Kalman filters with domain adaptation. By modeling the uncertainty of feature distributions using Kalman filters, our approach enables more effective knowledge transfer between domains. We demonstrate the efficacy of our method on various benchmark datasets, achieving state-of-the-art performance in cross-domain classification tasks.",
+        "Experiments": [
+            "Experiment 1: Evaluate the performance of our Kalman filter-based transfer learning framework on standard domain adaptation benchmarks (e.g., Office-31, VisDA-2017).",
+            "Experiment 2: Compare our approach with existing methods (e.g., IDAT, DANE) in terms of classification accuracy and robustness to dataset shifts."
+        ],
+        "Risk Factors and Limitations": [
+            "The effectiveness of our method may depend on the quality of the feature representations and the choice of Kalman filter parameters.",
+            "Our approach assumes that the uncertainty in feature distributions can be modeled using a Gaussian distribution, which might not always hold true in practice."
+        ]
+    }
+]

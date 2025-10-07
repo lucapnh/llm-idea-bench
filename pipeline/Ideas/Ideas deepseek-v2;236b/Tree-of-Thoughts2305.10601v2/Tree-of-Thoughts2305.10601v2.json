@@ -1,0 +1,58 @@
+[
+    {
+        "Name": "CTM_Integration",
+        "Title": "Integrating Computational Thinking Paradigms into Large Language Models for Enhanced Complex Problem Solving",
+        "Description": "Despite their impressive reasoning capabilities, large language models (LLMs) often falter when faced with complex tasks that require specific thinking paradigms such as divide-and-conquer and procedural deduction. The root challenge lies in the lack of computational thinking within LLMs during reasoning. To address this issue, we propose integrating a Computational Thinking Model (CTM) into LLMs to enable them to break down complex problems using techniques like decomposition, abstraction, reduction, and simulation. This will be achieved through tailored reinforcement learning rewards that encourage problem simplification, modular planning, and iterative verification.",
+        "Methods": [
+            {
+                "Name": "Computational Thinking Model (CTM) Integration",
+                "Description": "Incorporate computational thinking paradigms into LLMs using a novel framework called CTM. This will enable LLMs to reformulate complex problems through techniques such as decomposition, abstraction, reduction, and simulation."
+            },
+            {
+                "Name": "Reinforcement Learning Rewards",
+                "Description": "Introduce tailored reinforcement learning rewards that encourage problem simplification, modular planning, and iterative verification within the CTM framework."
+            }
+        ],
+        "Evaluation": [
+            {
+                "Dataset": "Code Generation Benchmarks",
+                "Metric": "Accuracy"
+            },
+            {
+                "Dataset": "Mathematical Reasoning Benchmarks",
+                "Metric": "Interpretability and Generalizability"
+            }
+        ],
+        "Expected Outcomes": [
+            "CTM Integration improves LLMs' problem-solving capabilities in complex tasks that require specific thinking paradigms.",
+            "The tailored reinforcement learning rewards enhance the computational thinking process within LLMs, leading to more robust and verifiable solutions."
+        ]
+    },
+    {
+        "Name": "LADAR_LLM",
+        "Title": "Large Language Model Adaptive Reasoning (LADAR) Framework for Dynamic Planning and Execution in Complex Environments",
+        "Short Hypothesis": "Integrating a dynamic planning system within large language models that adapts to the complexity of tasks can significantly enhance their ability to generate effective strategies across various domains.",
+        "Related Work": "Building upon Tree of Thoughts (ToT) and chain-of-thought (CoT), LADAR introduces an adaptive planning layer that continuously adjusts LLMs' problem-solving strategies based on real-time assessments of task complexity, a novel approach not explored in current literature.",
+        "Abstract": "The Large Language Model Adaptive Reasoning (LADAR) framework is proposed to enhance large language models with dynamic planning capabilities. LADAR introduces an adaptive layer that dynamically adjusts the model's reasoning strategies based on continuous evaluations using domain-specific heuristics and machine learning. We expect LADAR to outperform existing frameworks in tasks requiring adaptability, such as project management or real-time strategy games.",
+        "Experiments": [
+            {
+                "Name": "Dynamic Project Management Simulation",
+                "Description": "Evaluate LADAR's performance by simulating a dynamic project environment. Measure success through completion time and resource allocation efficiency against static planning baselines."
+            },
+            {
+                "Name": "Real-Time Strategy Game Adaptation",
+                "Description": "Assess LADAR in real-time strategy games with randomized scenarios, measuring adaptability by win rate, strategic flexibility, and the ability to respond effectively to changing conditions."
+            }
+        ],
+        "Risk Factors and Limitations": [
+            {
+                "Name": "Heuristic Design",
+                "Description": "LADAR's effectiveness relies on high-quality heuristics. Collaborating with domain experts will be essential for designing accurate heuristics across diverse domains."
+            },
+            {
+                "Name": "Computational Complexity",
+                "Description": "To address the computational overhead of real-time adaptation, we will explore optimization techniques and resource management strategies to ensure scalability in various environments."
+            }
+        ]
+    }
+]

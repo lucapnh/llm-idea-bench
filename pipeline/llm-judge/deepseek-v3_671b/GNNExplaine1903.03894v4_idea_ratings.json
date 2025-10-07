@@ -1,0 +1,139 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"topic_01",
+      "title":"GNNExplainer: Generating Explanations for Graph Neural Networks",
+      "keywords":[
+        "graph neural networks",
+        "explainability",
+        "mutual information",
+        "subgraph masking",
+        "feature attribution",
+        "prototypes"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"topic_01",
+      "idea_id":"mutual_info_gnn_explain",
+      "title":"Mutual Information-Driven Explanations for Graph Neural Networks via Subgraph Distillation",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":5,
+        "feasibility_resources":3,
+        "testability_falsifiability":5,
+        "methodological_rigor":5,
+        "literature_grounding":5,
+        "potential_impact":4,
+        "clarity_specificity":5,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.6,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Includes concrete experiments and metrics.",
+        "Positions against related work.",
+        "Pursues a distinct angle beyond standard explainers.",
+        "Addresses scalability/efficiency considerations."
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"inductive_counterfactual_gnn",
+      "title":"Inductive Counterfactual Explanations for Graph Neural Networks with Minimal Perturbations",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":4,
+        "feasibility_resources":3,
+        "testability_falsifiability":5,
+        "methodological_rigor":5,
+        "literature_grounding":5,
+        "potential_impact":5,
+        "clarity_specificity":5,
+        "safety_ethics_risk":3
+      },
+      "overall_weighted_score":4.45,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Includes concrete experiments and metrics.",
+        "Positions against related work.",
+        "Pursues a distinct angle beyond standard explainers.",
+        "Addresses scalability/efficiency considerations."
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"self_explainable_temporal_gnn",
+      "title":"Self-Explainable Temporal Graph Neural Networks via Dynamic Information Bottleneck",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":4,
+        "feasibility_resources":3,
+        "testability_falsifiability":5,
+        "methodological_rigor":5,
+        "literature_grounding":5,
+        "potential_impact":4,
+        "clarity_specificity":5,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.45,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Includes concrete experiments and metrics.",
+        "Positions against related work.",
+        "Pursues a distinct angle beyond standard explainers."
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"global_concept_detection_gnns",
+      "title":"Global Concept Detection in Graph Neural Networks via Neuron-Level Analysis and Lightweight Subgraph Extraction",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":2,
+        "methodological_rigor":4,
+        "literature_grounding":5,
+        "potential_impact":5,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.25,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Positions against related work."
+      ],
+      "red_flags":[]
+    }
+  ],
+  "ranking_by_overall":[
+    "topic_01/mutual_info_gnn_explain",
+    "topic_01/inductive_counterfactual_gnn",
+    "topic_01/self_explainable_temporal_gnn",
+    "topic_01/global_concept_detection_gnns"
+  ],
+  "ranking_by_topic":{
+    "topic_01":[
+      "mutual_info_gnn_explain",
+      "inductive_counterfactual_gnn",
+      "self_explainable_temporal_gnn",
+      "global_concept_detection_gnns"
+    ]
+  }
+}

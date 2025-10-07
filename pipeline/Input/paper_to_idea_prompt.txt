@@ -1,0 +1,16 @@
+Please summarize the following academic paper in the following .md (Markdown) format. Focus on clarity, conciseness, and scientific accuracy. Use accessible yet formal language. The goal is to produce a summary that looks like a workshop submission or scientific blog post.
+
+Output Format:
+
+# Title: [Insert paper title here]
+
+## Keywords  
+[3–6 relevant keywords that capture the main topics or contributions]
+
+## TL;DR  
+[1–2 sentence summary of the core message, highlighting the main finding or question]
+
+## Abstract  
+[150–300 words summarizing the motivation, problem, methodology (briefly), key results, implications, and any surprising or negative findings. Write in a natural, narrative tone that would appeal to a research-oriented but broad audience.]
+Here is the full paper text:
+[PASTE THE PAPER HERE]

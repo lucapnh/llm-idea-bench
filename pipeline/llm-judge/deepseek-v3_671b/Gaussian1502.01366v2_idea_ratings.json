@@ -1,0 +1,171 @@
+{
+  "seed_summaries": [
+    {
+      "topic_id": "topic_01",
+      "title": "Gaussian Approximation Potentials: a brief tutorial",
+      "keywords": [
+        "Gaussian process regression",
+        "interatomic potentials",
+        "SOAP descriptors",
+        "machine learning for materials",
+        "QUIP"
+      ]
+    }
+  ],
+  "weights_used": {
+    "originality_novelty": 0.2,
+    "relevance_alignment": 0.15,
+    "feasibility_resources": 0.15,
+    "testability_falsifiability": 0.1,
+    "methodological_rigor": 0.1,
+    "literature_grounding": 0.1,
+    "potential_impact": 0.1,
+    "clarity_specificity": 0.05,
+    "safety_ethics_risk": 0.05
+  },
+  "ideas": [
+    {
+      "topic_id": "topic_01",
+      "idea_id": "gap_phonon_transport",
+      "title": "Exploring Anisotropic Phonon Transport in Layered Materials Using Gaussian Approximation Potentials (GAP)",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 5,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.2,
+      "verdict": "accept",
+      "justification_evidence": [
+        "Concise premise provided in Short Hypothesis.",
+        "Explicit experiments outline enables evaluation and validation.",
+        "Related Work positions the idea within existing literature.",
+        "Abstract details scope, goals, and expected outcomes."
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "gap_thermal_properties",
+      "title": "Exploring Thermal Properties of Novel Two-Dimensional Materials Using Gaussian Approximation Potentials",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 5,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.2,
+      "verdict": "accept",
+      "justification_evidence": [
+        "Concise premise provided in Short Hypothesis.",
+        "Explicit experiments outline enables evaluation and validation.",
+        "Related Work positions the idea within existing literature.",
+        "Abstract details scope, goals, and expected outcomes."
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "gap_thermal_properties_2",
+      "title": "Exploring Thermal Properties of Novel Two-Dimensional Materials Using Gaussian Approximation Potentials",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 2,
+        "testability_falsifiability": 2,
+        "methodological_rigor": 2,
+        "literature_grounding": 3,
+        "potential_impact": 3,
+        "clarity_specificity": 3,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 2.95,
+      "verdict": "reject",
+      "justification_evidence": [
+        "Concise premise provided in Short Hypothesis.",
+        "Related Work positions the idea within existing literature.",
+        "Abstract details scope, goals, and expected outcomes."
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "gaussian_approximation_diffusion_acceleration",
+      "title": "Accelerating Diffusion Models via Gaussian Score Approximation",
+      "scores": {
+        "originality_novelty": 5,
+        "relevance_alignment": 3,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 3,
+        "methodological_rigor": 3,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 4
+      },
+      "overall_weighted_score": 3.8,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Concise premise provided in Short Hypothesis.",
+        "Explicit experiments outline enables evaluation and validation.",
+        "Related Work positions the idea within existing literature.",
+        "Abstract details scope, goals, and expected outcomes."
+      ],
+      "red_flags": [
+        "The effectiveness of Gaussian approximations may diminish for datasets with highly non-Gaussian distributions or very low noise scales.",
+        "Skipping early sampling steps could introduce artifacts in generated samples, particularly if the Gaussian approximation is inaccurate during these stages."
+      ]
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "active_learning_gap",
+      "title": "Active Learning for Gaussian Approximation Potentials (GAP) in Multi-Component Materials",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 5,
+        "feasibility_resources": 5,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.5,
+      "verdict": "accept",
+      "justification_evidence": [
+        "Concise premise provided in Short Hypothesis.",
+        "Explicit experiments outline enables evaluation and validation.",
+        "Related Work positions the idea within existing literature.",
+        "Abstract details scope, goals, and expected outcomes."
+      ],
+      "red_flags": []
+    }
+  ],
+  "ranking_by_overall": [
+    "topic_01/active_learning_gap",
+    "topic_01/gap_phonon_transport",
+    "topic_01/gap_thermal_properties",
+    "topic_01/gaussian_approximation_diffusion_acceleration",
+    "topic_01/gap_thermal_properties_2"
+  ],
+  "ranking_by_topic": {
+    "topic_01": [
+      "active_learning_gap",
+      "gap_phonon_transport",
+      "gap_thermal_properties",
+      "gaussian_approximation_diffusion_acceleration",
+      "gap_thermal_properties_2"
+    ]
+  }
+}

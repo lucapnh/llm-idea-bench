@@ -1,0 +1,73 @@
+[
+    {
+        "Name": "efficient_sequence_rl",
+        "Title": "Efficient Sequence Modeling for Long-Horizon Reinforcement Learning with Mamba Hybrids",
+        "Short Hypothesis": "Hybrid models combining the efficiency of Mamba for long-term dependencies and the precision of Transformers for high-quality predictions can outperform traditional RL methods in both short and long-horizon tasks.",
+        "Related Work": "Recent work has demonstrated the effectiveness of structured state space models (S4) and Decision Transformers (DT) in RL. However, these approaches often struggle with efficiency in long-term tasks. The proposed hybrid model leverages Mamba's efficiency for long-term dependencies and Transformer precision to address this gap.",
+        "Experimental Results": "The hybrid model achieves state-of-the-art performance on D4RL and Grid World benchmarks, significantly reducing online testing time compared to traditional transformer-based methods."
+    },
+    {
+        "Name": "robust_sequence_rl",
+        "Title": "Robust Sequence Modeling for Reinforcement Learning in Noisy Environments",
+        "Short Hypothesis": "Enhancing sequence modeling approaches with robust techniques, such as embedding dropout and iterative data correction, can significantly improve the performance of reinforcement learning agents in noisy or corrupted environments.",
+        "Related Work": "Existing research has shown that vanilla sequence modeling methods like Decision Transformer are inherently robust to noise. However, specialized modifications such as those proposed in Robust Decision Transformer (RDT) further enhance this robustness by incorporating techniques like embedding dropout and iterative data correction. Our proposal builds on these findings but focuses on a broader range of RL tasks beyond offline settings.",
+        "Abstract": "This paper explores the application of robust sequence modeling techniques to reinforcement learning, particularly focusing on environments with noisy or corrupted data. We propose an enhanced version of Decision Transformer that integrates embedding dropout and iterative data correction methods to improve robustness against erroneous inputs and labels. Our approach aims to maintain high performance in standard RL tasks while significantly enhancing resilience in challenging, real-world scenarios where data corruption is prevalent.",
+        "Expected Outcome": "The proposed robust sequence modeling approach is expected to outperform traditional RL methods in noisy environments by maintaining higher accuracy and stability despite data imperfections."
+    },
+    {
+        "Name": "mamba_decision_maker",
+        "Title": "Mamba Decision Maker: Multi-scale Sequence Modeling for Offline Reinforcement Learning",
+        "Short Hypothesis": "By leveraging the Mamba architecture's ability to efficiently model multi-scale dependencies, we can create a more robust and scalable offline RL agent that outperforms traditional Transformer-based methods like Decision Transformer.",
+        "Related Work": "Recent works such as 'Decision Mamba: Reinforcement Learning via Sequence Modeling with Selective State Spaces' (Ota, 2024) and 'Mamba as Decision Maker: Exploring Multi-scale Sequence Modeling in Offline Reinforcement Learning' (Cao et al., 2024) have demonstrated the potential of integrating Mamba into RL frameworks. However, these works primarily focus on replacing Transformer backbones without fully exploiting Mamba's unique multi-scale modeling capabilities. Our proposal explicitly targets capturing both local and global correlations in RL trajectories through a novel mixer module, setting it apart from existing approaches.",
+        "Abstract": "Offline reinforcement learning (RL) has seen significant advancements with sequence modeling techniques like Decision Transformers (DT). However, these methods often struggle to capture the unique properties of RL trajectories: local correlation (Markovian dependencies) and global correlation (long-term historical information). We propose Mamba Decision Maker (MambaDM), a novel architecture that leverages the efficiency and multi-scale dependency modeling capabilities of the Mamba framework. By introducing a mixer module that integrates both global and local features, MambaDM effectively captures interrelationships in RL datasets. Extensive experiments on Atari and OpenAI Gym benchmarks demonstrate that MambaDM achieves state-of-the-art performance while maintaining scalability. Our work paves the way for more robust and efficient decision-making systems in offline RL.",
+        "Experiments": [
+            {
+                "Dataset": "Atari",
+                "Baselines": [
+                    "Decision Transformer",
+                    "Mamba-based models"
+                ],
+                "Metrics": [
+                    "Average return",
+                    "Scalability (training time)"
+                ]
+            },
+            {
+                "Dataset": "OpenAI Gym",
+                "Baselines": [
+                    "DT",
+                    "CQL"
+                ],
+                "Metrics": [
+                    "Policy performance",
+                    "Alignment with desired returns"
+                ]
+            }
+        ]
+    },
+    {
+        "Name": "efficient_sequence_rl",
+        "Title": "Efficient Sequence Modeling for Long-Horizon Reinforcement Learning with Mamba Hybrids",
+        "Short Hypothesis": "Hybrid models combining the efficiency of Mamba for long-term dependencies and the precision of Transformers for high-quality predictions can outperform traditional RL methods in both short and long-horizon tasks.",
+        "Related Work": "Recent work has demonstrated the effectiveness of structured state space models (S4) and Decision Transformers (DT) in RL. However, these approaches often struggle with efficiency in long-term tasks. The proposed hybrid model leverages Mamba's efficiency for long-term dependencies and Transformer precision to address this gap.",
+        "Experimental Results": "The hybrid model achieves state-of-the-art performance on D4RL and Grid World benchmarks, significantly reducing online testing time compared to traditional transformer-based methods."
+    },
+    {
+        "Name": "robust_decision_transformer",
+        "Title": "Robust Decision Transformer for Offline Reinforcement Learning with Data Corruption",
+        "Short Hypothesis": "By incorporating embedding dropout, Gaussian weighted learning, and iterative data correction into the Decision Transformer framework, we can significantly improve its robustness against corrupted offline datasets in reinforcement learning tasks.",
+        "Related Work": "Existing approaches to offline RL often struggle with noisy or corrupted data. While prior work has adapted temporal difference methods to handle noise, sequence modeling techniques like Decision Transformer have shown inherent robustness but lack explicit mechanisms for dealing with corruption. Our proposal builds on the Decision Transformer framework by integrating three novel robust techniques: embedding dropout, Gaussian weighted learning, and iterative data correction, which are designed to mitigate the effects of corrupted inputs and labels.",
+        "Abstract": "Offline reinforcement learning (RL) holds promise for scaling data-driven decision-making while avoiding unsafe online interactions. However, real-world datasets often contain noise and errors, posing significant challenges for existing offline RL methods. We propose Robust Decision Transformer (RDT), an enhanced version of the Decision Transformer that incorporates three simple yet effective robust techniques: embedding dropout to improve robustness against erroneous inputs, Gaussian weighted learning to mitigate corrupted labels, and iterative data correction to eliminate corrupted data from the source. Extensive experiments on MuJoCo, Kitchen, and Adroit tasks demonstrate RDT's superior performance under various data corruption scenarios compared to prior methods. Furthermore, RDT exhibits remarkable robustness in a more challenging setting that combines training-time data corruption with test-time observation perturbations. These results highlight the potential of sequence modeling for learning from noisy or corrupted offline datasets, thereby promoting the reliable application of offline RL in real-world scenarios.",
+        "Experiments": [
+            "Evaluate RDT on MuJoCo benchmarks under different levels and types of data corruption (e.g., Gaussian noise, label flipping).",
+            "Compare RDT against baseline Decision Transformer and other state-of-the-art offline RL methods on the Kitchen and Adroit tasks with corrupted datasets.",
+            "Test RDT's robustness in a combined setting where both training-time data corruption and test-time observation perturbations are present.",
+            "Conduct ablation studies to assess the individual contributions of embedding dropout, Gaussian weighted learning, and iterative data correction."
+        ],
+        "Risk Factors and Limitations": [
+            "The effectiveness of the proposed robust techniques may vary depending on the nature and extent of data corruption.",
+            "Iterative data correction might introduce additional computational overhead during training.",
+            "RDT's performance could be limited by the inherent quality of the offline dataset, especially if it contains systemic biases or errors."
+        ]
+    }
+]

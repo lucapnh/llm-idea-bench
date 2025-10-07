@@ -1,0 +1,73 @@
+[
+    {
+        "Name": "GP-SOAPFusion",
+        "Title": "Enhancing Interatomic Potential Models through Gaussian Process Regression and SOAP Descriptor Fusion for Multi-Scale Data Integration",
+        "Short Hypothesis": "By combining the strengths of Gaussian Process (GP) regression with the detailed atomic information provided by Smooth Overlap of Atomic Positions (SOAP) descriptors, we can create a more accurate and transferable interatomic potential model that effectively integrates data across various length scales.",
+        "Related Work": "The GAP framework has demonstrated its effectiveness in learning local energy functionals using SOAP descriptors. However, there is a gap in the literature regarding the integration of multiple datasets from different scales to improve the accuracy and applicability of these models. Our proposal addresses this by proposing a fusion approach that leverages both quantum-mechanical and empirical data sources.",
+        "Abstract": "This study aims to develop an advanced interatomic potential model through the innovative combination of Gaussian Process (GP) regression with SOAP descriptors, focusing on integrating multi-scale datasets for enhanced accuracy and transferability. The proposed GP-SOAPFusion approach will be implemented within the QUIP software, allowing for efficient training on quantum-mechanical energies, forces, and virials while incorporating data from empirical sources. This dual-source learning strategy is expected to improve model performance by capturing complex atomic interactions at both microscopic and mesoscopic scales. We will validate the proposed method against benchmark datasets across various materials systems and assess its transferability through molecular dynamics simulations. The GP-SOAPFusion model aims to provide a more comprehensive understanding of material behavior, enabling accurate large-scale atomistic simulations in diverse scientific domains.",
+        "Experiments": [
+            "Designing an algorithm for the fusion of GP regression with SOAP descriptors within QUIP to handle data from multiple scales.",
+            "Training the fused model on a combination of quantum-mechanical and empirical datasets to optimize interatomic potential parameters.",
+            "Evaluating the accuracy of the proposed model against known benchmarks, including energy, force, and virial predictions for diverse materials systems.",
+            "Testing the transferability of the GP-SOAPFusion model across different length scales using molecular dynamics simulations."
+        ],
+        "Risk Factors and Limitations": [
+            "The technical challenge of designing an effective algorithm that can seamlessly integrate multi-scale data while maintaining computational efficiency.",
+            "Potential difficulty in obtaining a comprehensive dataset that covers the necessary range of atomic interactions at multiple scales.",
+            "Ensuring the accuracy of model predictions across various materials systems, which may require extensive fine-tuning and validation."
+        ]
+    },
+    {
+        "Name": "GP-SOAPAdaptiveV2",
+        "Title": "Enhancing Dynamic Materials Simulations with an Adaptive Gaussian Process Regression Framework and SOAP Descriptors",
+        "Short Hypothesis": "An adaptive Gaussian Process (GP) regression framework that dynamically integrates Smooth Overlap of Atomic Positions (SOAP) descriptors can improve the accuracy and efficiency of interatomic potential models in response to evolving atomic environments during materials simulations.",
+        "Related Work": "Building upon GAP's success with SOAP descriptors, our proposal introduces a novel adaptive GP approach tailored for dynamic simulations. This extends beyond static training by enabling continuous model refinement based on real-time system changes, addressing a gap in current modeling capabilities.",
+        "Abstract": "This research aims to advance materials simulation technology through the development of an Adaptive Gaussian Process Regression (GP-SOAPAdaptiveV2) framework that dynamically adjusts interatomic potentials using SOAP descriptors. The proposed approach will be integrated into the QUIP software, allowing for real-time model updates during molecular dynamics or other atomistic simulations without interrupting ongoing calculations. GP-SOAPAdaptiveV2 is designed to enhance both accuracy and computational efficiency by adapting to the evolving atomic environments inherent in dynamic materials systems. We will validate this adaptive approach through rigorous testing on diverse material datasets, comparing its performance with static GAP models under varying conditions of atomic dynamics. The goal is to provide a more responsive interatomic potential model that can effectively capture complex interactions across different scales and scenarios.",
+        "Experiments": [
+            "Designing an efficient online learning algorithm within QUIP for continuous adaptation of the Gaussian process regression model using SOAP descriptors during simulations.",
+            "Implementing a robust validation mechanism to ensure stability and convergence of the adaptive model in real-time.",
+            "Evaluating the computational efficiency gains and improved accuracy predictions of GP-SOAPAdaptiveV2 against static GAP models under dynamic atomic conditions.",
+            "Assessing the adaptability and transferability of the proposed framework across various materials systems with differing levels of atomic complexity."
+        ],
+        "Risk Factors and Limitations": [
+            "The technical challenge of balancing computational efficiency with continuous model updates to avoid instability during simulations.",
+            "Ensuring the stability and convergence of the adaptive GP-SOAPAdaptiveV2 model, which may require extensive validation and hyperparameter tuning.",
+            "Managing potential overhead associated with real-time adjustments without compromising simulation speed."
+        ]
+    },
+    {
+        "Name": "GP-SOAPQuantumBridge",
+        "Title": "Bridging Quantum Mechanics and Coarse-Grained Simulations with an Integrated Gaussian Process Regression Framework using SOAP Descriptors",
+        "Short Hypothesis": "An integrated GP regression framework, utilizing SOAP descriptors as a 'Quantum Bridge', can accurately translate quantum data into simplified force fields for coarse-grained simulations, enhancing the accuracy and transferability of interatomic potentials across scales.",
+        "Related Work": "While GAP has successfully modeled local energy functionals with SOAP descriptors, there remains an opportunity to bridge the gap between high-fidelity quantum mechanics and computationally efficient coarse-grained models. Our proposal introduces a novel approach that directly translates detailed quantum information into simplified force fields for large-scale simulations, addressing this need.",
+        "Abstract": "This study proposes an innovative 'Quantum Bridge' approach, leveraging Gaussian Process (GP) regression with SOAP descriptors to integrate quantum mechanics and coarse-grained simulations seamlessly. The GP-SOAPQuantumBridge will be implemented within the QUIP software framework, enabling a direct translation of high-fidelity quantum data into simplified force fields for large-scale atomistic simulations. This 'bridge' approach is expected to enhance the accuracy and transferability of interatomic potentials by providing a consistent transition from microscopic quantum interactions to mesoscopic coarse-grained models. We will validate this approach against benchmark datasets, comparing its performance with traditional GAP models in terms of energy, force, and virial predictions across various scales. The goal is to establish an efficient pathway for translating detailed atomic information into computationally tractable models suitable for complex systems at larger length scales.",
+        "Experiments": [
+            "Designing a GP-SOAPQuantumBridge algorithm within QUIP that accurately translates quantum data into coarse-grained force fields with minimal loss of accuracy.",
+            "Training the Quantum Bridge model on quantum-mechanical datasets to optimize its mapping capabilities from fine-grained to coarse-grained representations.",
+            "Evaluating the fidelity and transferability of the GP-SOAPQuantumBridge by comparing its predictions against known benchmarks across various scales, including energy, force, and virial in both quantum and coarse-grained domains.",
+            "Assessing computational efficiency gains of using the Quantum Bridge model for large-scale simulations compared to traditional GAP models."
+        ],
+        "Risk Factors and Limitations": [
+            "The challenge of designing an algorithm that accurately maps detailed atomic information onto simplified force fields without introducing significant errors.",
+            "Ensuring fidelity of predictions across scales, which may require extensive validation and calibration of the Quantum Bridge model.",
+            "Managing computational overhead while maintaining a balance between accuracy and efficiency in large-scale simulations."
+        ]
+    },
+    {
+        "Name": "GP-SOAPSymUnifier",
+        "Title": "Harmonizing Symmetry in Multi-Scale Interatomic Potential Models using Gaussian Process Regression and SOAP Descriptors",
+        "Short Hypothesis": "A unified approach to symmetry within the Gaussian Process (GP) regression framework, utilizing Smooth Overlap of Atomic Positions (SOAP) descriptors, can significantly enhance the accuracy and universality of interatomic potential models across diverse materials systems.",
+        "Related Work": "While GAP has successfully modeled local energy functionals with SOAP descriptors, there is a significant opportunity to harmonize symmetry considerations at multiple scales within GP regression. Our proposal introduces a novel approach that systematically unifies these symmetries to improve model applicability and accuracy.",
+        "Abstract": "This research initiative aims to develop an advanced interatomic potential modeling framework through the unification of multi-scale symmetry considerations in Gaussian Process Regression (GP) using SOAP descriptors. The proposed GP-SOAPSymUnifier will be implemented within the QUIP software, allowing for a consistent treatment of atomic symmetries across various scales during model training. This harmonized approach is expected to enhance the accuracy and transferability of interatomic potentials by capturing complex interactions with a symmetry framework that spans different material systems. We will validate this innovative approach through rigorous testing on diverse datasets, comparing its performance against existing GAP models in terms of energy, force, and virial predictions under varying symmetries. The goal is to provide an improved model that can accurately represent the intricate atomic interactions found in various materials science applications.",
+        "Experiments": [
+            "Developing a GP-SOAPSymUnifier algorithm within QUIP that systematically unifies multi-scale symmetry considerations during Gaussian process regression.",
+            "Training the unified model on diverse datasets with varying symmetries to optimize interatomic potential parameters for universality.",
+            "Evaluating the accuracy and transferability of GP-SOAPSymUnifier against known benchmarks, including energy, force, and virial predictions across a wide range of materials systems exhibiting different levels of symmetry complexity."
+        ],
+        "Risk Factors and Limitations": [
+            "The challenge of developing an algorithm that can effectively unify multi-scale symmetries without increasing computational complexity or compromising model accuracy.",
+            "Ensuring comprehensive coverage of all relevant symmetries during training by assembling diverse datasets spanning various material properties.",
+            "Balancing the trade-off between a unified symmetry approach and the need for specialized models tailored to specific materials systems."
+        ]
+    }
+]

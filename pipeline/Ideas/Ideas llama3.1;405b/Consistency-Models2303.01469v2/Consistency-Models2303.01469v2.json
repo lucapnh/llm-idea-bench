@@ -1,0 +1,84 @@
+[
+    {
+        "Name": "one_step_generative_modeling",
+        "Title": "One-Step Generative Modeling via Characteristic Learning and Probability Flow ODEs",
+        "Short Hypothesis": "Can we develop a one-step generative model that combines the efficiency of sampling in GANs with the stable performance of flow-based models, while avoiding iterative sampling and explicit consistency losses?",
+        "Related Work": "Our work builds upon recent advances in generative modeling, including diffusion models, flow-based models, and characteristic learning. However, our approach differs from existing methods by leveraging probability flow ODEs to describe the transport of probability density along characteristics, allowing for a one-step mapping that effectively pushes the prior distribution towards the target distribution.",
+        "Abstract": "We propose a novel one-step generative model that combines the efficiency of sampling in GANs with the stable performance of flow-based models. Our approach leverages characteristic learning and probability flow ODEs to describe the transport of probability density along characteristics, allowing for a one-step mapping that effectively pushes the prior distribution towards the target distribution. We analyze the errors in velocity matching, Euler discretization, and characteristic fitting to establish a non-asymptotic convergence rate for our model in 2-Wasserstein distance. Our experiments demonstrate high generation quality with just a single evaluation of the neural network.",
+        "Experiments": [
+            "Train the characteristic generator on synthetic and real datasets, including CIFAR-10 and ImageNet 64x64",
+            "Evaluate the performance of the characteristic generator using metrics such as FID and IS",
+            "Compare the results to existing one-step generative models, including GANs and flow-based models"
+        ],
+        "Risk Factors and Limitations": [
+            "The accuracy of the characteristic generator relies on the quality of the estimated velocity field",
+            "The Euler discretization step may introduce errors in the solution of the probability flow ODE",
+            "The characteristic fitting process may not always converge to the optimal solution"
+        ]
+    },
+    {
+        "Name": "temporal_consistency_generative_modeling",
+        "Title": "Temporal Consistency in Generative Modeling with Dynamic Constraints",
+        "Short Hypothesis": "By incorporating temporal consistency constraints into generative models, we can improve the coherence and realism of generated sequences.",
+        "Related Work": "Existing methods for generative modeling have focused on static images or short-term sequences. Recent work has explored the use of dynamic constraints for improving temporal consistency in video generation. However, these approaches often rely on complex architectures or require large amounts of labeled data.",
+        "Abstract": "We propose a novel approach for incorporating temporal consistency constraints into generative models. Our method uses a combination of adversarial training and dynamic programming to ensure that generated sequences are coherent and realistic. We demonstrate the effectiveness of our approach through experiments on video generation and sequence-to-sequence tasks.",
+        "Experiments": [
+            "Evaluate the proposed method on video generation tasks using benchmark datasets such as UCF-101 and HMDB-51.",
+            "Compare the performance of our method with existing approaches for temporal consistency in generative modeling.",
+            "Investigate the effect of dynamic constraints on sequence-to-sequence tasks such as machine translation and text summarization."
+        ],
+        "Risk Factors and Limitations": [
+            "The proposed method requires careful tuning of hyperparameters to balance the trade-off between temporal consistency and diversity.",
+            "The use of dynamic constraints may introduce additional computational overhead, which could be a limitation for large-scale applications."
+        ]
+    },
+    {
+        "Name": "temporal_consistency_diffusion",
+        "Title": "Temporal Consistency in Diffusion Models for Dynamic Scene Generation",
+        "Short Hypothesis": "Can temporal consistency be improved in diffusion models by incorporating a novel loss function that measures the difference between consecutive frames?",
+        "Related Work": "Recent works such as DiST-4D and SmokeSVD have shown promising results in dynamic scene generation using diffusion models. However, these methods prioritize appearance consistency over temporal consistency. Our proposal aims to address this limitation by introducing a new loss function that specifically targets temporal consistency.",
+        "Abstract": "We propose a novel approach to improve temporal consistency in diffusion models for dynamic scene generation. By incorporating a new loss function that measures the difference between consecutive frames, we aim to generate more realistic and coherent sequences of images. Our method builds upon existing works such as DiST-4D and SmokeSVD, but prioritizes temporal consistency over appearance consistency. We evaluate our approach on various datasets and demonstrate its effectiveness in generating high-quality dynamic scenes.",
+        "Experiments": [
+            "Train a diffusion model with the proposed loss function on a dataset of videos",
+            "Compare the results with existing methods such as DiST-4D and SmokeSVD",
+            "Evaluate the temporal consistency of the generated sequences using metrics such as PSNR and SSIM"
+        ],
+        "Risk Factors and Limitations": [
+            "The proposed loss function may not be effective in all scenarios",
+            "Training a diffusion model with the new loss function may require significant computational resources",
+            "Evaluating temporal consistency is challenging due to the lack of standardized metrics"
+        ]
+    },
+    {
+        "Name": "probabilistic_circuits_neural_odes",
+        "Title": "Probabilistic Circuits meet Neural ODEs: A Novel Framework for Generative Modeling",
+        "Short Hypothesis": "Can we leverage probabilistic circuits and neural ordinary differential equations to create a novel generative model that combines the strengths of both paradigms?",
+        "Related Work": "Our work builds upon recent advances in probabilistic circuits and neural ODEs. However, our approach differs from existing methods by integrating these two frameworks to create a more expressive and flexible generative model.",
+        "Abstract": "We propose a novel framework for generative modeling that combines the strengths of probabilistic circuits and neural ordinary differential equations. Our approach leverages the expressiveness of probabilistic circuits to model complex distributions, while utilizing neural ODEs to describe the dynamics of the generative process. We demonstrate the effectiveness of our framework through experiments on synthetic and real-world datasets.",
+        "Experiments": [
+            "Train the proposed model on synthetic datasets such as MNIST and CIFAR-10",
+            "Evaluate the performance of the proposed model using metrics such as log-likelihood and FID",
+            "Compare the results to existing generative models, including VAEs and GANs"
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of probabilistic circuits and neural ODEs may require careful tuning of hyperparameters",
+            "The training process may be computationally expensive due to the use of neural ODEs"
+        ]
+    },
+    {
+        "Name": "dynamic_probabilistic_circuits",
+        "Title": "Dynamic Probabilistic Circuits for Image Generation with Spatiotemporal Constraints",
+        "Short Hypothesis": "Can we develop a novel generative model that combines dynamic probabilistic circuits with spatiotemporal constraints to generate coherent and realistic image sequences?",
+        "Related Work": "Our work builds upon recent advances in probabilistic circuits and generative models. However, our approach differs from existing methods by integrating dynamic probabilistic circuits with spatiotemporal constraints to model complex distributions and generate coherent image sequences.",
+        "Abstract": "We propose a novel framework for generating coherent and realistic image sequences using dynamic probabilistic circuits with spatiotemporal constraints. Our approach leverages the expressiveness of probabilistic circuits to model complex distributions, while utilizing dynamic constraints to ensure coherence and realism in the generated sequences. We demonstrate the effectiveness of our framework through experiments on benchmark datasets.",
+        "Experiments": [
+            "Train the proposed model on benchmark datasets such as UCF-101 and HMDB-51",
+            "Evaluate the performance of the proposed model using metrics such as PSNR and SSIM",
+            "Compare the results to existing generative models, including VAEs and GANs"
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of dynamic probabilistic circuits with spatiotemporal constraints may require careful tuning of hyperparameters",
+            "The training process may be computationally expensive due to the use of dynamic constraints"
+        ]
+    }
+]

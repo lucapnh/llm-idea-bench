@@ -1,0 +1,58 @@
+[
+    {
+        "Name": "llm_building_regulations",
+        "Title": "Evaluating Large Language Models for Automating Building Regulations Compliance Checking",
+        "Short Hypothesis": "Large language models can effectively translate building regulations into a computable representation using few-shot learning and chain-of-thought reasoning, improving automated compliance checking in the construction industry.",
+        "Related Work": "The use of large language models for automating building regulations compliance checking is a novel application. However, related work has explored the use of natural language processing techniques for compliance checking and the potential of LLMs for legal text analysis.",
+        "Abstract": "This proposal investigates the feasibility of using large language models to automate the conversion of building regulations into a semantic and computable representation. We evaluate the performance of LLMs in translating building regulations into LegalRuleML using few-shot learning and chain-of-thought reasoning. The results have significant implications for improving automated compliance checking in the construction industry.",
+        "Experiments": [
+            "Evaluate the performance of LLMs in translating building regulations into LegalRuleML using few-shot learning",
+            "Investigate the effectiveness of chain-of-thought reasoning and self-consistency strategies in improving translation accuracy",
+            "Explore the existence of expert domain knowledge in the model and its impact on translation quality"
+        ],
+        "Risk Factors and Limitations": [
+            "The complexity and nuances of building regulations may pose challenges for LLMs to accurately translate into a computable representation",
+            "The limited availability of training data and the need for careful contextualization may affect the performance of LLMs in this task"
+        ]
+    },
+    {
+        "Name": "adversarial_cot",
+        "Title": "Adversarial Attacks on Chain-of-Thought Reasoning in Language Models",
+        "Short Hypothesis": "Chain-of-thought reasoning in language models can be vulnerable to adversarial attacks, compromising their performance and reliability.",
+        "Related Work": "While there is extensive research on adversarial attacks in NLP, the specific vulnerability of chain-of-thought reasoning has not been thoroughly explored. This proposal aims to fill this gap by investigating the effectiveness of adversarial attacks on CoT reasoning.",
+        "Abstract": "This proposal explores the vulnerability of chain-of-thought (CoT) reasoning in language models to adversarial attacks. We will investigate the feasibility of crafting adversarial examples that compromise the performance and reliability of CoT reasoning, and examine the robustness of various decoding strategies against such attacks.",
+        "Experiments": [
+            "Investigate the effectiveness of adversarial attacks on CoT reasoning using gradient-based methods",
+            "Examine the robustness of self-consistency and other decoding strategies against adversarial attacks",
+            "Analyze the impact of model size and complexity on vulnerability to adversarial attacks"
+        ],
+        "Risk Factors and Limitations": [
+            "The difficulty in crafting effective adversarial examples for CoT reasoning may limit the scope of the study",
+            "The potential dependence on specific model architectures or training data may affect the generalizability of the results"
+        ]
+    },
+    {
+        "Name": "neural_symbolic_integration_for_reasoning",
+        "Title": "Neural-Symbolic Integration for Reasoning in Language Models: A Study on Complex Question Answering",
+        "Short Hypothesis": "We hypothesize that neural-symbolic integration can improve the performance of language models on complex question answering tasks by enabling more effective reasoning and inference.",
+        "Related Work": "Recent studies have explored the application of neural-symbolic integration in natural language processing, including question answering. However, most existing approaches focus on simple question answering tasks or rely on pre-trained language models without explicit symbolic reasoning components. Our proposal distinguishes itself by investigating the effectiveness of neural-symbolic integration for complex question answering and exploring the potential benefits of integrating symbolic reasoning with large language models.",
+        "Abstract": "We propose a novel approach to complex question answering that integrates neural and symbolic methods to enable more effective reasoning and inference. Our approach leverages the strengths of both paradigms, combining the pattern recognition capabilities of neural networks with the logical reasoning abilities of symbolic systems. We evaluate our approach on a range of complex question answering tasks, demonstrating significant improvements over state-of-the-art language models.",
+        "Experiments": [
+            "Experiment 1: Evaluate the performance of our neural-symbolic integration approach on a benchmark dataset for complex question answering",
+            "Experiment 2: Investigate the effect of varying the level of symbolic reasoning on the performance of our approach",
+            "Experiment 3: Compare the performance of our approach with state-of-the-art language models on a range of complex question answering tasks"
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of neural and symbolic methods may introduce additional complexity and computational overhead",
+            "The effectiveness of our approach may depend on the quality and relevance of the symbolic knowledge used in the reasoning process"
+        ]
+    },
+    {
+        "Name": "concept_based_llm_explainability",
+        "Title": "Explaining Large Language Model Predictions through Concept-Based Analysis",
+        "Short Hypothesis": "Can concept-based analysis provide insights into the decision-making process of large language models and improve their explainability?",
+        "Related Work": "While there are existing methods for explaining LLM predictions, such as SHAP and LIME, they are often complex and difficult to interpret. Concept-based analysis has been shown to be effective in explaining neural network decisions, but its application to LLMs is still unexplored.",
+        "Methodology": "We propose a novel approach that leverages concept-based analysis to explain LLM predictions. Our method involves identifying high-level concepts in the input data and analyzing how they relate to the model's predictions. We will evaluate our approach on various NLP tasks, including text classification and language translation.",
+        "Expected Outcomes": "Our expected outcomes include (1) improved understanding of LLM decision-making processes, (2) development of more interpretable and explainable LLMs, and (3) enhanced trust in LLM-based systems."
+    }
+]

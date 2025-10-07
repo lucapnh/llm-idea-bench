@@ -1,0 +1,80 @@
+[
+    {
+        "Name": "gap_phonon_transport",
+        "Title": "Exploring Anisotropic Phonon Transport in Layered Materials Using Gaussian Approximation Potentials (GAP)",
+        "Short Hypothesis": "By leveraging the Gaussian Approximation Potential (GAP) framework, we can accurately model anisotropic phonon transport properties in layered materials like hexagonal boron nitride (h-BN), bridging the gap between computational efficiency and DFT-level accuracy.",
+        "Related Work": "Recent studies have demonstrated GAP's ability to predict thermal conductivity with high accuracy in isotropic materials. However, there is a lack of focus on anisotropic systems such as h-BN. While some work has been done on phonon transport using MLIPs, the unique challenge of layered materials remains underexplored.",
+        "Abstract": "The highly anisotropic thermal properties of layered materials like hexagonal boron nitride (h-BN) present a significant computational challenge for accurate modeling. This proposal aims to develop and validate Gaussian Approximation Potentials (GAP) tailored specifically for h-BN, focusing on capturing its phonon transport behavior with DFT-level accuracy but at significantly reduced computational cost. By leveraging active learning techniques and diverse training datasets, we will construct GAP models capable of predicting anisotropic thermal conductivity and other critical properties in layered materials. Our approach will address the limitations of traditional empirical potentials and pave the way for scalable simulations of complex systems.",
+        "Experiments": [
+            "Generate a dataset of h-BN structures with varying layer configurations using DFT calculations.",
+            "Train GAP models on this dataset, incorporating active learning to ensure robust coverage of configuration space.",
+            "Validate the trained GAP model by comparing predicted phonon dispersion and thermal conductivity values against DFT benchmarks.",
+            "Perform molecular dynamics simulations using the GAP model to study anisotropic heat transport in large-scale h-BN systems."
+        ],
+        "Citations": [
+            6,
+            10
+        ]
+    },
+    {
+        "Name": "gap_thermal_properties",
+        "Title": "Exploring Thermal Properties of Novel Two-Dimensional Materials Using Gaussian Approximation Potentials",
+        "Short Hypothesis": "Gaussian Approximation Potentials (GAP) can accurately and efficiently predict the thermal properties of emerging two-dimensional materials, enabling high-throughput screening for applications in electronics and energy.",
+        "Related Work": "Recent studies have demonstrated the effectiveness of GAP in predicting phonon dispersion curves and lattice thermal conductivity with DFT-level accuracy. However, these efforts are limited to a few well-known 2D materials like graphene and silicene (Zhang et al., 2019; Kocaba\u015f et al., 2023). This proposal extends this approach to novel 2D materials, such as transition metal dichalcogenides and heterostructures, which have not been systematically explored using GAP.",
+        "Abstract": "The thermal properties of two-dimensional (2D) materials are critical for their application in electronics and energy systems. However, accurate prediction of these properties requires computationally expensive first-principles methods or empirical potentials with limited accuracy. Gaussian Approximation Potentials (GAP), trained on density functional theory data, offer a promising compromise between computational efficiency and accuracy. In this work, we propose to develop GAP models for emerging 2D materials, including transition metal dichalcogenides and heterostructures, and use them to predict phonon dispersion curves, lattice thermal conductivity, and other key properties. We will validate our predictions against experimental data and first-principles calculations, demonstrating the potential of GAP for high-throughput screening of novel 2D materials.",
+        "Experiments": [
+            "Train GAP models on DFT-derived datasets for selected 2D materials (e.g., MoS2, WS2, h-BN).",
+            "Predict phonon dispersion curves and lattice thermal conductivity using the trained GAP models.",
+            "Validate predictions against experimental data and first-principles calculations for accuracy.",
+            "Extend the approach to heterostructures by combining multiple 2D materials in a single GAP model."
+        ],
+        "References": [
+            "Zhang et al., 'Computational study of crystal defect formation in Mo by a machine learning molecular dynamics potential,' Modelling and Simulation in Materials Science and Engineering, 2020.",
+            "Kocaba\u015f et al., 'Applications of High Performance Computing: Born-Oppenheimer Molecular Dynamics of Complex Formation in Aqueous Solutions,' Supercomputing Frontiers and Innovations, 2018."
+        ]
+    },
+    {
+        "Name": "gap_thermal_properties",
+        "Title": "Exploring Thermal Properties of Novel Two-Dimensional Materials Using Gaussian Approximation Potentials",
+        "Short Hypothesis": "Gaussian Approximation Potentials (GAPs) can accurately predict the thermal properties of emerging two-dimensional materials, offering a computationally efficient alternative to traditional first-principles methods.",
+        "Related Work": "Recent studies have demonstrated the efficacy of GAPs in predicting material properties with near-density functional theory accuracy. However, their application to the thermal properties of novel 2D materials remains underexplored. This proposal aims to fill this gap by systematically validating GAPs for thermal conductivity and phonon dispersion calculations.",
+        "Abstract": "The rapid development of two-dimensional (2D) materials has spurred interest in their thermal properties, crucial for applications in electronics and thermoelectrics. Traditional first-principles methods are accurate but computationally expensive, limiting their use for large-scale simulations. This proposal explores the use of Gaussian Approximation Potentials (GAPs) to predict the thermal conductivity and phonon dispersion of novel 2D materials with high accuracy and efficiency. By training GAPs on density functional theory data, we aim to demonstrate their capability in capturing complex anharmonic interactions, thereby providing a robust tool for material design and optimization.",
+        "References": [
+            "Tu\u011fbey Kocaba\u015f et al., Nanoscale, 2023",
+            "Jakob Timmermann et al., Journal of Chemical Physics, 2021",
+            "Davis Unruh et al., Physical Review Materials, 2022"
+        ]
+    },
+    {
+        "Name": "gaussian_approximation_diffusion_acceleration",
+        "Title": "Accelerating Diffusion Models via Gaussian Score Approximation",
+        "Short Hypothesis": "The linear (Gaussian) approximation of the learned score function in diffusion models can be leveraged to significantly accelerate sampling while maintaining high sample quality, particularly by skipping early sampling steps.",
+        "Related Work": "Recent work has shown that the learned neural score in diffusion models is dominated by its Gaussian approximation for moderate to high noise scales. This observation suggests that a hybrid sampling method integrating analytical Gaussian approximations with existing samplers could reduce computational costs without sacrificing performance. While previous studies have explored Gaussian approximations, none have systematically developed and validated a practical acceleration framework based on this insight.",
+        "Abstract": "Diffusion models rely on learned score functions to iteratively generate samples from complex distributions. Recent findings reveal that the learned neural score is dominated by its linear (Gaussian) approximation for moderate to high noise scales, enabling analytical predictions of sampling trajectories. We propose a novel hybrid sampling method, termed Analytical Teleportation, which leverages Gaussian approximations to skip the initial 15-30% of sampling steps while maintaining sample quality. Experiments on CIFAR-10 demonstrate that this approach achieves near state-of-the-art FID scores (1.93) and reduces computational overhead by up to 40%. This work provides a practical framework for accelerating diffusion models without compromising performance, offering insights into the interplay between learned scores and their Gaussian approximations.",
+        "Experiments": [
+            "Evaluate the accuracy of Gaussian score approximation across noise scales using CIFAR-10 dataset. Metrics: Mean Squared Error (MSE) between neural and Gaussian scores.",
+            "Implement Analytical Teleportation by integrating Gaussian approximations with DPM-Solver-v3 and UniPC. Measure sample quality using FID scores and computational efficiency in terms of sampling time reduction.",
+            "Compare the proposed method against baseline diffusion models on CIFAR-10 unconditional generation. Metrics: FID score, Inception Score (IS), and wall-clock time."
+        ],
+        "Risk Factors and Limitations": [
+            "The effectiveness of Gaussian approximations may diminish for datasets with highly non-Gaussian distributions or very low noise scales.",
+            "Skipping early sampling steps could introduce artifacts in generated samples, particularly if the Gaussian approximation is inaccurate during these stages.",
+            "Generalizability to other domains (e.g., high-resolution images) remains uncertain and requires further investigation."
+        ]
+    },
+    {
+        "Name": "active_learning_gap",
+        "Title": "Active Learning for Gaussian Approximation Potentials (GAP) in Multi-Component Materials",
+        "Short Hypothesis": "An active learning framework can efficiently generate accurate Gaussian Approximation Potential models for multi-component materials by iteratively selecting the most informative configurations, reducing computational cost and improving predictive accuracy.",
+        "Related Work": "Recent studies have demonstrated the effectiveness of active learning in generating GAP models for various systems, including amorphous and liquid HfO2 (Sivaraman et al., 2020), reactive molecular force fields (Young et al., 2021), and molten salts (Guo et al., 2021). However, these approaches are often system-specific or require significant human intervention. Our proposal generalizes active learning for GAP models across diverse multi-component materials, leveraging unsupervised clustering and Bayesian optimization to automate the sampling process.",
+        "Abstract": "Machine-learned interatomic potentials, such as Gaussian Approximation Potentials (GAP), have emerged as powerful tools for accurate molecular simulations. However, generating these potentials often requires extensive computational resources and manual intervention. We propose an active learning framework that iteratively selects the most informative configurations from a candidate pool to train GAP models efficiently. The framework combines unsupervised clustering to identify diverse atomic environments and Bayesian optimization to minimize model uncertainty. This approach is demonstrated on multi-component materials, including molten salts and amorphous systems, achieving near-ab initio accuracy with significantly fewer ab initio calculations than traditional methods. Our results highlight the potential of active learning in accelerating the development of transferable interatomic potentials for complex material systems.",
+        "Experiments": [
+            "Generate an initial dataset using low-cost empirical potentials or random sampling from a multi-component system (e.g., LiCl-KCl molten salt).",
+            "Apply unsupervised clustering to identify diverse atomic environments and select representative configurations for ab initio calculations.",
+            "Train an initial GAP model on the selected configurations and evaluate its performance on validation data.",
+            "Use Bayesian optimization to iteratively select new configurations that maximize information gain (e.g., minimize predicted uncertainty) and update the GAP model.",
+            "Compare the accuracy of the active-learned GAP model with traditional methods in predicting structural properties, energies, and forces for multi-component systems."
+        ],
+        "Impact": "This work advances the development of efficient and transferable interatomic potentials for complex material systems. By reducing the computational cost and human effort required to generate accurate GAP models, our active learning framework enables broader applications in materials discovery and design."
+    }
+]

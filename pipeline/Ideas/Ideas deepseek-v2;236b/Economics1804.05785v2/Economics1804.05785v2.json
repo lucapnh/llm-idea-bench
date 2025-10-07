@@ -1,0 +1,40 @@
+[
+    {
+        "Name": "HeuristicDynamicTreatmentEstimation",
+        "Title": "Enhancing Interpretability and Robustness in Dynamic Treatment Effect Estimation through Heuristic Approaches",
+        "Short Hypothesis": "By systematically developing heuristics that reflect cohort-specific treatment effects, we can construct a more interpretable and potentially robust framework for estimating dynamic treatment effects (DTEs) in staggered adoption studies.",
+        "Related Work": "Recognizing the limitations of traditional methods like TWFE in capturing heterogeneous treatment effects, our proposal diverges from Sun and Abraham's insights by introducing heuristics as an alternative approach. This aligns with recent efforts to improve DTE estimation through transparent cohort-share weights and group-time ATT frameworks.",
+        "Abstract": "This study introduces a heuristic-based methodology for estimating Dynamic Treatment Effects (DTEs) in staggered adoption studies, where treatment effects are known to vary across cohorts. We propose a systematic approach to develop heuristics that encapsulate the unique patterns of cohort-specific effects, thereby offering an interpretable alternative to complex models like TWFE. Our framework leverages these heuristics to guide the estimation process towards more transparent and robust results, avoiding contamination from extraneous periods or cohorts. Through rigorous experimentation with simulated data, we will validate the robustness of our heuristic approach against traditional methods. We further demonstrate its applicability in real-world healthcare datasets, showcasing how it can provide clearer insights into treatment dynamics without sacrificing interpretability.",
+        "Experiments": [
+            "Systematically develop heuristics based on cohort characteristics and treatment effects to guide estimation.",
+            "Integrate these heuristics within a transparent statistical framework for DTE estimation.",
+            "Conduct simulations to compare the performance of our heuristic approach with TWFE using benchmark datasets.",
+            "Apply the refined heuristic methodology to healthcare datasets with known staggered adoption patterns.",
+            "Perform sensitivity analysis on the impact of different heuristic rules on DTE estimates."
+        ],
+        "Risk Factors and Limitations": [
+            "The heuristics must be carefully designed to avoid introducing subjective bias into the estimation process.",
+            "While heuristics can enhance interpretability, they may not always provide the same precision as more complex statistical models.",
+            "Heuristic-based estimations require a thorough validation against benchmark datasets to ensure their reliability."
+        ]
+    },
+    {
+        "Name": "AdaptiveCohortDTEFramework",
+        "Title": "Advancing Dynamic Treatment Effect Estimation with an Adaptive Cohort-Specific Modeling Framework",
+        "Short Hypothesis": "An adaptive modeling framework that dynamically tailors its parameters to the distinct characteristics of each treatment cohort can provide more accurate and interpretable dynamic treatment effects (DTEs) in staggered adoption studies.",
+        "Related Work": "Our proposal builds on recent critiques of TWFE models, recognizing their limitations in capturing heterogeneous DTEs across cohorts. We advance a tailored approach that aligns with emerging group-time ATT frameworks but innovates by dynamically adapting to the unique cohort context for enhanced precision and interpretability.",
+        "Abstract": "This research initiative introduces an adaptive modeling framework designed to estimate dynamic treatment effects (DTEs) in staggered adoption studies where cohorts exhibit distinct treatment responses. By dynamically adjusting model parameters to each cohort's specific attributes, our approach offers a tailored analysis that avoids the contamination of extraneous periods or cross-cohort influences inherent in TWFE models. Through rigorous validation using simulated data and real-world healthcare applications, we demonstrate the superior accuracy and interpretability of our adaptive framework compared to traditional methods. This research not only advances methodological understanding but also provides practitioners with a robust tool for uncovering nuanced treatment dynamics while maintaining analytic clarity.",
+        "Experiments": [
+            "Develop an adaptive modeling framework that dynamically tailors parameters based on cohort-specific attributes and treatment timing.",
+            "Validate the performance of our framework against TWFE using controlled simulations to benchmark DTE estimation accuracy.",
+            "Apply the refined adaptive methodology to healthcare datasets with staggered adoption patterns for empirical validation.",
+            "Assess interpretability through a comparative analysis with TWFE results, focusing on ease of understanding and communication.",
+            "Investigate scalability by testing the framework's performance on larger datasets with varied treatment cohorts."
+        ],
+        "Risk Factors and Limitations": [
+            "Accurate cohort characterization is essential but may be challenging if data quality or quantity is limited.",
+            "Dynamic parameter adjustments require careful calibration to avoid overfitting and ensure model robustness.",
+            "While offering improved accuracy, the adaptive approach may demand more advanced statistical skills for implementation."
+        ]
+    }
+]

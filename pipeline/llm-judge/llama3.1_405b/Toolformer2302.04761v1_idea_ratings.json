@@ -1,0 +1,172 @@
+{
+  "seed_summaries": [
+    {
+      "topic_id": "topic_01",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools&#x20;",
+      "keywords": [
+        "self-supervised tool use",
+        "API-augmented language modeling",
+        "zero-shot generalization",
+        "retrieval & QA",
+        "programmatic reasoning",
+        "multilingual translation"
+      ]
+    }
+  ],
+  "weights_used": {
+    "originality_novelty": 0.2,
+    "relevance_alignment": 0.15,
+    "feasibility_resources": 0.15,
+    "testability_falsifiability": 0.1,
+    "methodological_rigor": 0.1,
+    "literature_grounding": 0.1,
+    "potential_impact": 0.1,
+    "clarity_specificity": 0.05,
+    "safety_ethics_risk": 0.05
+  },
+  "ideas": [
+    {
+      "topic_id": "topic_01",
+      "idea_id": "self_supervised_api_usage",
+      "title": "Self-Supervised Learning of API Usage in Language Models",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 5,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 4,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 4
+      },
+      "overall_weighted_score": 4.4,
+      "verdict": "accept",
+      "justification_evidence": [
+        "Language models can learn to use APIs effectively through self-supervised learning, improving their performance on a range of tasks without requiring explicit supervision or fine-t",
+        "We propose a self-supervised approach to learning API usage in language models. Our method uses a cycle-consistency loss to refine the model's understanding of API calls and their ",
+        "Experiments: Train a language model on a dataset with API calls and evaluate its performance on a range of tasks; Compare the performance of the self-supervised approach to a super",
+        "Related Work: Recent work has explored the use of cycle-consistency losses for refining prompts in multimodal foundation models (Diesendruck et al., 2024), and reinforced model rou"
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "embodied_language_learning",
+      "title": "Embodied Language Learning through Interactive Simulation",
+      "scores": {
+        "originality_novelty": 2,
+        "relevance_alignment": 3,
+        "feasibility_resources": 2,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 3,
+        "potential_impact": 3,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 3
+      },
+      "overall_weighted_score": 3.15,
+      "verdict": "reject",
+      "justification_evidence": [
+        "Can embodied language learning be achieved through interactive simulation, and can it improve language understanding and generation capabilities?",
+        "This proposal presents an innovative approach to language learning, leveraging interactive simulation to create an immersive environment that fosters embodied cognition. By integra",
+        "Experiments: Develop an interactive simulation platform for language learning; Integrate language models with the simulation platform; Evaluate the effectiveness of embodied langua",
+        "Related Work: While there have been studies on embodied cognition and language learning, none have explored the use of interactive simulation as a means to achieve embodied languag"
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "meta_api_usage",
+      "title": "Meta-Learning for Adaptive API Usage in Language Models",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 4,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 4
+      },
+      "overall_weighted_score": 4.15,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Language models can learn to adaptively select and use APIs through meta-learning, improving their performance on a range of tasks without requiring explicit supervision or fine-tu",
+        "We propose a meta-learning approach to enable language models to adaptively select and use APIs. Our method uses a meta-learning algorithm to train the model to learn how to select",
+        "Experiments: Train a language model using meta-learning to adaptively select and use APIs; Evaluate the performance of the meta-learning approach on a range of tasks; Compare the p",
+        "Related Work: While there have been studies on meta-learning for language models, none have explored the application of meta-learning to adaptive API usage. This proposal aims to f"
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "llm_mathematical_discovery",
+      "title": "Unlocking Mathematical Discovery with Large Language Models",
+      "scores": {
+        "originality_novelty": 3,
+        "relevance_alignment": 3,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 4,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 4
+      },
+      "overall_weighted_score": 3.7,
+      "verdict": "revise",
+      "justification_evidence": [
+        "We hypothesize that large language models (LLMs) can be fine-tuned to aid in mathematical discovery by generating novel and valid mathematical theorems, proofs, and conjectures.",
+        "We propose a research project that leverages large language models (LLMs) to facilitate mathematical discovery. By fine-tuning LLMs on a dataset of mathematical texts and theorems,",
+        "Experiments: Fine-tune a large language model on a dataset of mathematical texts and theorems to generate novel mathematical concepts.; Develop a framework that integrates the fine",
+        "Related Work: Recent studies have explored the application of LLMs in automated theorem proving and mathematical reasoning. However, these efforts have focused on solving existing "
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "cognitive_bias_for_agi",
+      "title": "Cognitive Bias for Artificial General Intelligence: A Neuro-Symbolic Approach",
+      "scores": {
+        "originality_novelty": 2,
+        "relevance_alignment": 3,
+        "feasibility_resources": 2,
+        "testability_falsifiability": 3,
+        "methodological_rigor": 4,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 4,
+        "safety_ethics_risk": 3
+      },
+      "overall_weighted_score": 2.9,
+      "verdict": "reject",
+      "justification_evidence": [
+        "Can cognitive biases be used to enhance the performance of artificial general intelligence systems by providing a more human-like reasoning mechanism?",
+        "We propose a neuro-symbolic approach to artificial general intelligence that incorporates cognitive biases as a fundamental component of the reasoning mechanism. Our framework, CB-",
+        "Related Work: Existing AGI frameworks, such as CoALA and OGI, focus on modular architectures and multi-modal integration. However, they do not explicitly incorporate cognitive bias"
+      ],
+      "red_flags": [
+        "Ambitious AGI/agent scope may be infeasible",
+        "Sensitive domains require strong safety protocols"
+      ]
+    }
+  ],
+  "ranking_by_overall": [
+    "topic_01/self_supervised_api_usage",
+    "topic_01/meta_api_usage",
+    "topic_01/llm_mathematical_discovery",
+    "topic_01/embodied_language_learning",
+    "topic_01/cognitive_bias_for_agi"
+  ],
+  "ranking_by_topic": {
+    "topic_01": [
+      "self_supervised_api_usage",
+      "meta_api_usage",
+      "llm_mathematical_discovery",
+      "embodied_language_learning",
+      "cognitive_bias_for_agi"
+    ]
+  }
+}

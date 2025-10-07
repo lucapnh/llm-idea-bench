@@ -1,0 +1,67 @@
+[
+    {
+        "Name": "gnn_explainability",
+        "Title": "Unveiling the Black Box: A Novel Approach to Graph Neural Network Explainability",
+        "Short Hypothesis": "Can we develop a model-agnostic, efficient, and data-driven framework for extracting interpretable logic rules from Graph Neural Networks (GNNs) without relying on predefined concepts?",
+        "Related Work": "Existing GNN explainability methods are limited by their reliance on predefined concepts, instance-specific explanations, or strict prerequisites. Our approach addresses these limitations by proposing a novel framework that extracts interpretable logic rules from GNNs in a model-agnostic and data-driven manner.",
+        "Abstract": "Graph Neural Networks (GNNs) have achieved remarkable success in various domains, but their black-box nature hinders understanding of their decision-making processes. We propose LOGICXGNN, a novel framework for extracting interpretable logic rules from GNNs without relying on predefined concepts. Our approach is model-agnostic, efficient, and data-driven, facilitating knowledge discovery and offering significant potential for applications such as drug design.",
+        "Experiments": [
+            "Evaluate the performance of LOGICXGNN on real-world datasets (e.g., MUTAG, BBBP) in terms of accuracy, interpretability, and efficiency.",
+            "Compare the extracted logic rules with existing explainability methods (e.g., GCFExplainer, SES) to demonstrate the superiority of our approach.",
+            "Investigate the potential applications of LOGICXGNN in domains such as drug discovery and recommendation systems."
+        ],
+        "Risk Factors and Limitations": [
+            "The complexity of GNN architectures may pose challenges for extracting interpretable logic rules.",
+            "The quality of the extracted rules may depend on the dataset and task at hand.",
+            "LOGICXGNN may require significant computational resources for large-scale datasets."
+        ]
+    },
+    {
+        "Name": "multimodal_knowledge_graph_embedding",
+        "Title": "Multimodal Knowledge Graph Embedding with Graph Neural Networks",
+        "Short Hypothesis": "Using graph neural networks to learn multimodal knowledge graph embeddings can improve the accuracy of link prediction and recommendation tasks.",
+        "Related Work": "Existing methods for knowledge graph representation learning primarily focus on structured information and overlook the potential benefits of incorporating multimodal information. Recent studies have proposed using graph neural networks for multimodal single-cell data integration, but not for knowledge graph embedding.",
+        "Abstract": "We propose a novel approach to learn multimodal knowledge graph embeddings using graph neural networks. Our method combines structural information from the knowledge graph with visual and textual information from images and text descriptions. We evaluate our approach on several benchmark datasets and demonstrate its superiority over existing state-of-the-art methods.",
+        "Experiments": [
+            "Evaluate the proposed method on the WN18-IMG and FB15K-IMG datasets",
+            "Compare the performance of our method with existing state-of-the-art methods such as TransE, ConvE, and R-GCN",
+            "Analyze the effect of incorporating multimodal information on link prediction accuracy"
+        ],
+        "Risk Factors and Limitations": [
+            "The quality of the multimodal data may affect the performance of our method",
+            "The scalability of our approach to large knowledge graphs needs to be evaluated"
+        ]
+    },
+    {
+        "Name": "neurosymbolic_graph_reasoning",
+        "Title": "Neuro-Symbolic Graph Reasoning with Probabilistic Inductive Logic Programming",
+        "Short Hypothesis": "Can we develop a neuro-symbolic graph reasoning approach that integrates probabilistic inductive logic programming to handle uncertain and noisy data?",
+        "Related Work": "Existing approaches such as Graph Neural Networks (GNNs) and Neuro-Symbolic Reasoning have been proposed, but they do not address the issue of handling uncertain and noisy data. Our approach builds upon the work of Hillerstr\u00f6m et al. on probabilistic inductive logic programming and integrates it with neuro-symbolic graph reasoning.",
+        "Abstract": "We propose a novel approach to neuro-symbolic graph reasoning that integrates probabilistic inductive logic programming. Our approach uses a combination of neurosymbolic inference, a continuous criterion for hypothesis selection (binary cross-entropy), and a relaxation of the hypothesis constrainer (NoisyCombo) to handle uncertain and noisy data. We demonstrate the effectiveness of our approach on several benchmark datasets.",
+        "Experiments": [
+            "Experiment 1: Evaluate the performance of our approach on a graph classification task with noisy labels.",
+            "Experiment 2: Compare the performance of our approach with existing GNN-based approaches on a graph regression task with uncertain data."
+        ],
+        "Risk Factors and Limitations": [
+            "The scalability of our approach to large graphs and datasets is unknown.",
+            "The choice of hyperparameters for the probabilistic inductive logic programming component may require careful tuning."
+        ]
+    },
+    {
+        "Name": "gnn_robustness_explainability",
+        "Title": "Exploring the Interplay between Adversarial Robustness and Explainability in Graph Neural Networks",
+        "Short Hypothesis": "We hypothesize that there is a trade-off between adversarial robustness and explainability in graph neural networks (GNNs), and that understanding this interplay can lead to more trustworthy GNNs.",
+        "Related Work": "Recent works have explored the vulnerability of GNNs to adversarial attacks and proposed methods to improve their robustness. However, the relationship between adversarial robustness and explainability in GNNs remains underexplored. Our work aims to bridge this gap by investigating how explainability methods can be used to improve the robustness of GNNs.",
+        "Abstract": "Graph neural networks (GNNs) have shown promise in various applications, but their vulnerability to adversarial attacks raises concerns about their trustworthiness. In this work, we explore the interplay between adversarial robustness and explainability in GNNs. We propose a framework that uses explainability methods to identify vulnerable nodes and edges in the graph, and then leverages this information to improve the robustness of the GNN. Our experiments on several benchmark datasets demonstrate that our approach can improve the robustness of GNNs against various types of attacks.",
+        "Experiments": [
+            "Experiment 1: Evaluate the effectiveness of explainability methods in identifying vulnerable nodes and edges in the graph",
+            "Experiment 2: Investigate how the identified vulnerabilities can be used to improve the robustness of GNNs",
+            "Experiment 3: Compare the performance of our approach with state-of-the-art methods for improving the robustness of GNNs"
+        ],
+        "Risk Factors and Limitations": [
+            "The effectiveness of our approach may depend on the quality of the explainability methods used",
+            "Our approach may not be applicable to all types of GNNs or datasets",
+            "There may be a trade-off between adversarial robustness and model performance"
+        ]
+    }
+]

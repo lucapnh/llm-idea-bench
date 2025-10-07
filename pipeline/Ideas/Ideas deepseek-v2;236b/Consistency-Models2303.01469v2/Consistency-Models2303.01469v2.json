@@ -1,0 +1,100 @@
+[
+    {
+        "Name": "UniCoGen",
+        "Title": "Unifying Consistency Generation for Efficient Multi-Modal Synthesis",
+        "Short Hypothesis": "A unified consistency model that leverages shared latent spaces across modalities can enable efficient one-step generation and zero-shot editing, outperforming existing multi-modal fusion methods.",
+        "Related Work": "Recent advances in generative modeling have explored the unification of different domains within a single framework (e.g., UniHDA, M\u00b3amba). However, these approaches often focus on specific tasks or maintain separate pathways for each modality, lacking a fully integrated approach that enforces consistency across all modalities while enabling one-step generation and zero-shot editing.",
+        "Abstract": "This proposal introduces UniCoGen, an innovative framework that unifies consistency models to enable efficient multi-modal synthesis. By training a single network with shared latent spaces for diverse modalities such as images, audio, and text, we aim to achieve high-quality one-step generation across domains. Our approach will employ a novel distillation process that leverages pre-trained diffusion models while enforcing cross-modal consistency through a unified embedding space. We hypothesize that UniCoGen will outperform existing multi-modal fusion methods by providing superior synthesis quality with the added benefit of zero-shot editing capabilities. To validate our claims, we will conduct experiments on benchmark datasets across modalities to evaluate generation quality using appropriate metrics (e.g., FID for images, SNR for audio, perplexity for text). Additionally, we will demonstrate UniCoGen's versatility through tasks such as style transfer between different domains and zero-shot editing of synthesized content.",
+        "Experiments": [
+            "Train UniCoGen on a diverse dataset containing multiple modalities (e.g., CIFAR-10, LibriSpeech, WikiText-2).",
+            "Evaluate one-step generation quality across all modalities using FID for images, SNR for audio, and perplexity for text.",
+            "Demonstrate zero-shot editing capabilities through tasks such as style transfer between image and audio domains or text-guided synthesis."
+        ],
+        "Risk Factors and Limitations": [
+            "The challenge of ensuring high-quality generation across all modalities with a single one-step model may require more sophisticated training techniques.",
+            "Cross-modal consistency in latent spaces is complex and may impact the quality of synthesized content if not properly managed.",
+            "Zero-shot editing tasks are diverse and may require additional fine-tuning to achieve optimal results."
+        ]
+    },
+    {
+        "Name": "MultiConsistRefined",
+        "Title": "Multiscale Consistency for Scalable and Adaptive Generative Modeling",
+        "Short Hypothesis": "A hierarchical multiscale consistency model can efficiently scale to larger datasets while maintaining high-quality generation across varying resolutions, providing a more adaptive solution for diverse applications.",
+        "Related Work": "Existing generative models often struggle with scalability and adaptability due to the need for separate training or architectural adjustments at different scales. While recent works like Consistency Models have improved one-step generation, there is an opportunity to address both scalability and resolution adaptation in a unified framework.",
+        "Abstract": "This proposal refines MultiConsist as a generative modeling approach that leverages hierarchical multiscale consistency for scalable and adaptive synthesis across diverse datasets. By integrating features at multiple scales into a single model, we aim to achieve high-quality generation with the ability to adapt seamlessly from low-resolution to high-resolution synthesis. Our refined approach will detail a novel training scheme that enforces consistency between feature representations at each scale, allowing for efficient scaling without compromising quality. We hypothesize that MultiConsistRefined will outperform existing models by providing superior generation quality and resolution adaptability. To validate our claims, we will conduct experiments on large-scale datasets to evaluate generation quality using metrics like FID and perceptual similarity measures. Additionally, we will demonstrate the model's versatility through tasks such as super-resolution and real-time adaptation to new data distributions.",
+        "Experiments": [
+            "Develop a detailed hierarchical feature representation for scalable generative modeling with consistency constraints at multiple scales.",
+            "Train MultiConsistRefined on large-scale datasets like ImageNet at various resolutions (e.g., 64x64, 128x128, 256x256).",
+            "Evaluate generation quality across different resolutions using FID and perceptual similarity measures.",
+            "Demonstrate real-time adaptability through tasks such as super-resolution and adaptation to new data distributions."
+        ],
+        "Risk Factors and Limitations": [
+            "Ensuring consistency without compromising generation quality may require a complex architecture or training strategy.",
+            "The trade-off between scalability, generation quality, and computational efficiency requires careful balancing.",
+            "Real-time adaptation to new data distributions may introduce additional complexities in the model's learning dynamics."
+        ]
+    },
+    {
+        "Name": "HarmonizedGenerativeODE",
+        "Title": "Enhancing One-Step Generation with Optimal Transport for Style and Semantic Consistency",
+        "Short Hypothesis": "The integration of optimal transport within consistency models can enable high-quality one-step generation while providing explicit control over stylistic features and semantic alignment across various datasets.",
+        "Related Work": "Consistency models have shown promise in single-step sampling, yet there is a lack of methods that explicitly address style transfer without compromising the speed of generation. Optimal transport (OT) has been used to align distributions but not fully exploited for consistent style control within generative modeling frameworks.",
+        "Abstract": "This proposal refines HarmonizedGenerativeODE as an approach that leverages the strengths of both consistency models and optimal transport theory to enhance one-step generation with fine-grained stylistic control. By incorporating OT into the training process, we aim to guide the mapping between latent spaces of different datasets or styles while maintaining semantic coherence. Our refined method will detail a novel integration of OT constraints within consistency modeling, allowing for direct single-step generation that is both high quality and style-aware. We hypothesize that HarmonizedGenerativeODE will outperform existing models in terms of generation speed without sacrificing control over the stylization across various datasets. To validate our claims, we plan to conduct experiments on diverse benchmark datasets to assess generation quality using metrics such as FID and style consistency measures. Additionally, we will demonstrate the model's capabilities through tasks like zero-shot style transfer between different domains (e.g., from paintings to photographs) and interactive stylization interfaces for real-time user input.",
+        "Experiments": [
+            "Develop a training framework that seamlessly integrates OT constraints into consistency models without significantly increasing computational complexity.",
+            "Train HarmonizedGenerativeODE on datasets with diverse stylistic features, such as fine art collections and natural image databases.",
+            "Evaluate one-step generation quality across various styles using FID and style consistency measures.",
+            "Demonstrate zero-shot style transfer capabilities by generating content that effectively bridges the gap between distinct artistic domains (e.g., from Van Gogh's brushwork to a high-resolution photograph).",
+            "Implement an interactive interface for users to adjust stylization parameters during generation, showcasing the model's real-time adaptability."
+        ],
+        "Risk Factors and Limitations": [
+            "Balancing computational efficiency with OT constraints is critical but challenging.",
+            "Ensuring intuitive style control without sacrificing semantic coherence requires careful tuning of model hyperparameters.",
+            "Real-time interaction may impose additional requirements on system performance."
+        ]
+    },
+    {
+        "Name": "CrossConsistFusion",
+        "Title": "Real-Time Multimodal Fusion with Cross-Consistency for Interactive Synthesis",
+        "Short Hypothesis": "A parallelizable neural architecture that fuses multiple modalities in real time, ensuring coherence and fidelity across diverse data types, can enable interactive applications requiring immediate synthesis response.",
+        "Related Work": "Recent advancements like OmniTalker have shown the potential for real-time audio-video generation from text input. However, a broader framework capable of fusing and synchronizing multiple modalities in real time remains an open challenge.",
+        "Abstract": "CrossConsistFusion proposes a novel parallelizable neural architecture designed to fuse information across various modalities such as image, audio, and text in real time. By leveraging recent insights from OmniTalker's efficient one-shot generation for audio-video synthesis, our approach extends this capability to a wider range of interactive scenarios that require immediate coherence between diverse data types. We hypothesize that CrossConsistFusion will enable applications like live event commentary or virtual reality experiences with high fidelity and minimal latency. To validate our claims, we plan to develop the architecture's core components for parallel processing and real-time fusion, train it on multimodal datasets, and evaluate its performance in terms of synchronization accuracy, generation quality, and response time using relevant metrics such as FID, SNR, and text perplexity. Additionally, we will demonstrate interactive scenarios that showcase CrossConsistFusion's ability to adapt dynamically to changing inputs across various modalities.",
+        "Experiments": [
+            "Develop the core components for parallel processing of diverse modalities and real-time fusion mechanisms.",
+            "Train CrossConsistFusion on multimodal datasets to achieve high coherence between image, audio, and text representations in real time.",
+            "Evaluate synchronization accuracy, generation quality, and response time using FID, SNR, and perplexity metrics across all modalities.",
+            "Demonstrate interactive scenarios requiring immediate synthesis response for various applications like live event commentary or virtual reality experiences."
+        ],
+        "Risk Factors and Limitations": [
+            "Ensuring real-time coherence without introducing artifacts requires precise synchronization mechanisms.",
+            "Developing a parallelizable neural architecture that can handle diverse modalities with minimal latency is challenging.",
+            "Real-time adaptation to changing inputs across multiple modalities may introduce additional complexities in the model's learning dynamics."
+        ]
+    },
+    {
+        "Name": "SyncGen_v2",
+        "Title": "HarmonEyes: Real-Time Synchronized Multimodal Interaction for Immersive Experiences",
+        "Short Hypothesis": "A novel generative model that integrates real-time synchronization of eye movements, speech, and body gestures can significantly enhance the realism and interactivity in virtual environments.",
+        "Related Work": "While recent works like 'Talking With Hands 16.2M' have made strides in analyzing and synthesizing synchronized body-finger motion with audio, there is a gap in literature for models that specifically focus on eye movements as a key modality. Our proposal, HarmonEyes, aims to bridge this gap by integrating the synthesis of eye gaze direction, speech, and gestures into a unified framework, building upon the foundational work of 'Talking With Hands 16.2M'.",
+        "Details": {
+            "Methodology": "HarmonEyes will employ a multimodal deep learning architecture that leverages pre-trained models for each modality (eye tracking, speech synthesis, and gesture recognition) and integrates them through a synchronization layer to ensure real-time coherence across all outputs. The model will be trained on a diverse dataset capturing naturalistic interactions, with emphasis on the temporal dynamics of eye movements.",
+            "Innovation": {
+                "Real-Time Synchronization": "A novel synchronization algorithm that dynamically adjusts the timing and content of each modality to maintain high fidelity interaction in real time."
+            },
+            "Applications": [
+                "Telepresence",
+                "Virtual Reality (VR) experiences",
+                "Human-Computer Interaction (HCI)",
+                "Entertainment, such as gaming and virtual events"
+            ],
+            "Evaluation Metrics": {
+                "Temporal Coherence": "Measured by the synchronization accuracy of eye movements with speech and gestures.",
+                "User Engagement": "Assessed through user studies comparing HarmonEyes to existing models in terms of immersion and interactivity."
+            },
+            "Future Work": [
+                "Integration of additional modalities such as facial expressions",
+                "Refinement of the model for low-latency applications"
+            ]
+        }
+    }
+]

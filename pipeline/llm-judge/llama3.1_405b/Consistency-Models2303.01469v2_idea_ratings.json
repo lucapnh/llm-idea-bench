@@ -1,0 +1,176 @@
+{
+  "seed_summaries": [
+    {
+      "topic_id": "topic_01",
+      "title": "Consistency Models",
+      "keywords": [
+        "generative modeling",
+        "diffusion models",
+        "one-step sampling",
+        "model distillation",
+        "probability flow ODE",
+        "zero-shot editing"
+      ]
+    }
+  ],
+  "weights_used": {
+    "originality_novelty": 0.2,
+    "relevance_alignment": 0.15,
+    "feasibility_resources": 0.15,
+    "testability_falsifiability": 0.1,
+    "methodological_rigor": 0.1,
+    "literature_grounding": 0.1,
+    "potential_impact": 0.1,
+    "clarity_specificity": 0.05,
+    "safety_ethics_risk": 0.05
+  },
+  "ideas": [
+    {
+      "topic_id": "topic_01",
+      "idea_id": "one_step_generative_modeling",
+      "title": "One-Step Generative Modeling via Characteristic Learning and Probability Flow ODEs",
+      "scores": {
+        "originality_novelty": 5,
+        "relevance_alignment": 5,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 5,
+        "potential_impact": 5,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.85,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Hypothesis outlines the core mechanism or constraint being tested",
+        "Explicit experiments and datasets are proposed",
+        "Includes measurable metrics for evaluation",
+        "Positions against prior directions in generative modeling"
+      ],
+      "red_flags": [
+        "Potential numerical error from Euler discretization needs control"
+      ]
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "temporal_consistency_generative_modeling",
+      "title": "Temporal Consistency in Generative Modeling with Dynamic Constraints",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 3,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 3,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 3.9,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Hypothesis outlines the core mechanism or constraint being tested",
+        "Explicit experiments and datasets are proposed",
+        "Includes measurable metrics for evaluation",
+        "Positions against prior directions in generative modeling"
+      ],
+      "red_flags": [
+        "Complex training dynamics may require delicate tuning"
+      ]
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "temporal_consistency_diffusion",
+      "title": "Temporal Consistency in Diffusion Models for Dynamic Scene Generation",
+      "scores": {
+        "originality_novelty": 5,
+        "relevance_alignment": 3,
+        "feasibility_resources": 3,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 4,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.2,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Hypothesis outlines the core mechanism or constraint being tested",
+        "Explicit experiments and datasets are proposed",
+        "Includes measurable metrics for evaluation",
+        "Positions against prior directions in generative modeling"
+      ],
+      "red_flags": [
+        "High compute for video diffusion may challenge feasibility"
+      ]
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "probabilistic_circuits_neural_odes",
+      "title": "Probabilistic Circuits meet Neural ODEs: A Novel Framework for Generative Modeling",
+      "scores": {
+        "originality_novelty": 5,
+        "relevance_alignment": 4,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 4,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.5,
+      "verdict": "accept",
+      "justification_evidence": [
+        "Hypothesis outlines the core mechanism or constraint being tested",
+        "Explicit experiments and datasets are proposed",
+        "Includes measurable metrics for evaluation",
+        "Positions against prior directions in generative modeling"
+      ],
+      "red_flags": []
+    },
+    {
+      "topic_id": "topic_01",
+      "idea_id": "dynamic_probabilistic_circuits",
+      "title": "Dynamic Probabilistic Circuits for Image Generation with Spatiotemporal Constraints",
+      "scores": {
+        "originality_novelty": 4,
+        "relevance_alignment": 3,
+        "feasibility_resources": 4,
+        "testability_falsifiability": 5,
+        "methodological_rigor": 5,
+        "literature_grounding": 4,
+        "potential_impact": 4,
+        "clarity_specificity": 5,
+        "safety_ethics_risk": 5
+      },
+      "overall_weighted_score": 4.15,
+      "verdict": "revise",
+      "justification_evidence": [
+        "Hypothesis outlines the core mechanism or constraint being tested",
+        "Explicit experiments and datasets are proposed",
+        "Includes measurable metrics for evaluation",
+        "Positions against prior directions in generative modeling"
+      ],
+      "red_flags": []
+    }
+  ],
+  "ranking_by_overall": [
+    "topic_01/one_step_generative_modeling",
+    "topic_01/probabilistic_circuits_neural_odes",
+    "topic_01/temporal_consistency_diffusion",
+    "topic_01/dynamic_probabilistic_circuits",
+    "topic_01/temporal_consistency_generative_modeling"
+  ],
+  "ranking_by_topic": {
+    "topic_01": [
+      "one_step_generative_modeling",
+      "probabilistic_circuits_neural_odes",
+      "temporal_consistency_diffusion",
+      "dynamic_probabilistic_circuits",
+      "temporal_consistency_generative_modeling"
+    ]
+  }
+}

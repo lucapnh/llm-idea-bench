@@ -1,0 +1,30 @@
+[
+    {
+        "Name": "llm_reasoning_search",
+        "Title": "Self-Guided Exploration of Solution Space for Large Language Models",
+        "Short Hypothesis": "By empowering large language models to autonomously control the search process via self-guided exploration, we can improve their reasoning and planning capabilities across various tasks.",
+        "Related Work": "Our proposal builds upon recent advances in using large language models for reasoning and planning, such as Language Agent Tree Search (LATS) and Monte Carlo Planning with Large Language Model. However, our approach differs by removing the need for pre-defined search strategies and instead allowing the model to guide its own exploration.",
+        "Abstract": "We propose a novel self-guided search method that empowers large language models to autonomously control the search process via internal scoring mechanisms. Our approach enables more flexible and context-sensitive reasoning without requiring manual tuning or task-specific adaptation. We evaluate our method on various tasks, including Countdown and Sudoku, and demonstrate improved performance compared to classic search algorithms.",
+        "Experiments": [
+            "Implement self-guided exploration in a large language model",
+            "Evaluate the model's performance on Countdown and Sudoku tasks",
+            "Compare results with Tree-of-Thoughts' Breadth First Search (ToT-BFS), Best First Search (BestFS), and Monte Carlo Tree Search (MCTS)"
+        ]
+    },
+    {
+        "Name": "llm_cognitive_architectures",
+        "Title": "Cognitive Architectures for Large Language Models: Integrating Reasoning, Memory, and Learning",
+        "Short Hypothesis": "By integrating large language models with cognitive architectures that incorporate reasoning, memory, and learning mechanisms, we can create more generalizable, flexible, and human-like intelligent systems.",
+        "Related Work": "Our proposal builds upon the Tree of Thoughts (ToT) framework, which enables large language models to explore, evaluate, and backtrack across multiple reasoning paths. However, ToT focuses primarily on reasoning and planning, whereas our approach integrates cognitive architectures that incorporate memory and learning mechanisms, providing a more comprehensive framework for general intelligence.",
+        "Abstract": "We propose the integration of large language models with cognitive architectures that incorporate reasoning, memory, and learning mechanisms. Our approach combines the strengths of symbolic reasoning, connectionist learning, and hierarchical representations to create more generalizable, flexible, and human-like intelligent systems. We evaluate our method on various tasks that require reasoning, problem-solving, and learning, including complex decision-making scenarios and multi-step planning problems.",
+        "Experiments": [
+            "Implement a cognitive architecture that incorporates reasoning, memory, and learning mechanisms",
+            "Integrate the cognitive architecture with a large language model",
+            "Evaluate the performance of the integrated system on various tasks, including complex decision-making scenarios and multi-step planning problems"
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of cognitive architectures with large language models may introduce additional complexity and computational costs",
+            "The evaluation of such systems may require novel metrics and methodologies that can capture their unique capabilities and limitations"
+        ]
+    }
+]

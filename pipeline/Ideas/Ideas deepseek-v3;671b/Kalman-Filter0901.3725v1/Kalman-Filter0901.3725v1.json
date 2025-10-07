@@ -1,0 +1,73 @@
+[
+    {
+        "Name": "ensemble_kalman_filter_extensions",
+        "Title": "Exploring Nonlinear and Non-Gaussian Extensions to the Ensemble Kalman Filter for High-Dimensional Systems",
+        "Short Hypothesis": "Extending the Ensemble Kalman Filter (EnKF) with nonlinear and non-Gaussian techniques can improve its performance in high-dimensional systems without significantly increasing computational cost.",
+        "Related Work": "Existing research has explored various extensions of the EnKF, such as Gaussian anamorphosis methods and two-step updates like the Rank Histogram Filter (RHF). These approaches have shown promise but are limited by their reliance on specific assumptions or increased complexity. Recent work also highlights multifidelity extensions and deep learning-enhanced filters, which offer computational efficiency but require further validation in diverse scenarios.",
+        "Abstract": "This proposal investigates novel nonlinear and non-Gaussian extensions to the Ensemble Kalman Filter (EnKF) for high-dimensional systems. While EnKF is widely used due to its scalability, its Gaussian assumptions limit performance in complex settings. We propose a framework that integrates advanced techniques such as optimal transport-based updates and multifidelity control variates to address these limitations. The approach aims to maintain computational efficiency while improving accuracy in non-Gaussian scenarios. Experiments will focus on benchmark problems like the Lorenz-96 system, comparing the proposed extensions with existing methods (e.g., RHF and GA-EnKF) using metrics such as RMSE and computational cost.",
+        "Experiments": [
+            "Implement a baseline EnKF for the Lorenz-96 system to establish performance benchmarks.",
+            "Develop and test an optimal transport-based update mechanism within the EnKF framework, evaluating its impact on accuracy (RMSE) and computational efficiency.",
+            "Integrate multifidelity control variates into the EnKF, comparing results with single-fidelity versions in terms of RMSE and runtime.",
+            "Compare the proposed extensions against existing methods like RHF and GA-EnKF using a suite of experiments with varying levels of non-Gaussian noise."
+        ],
+        "Citations": [
+            "Grooms, I. G. (2021). A comparison of nonlinear extensions to the ensemble Kalman filter. Computational Geosciences.",
+            "Popov, A., & Sandu, A. (2021). Surrogate Tree and Model Forest Extensions to the Multi\ufb01delity Ensemble Kalman Filter.",
+            "Malik, Z., & Maulik, R. (2024). A competitive baseline for deep learning enhanced data assimilation using conditional Gaussian ensemble Kalman filtering."
+        ]
+    },
+    {
+        "Name": "adaptive_precision_localization",
+        "Title": "Adaptive Precision Localization for Ensemble Kalman Filters",
+        "Short Hypothesis": "Using adaptive sparsity in precision matrices for localization can improve the representation of correlation structures and reduce computational costs compared to traditional covariance or fixed-precision methods.",
+        "Related Work": "Existing work includes model space localization (Lei et al., 2018), CNN-based adaptive localization (Wang et al., 2023), and precision localization (Gryvill & Tjelmeland, 2024). This proposal distinguishes itself by introducing adaptivity into the sparsity structure of precision matrices, which has not been explored in EnKF localization.",
+        "Abstract": "Localization is a critical component of Ensemble Kalman Filters (EnKF) to mitigate sampling errors caused by limited ensemble sizes. While covariance and model space localizations are widely used, they often require domain-specific tuning or significant computational resources. This work proposes adaptive precision localization, where the sparsity structure of precision matrices is dynamically adjusted based on sample correlations between state variables. By leveraging sparse precision matrices, this approach aims to better capture correlation structures while reducing computational costs. Experiments will be conducted using the Lorenz-96 model and a high-dimensional geophysical system to evaluate its performance in terms of prediction accuracy, uncertainty representation, and scalability.",
+        "Experiments": [
+            "Implement adaptive precision localization by dynamically adjusting sparsity patterns based on sample correlations between state variables.",
+            "Compare prediction accuracy (RMSE) and computational efficiency against traditional covariance localization and fixed-precision methods using the Lorenz-96 model.",
+            "Evaluate uncertainty representation by comparing ensemble spread and correlation structure with ground truth or high-resolution simulations in a geophysical system.",
+            "Test scalability by varying ensemble size and dimensionality of the state space."
+        ],
+        "Risk Factors and Limitations": [
+            "Adaptive sparsity may introduce additional computational overhead during updates, potentially offsetting gains from reduced matrix operations.",
+            "The method's effectiveness may depend on the underlying correlation structure, requiring careful tuning for different applications.",
+            "Limited ensemble sizes could still lead to sampling errors despite adaptive localization."
+        ]
+    },
+    {
+        "Name": "deep_ensemble_kalman_filter",
+        "Title": "Deep Learning-Enhanced Ensemble Kalman Filter for Nonlinear Data Assimilation in Chaotic Systems",
+        "Short Hypothesis": "Integrating deep learning with the ensemble Kalman filter (EnKF) can improve state estimation in chaotic systems by leveraging nonlinear relationships and reducing dependency on large ensembles.",
+        "Related Work": "Existing approaches like Tsuyuki & Tamura (2022) and Yegenoglu et al. (2020) have explored embedding deep learning in EnKF, but they focus primarily on gradient optimization or generic nonlinearities. Bocquet et al. (2024) demonstrate that deep learning can achieve ensemble-like accuracy without ensembles by identifying dynamical instabilities. Our proposal distinguishes itself by explicitly targeting chaotic systems and optimizing the trade-off between computational cost and estimation accuracy.",
+        "Abstract": "This work proposes a novel framework for data assimilation in chaotic systems by integrating deep learning with the ensemble Kalman filter (EnKF). Traditional EnKF methods rely on large ensembles to estimate state covariances, which is computationally expensive. We hypothesize that a deep neural network can learn nonlinear relationships within the system dynamics, enabling accurate state estimation even with small or single-state ensembles. Our approach leverages residual convolutional networks to model chaotic behavior and identify key instabilities, reducing reliance on ensemble-based covariance estimates. Experiments will focus on the Lorenz 96 system as a benchmark for spatiotemporal chaos. We aim to demonstrate that our method achieves comparable accuracy to traditional EnKF while significantly lowering computational costs.",
+        "Experiments": [
+            "Train a residual convolutional neural network (ResNet) on state trajectories of the Lorenz 96 system, focusing on learning nonlinear relationships and instabilities.",
+            "Integrate the trained ResNet into an ensemble Kalman filter framework, replacing or augmenting traditional covariance estimation methods.",
+            "Compare the performance of our deep learning-enhanced EnKF with standard EnKF and variational data assimilation methods using root-mean-squared error (RMSE) and anomaly correlation coefficients as metrics.",
+            "Evaluate computational efficiency by measuring runtime and memory usage across different ensemble sizes."
+        ],
+        "Risk Factors and Limitations": [
+            "The ResNet may fail to generalize well to unseen chaotic systems, limiting applicability beyond the Lorenz 96 benchmark.",
+            "Training deep neural networks requires significant computational resources initially, potentially offsetting gains in assimilation efficiency.",
+            "Small ensembles or single-state propagation might introduce bias if the learned nonlinear relationships are imperfect."
+        ]
+    },
+    {
+        "Name": "adaptive_non-gaussian_enkf",
+        "Title": "Adaptive Non-Gaussian Extensions to Ensemble Kalman Filtering for High-Dimensional Systems",
+        "Short Hypothesis": "Integrating adaptive techniques with non-Gaussian extensions like Gaussian Anamorphosis and two-step updates will improve the robustness and accuracy of ensemble Kalman filtering in high-dimensional, nonlinear systems.",
+        "Related Work": "Existing methods such as GA-EnKF (Nguyen et al., 2023) and RHF (Grooms, 2021) address non-Gaussianity but lack adaptive mechanisms for high-dimensional systems. Our proposal builds on these by incorporating robust filtering techniques (Lopez-Restrepo et al., 2022) and comparing with state-of-the-art methods like CG-EnKF and NS-EnKF (Malik & Maulik, 2024).",
+        "Abstract": "The Ensemble Kalman Filter (EnKF) is widely used for data assimilation but struggles under non-Gaussian assumptions. This work proposes adaptive extensions to EnKF that integrate Gaussian Anamorphosis and two-step updates with robust filtering techniques to handle high-dimensional, nonlinear systems. We evaluate our approach on synthetic datasets like Lorenz-96 and real-world applications such as flood forecasting and air quality modeling. Our experiments demonstrate significant improvements in accuracy and robustness compared to traditional EnKF and state-of-the-art methods like CG-EnKF and NS-EnKF.",
+        "Experiments": [
+            "Implement adaptive GA-EnKF and two-step updates for the Lorenz-96 model, comparing performance with vanilla EnKF, RHF, and iRHF. Evaluation metrics include RMSE and ensemble spread.",
+            "Apply the proposed method to a flood forecasting scenario using SAR-derived wet surface ratio observations (Nguyen et al., 2023). Assess improvements in prediction accuracy and computational efficiency.",
+            "Test the adaptive extensions on an air quality model (Lopez-Restrepo et al., 2022) with non-Gaussian noise. Compare results with EnKF-KA and LETKF using error metrics and warning issuance rates."
+        ],
+        "Risk Factors and Limitations": [
+            "High computational cost for large-scale systems may limit scalability.",
+            "The effectiveness of adaptive techniques depends on accurate parameter tuning, which could be challenging in real-world applications.",
+            "Comparisons with deep learning-based methods like SF may reveal limitations in handling highly nonlinear perturbations."
+        ]
+    }
+]

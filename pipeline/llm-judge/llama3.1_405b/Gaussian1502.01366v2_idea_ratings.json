@@ -1,0 +1,171 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"topic_01",
+      "title":"Gaussian Approximation Potentials: a brief tutorial",
+      "keywords":[
+        "Gaussian process regression",
+        "interatomic potentials",
+        "SOAP descriptors",
+        "machine learning for materials",
+        "QUIP"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"topic_01",
+      "idea_id":"symmetry_aware_gpr",
+      "title":"Symmetry-Aware Gaussian Process Regression for Materials Science",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":5,
+        "feasibility_resources":3,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.15,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Builds on Gaussian process regression, aligning with GAP’s core modeling approach",
+        "Targets symmetry-aware descriptors (e.g., SOAP), relevant to the seed’s descriptor focus",
+        "Includes explicit experiments and comparisons against baselines"
+      ],
+      "red_flags":[
+        "High computational cost risk",
+        "Generalization concerns"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"transfer_learning_gpr",
+      "title":"Transfer Learning for Gaussian Process Regression in Materials Science",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":4,
+        "feasibility_resources":3,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.0,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Builds on Gaussian process regression, aligning with GAP’s core modeling approach",
+        "Includes explicit experiments and comparisons against baselines",
+        "Proposes leveraging pre-trained knowledge to improve data efficiency"
+      ],
+      "red_flags":[
+        "High computational cost risk",
+        "Generalization concerns"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"uncertainty_quantification_in_materials_science",
+      "title":"Uncertainty Quantification in Materials Science with Limited Data using Bayesian Neural Networks",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":3,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.75,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Builds on Gaussian process regression, aligning with GAP’s core modeling approach",
+        "Includes explicit experiments and comparisons against baselines",
+        "Employs Bayesian modeling for uncertainty; alternative to GP-based UQ in seed context"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"interpretable_ml_materials",
+      "title":"Interpretable Machine Learning for Materials Science: A Feature-Assisted Approach",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":3,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.55,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Includes explicit experiments and comparisons against baselines"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"mol_prop_pred_with_grammar_induced_geometry",
+      "title":"Hierarchical Grammar-Induced Geometry for Data-Efficient Molecular Property Prediction",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":3,
+        "feasibility_resources":3,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":3,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.65,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Includes explicit experiments and comparisons against baselines",
+        "Proposes leveraging pre-trained knowledge to improve data efficiency",
+        "Explores structured priors over molecules; less aligned with interatomic potential focus"
+      ],
+      "red_flags":[
+        "High computational cost risk",
+        "Generalization concerns"
+      ]
+    }
+  ],
+  "ranking_by_overall":[
+    "topic_01/symmetry_aware_gpr",
+    "topic_01/transfer_learning_gpr",
+    "topic_01/uncertainty_quantification_in_materials_science",
+    "topic_01/mol_prop_pred_with_grammar_induced_geometry",
+    "topic_01/interpretable_ml_materials"
+  ],
+  "ranking_by_topic":{
+    "topic_01":[
+      "symmetry_aware_gpr",
+      "transfer_learning_gpr",
+      "uncertainty_quantification_in_materials_science",
+      "mol_prop_pred_with_grammar_induced_geometry",
+      "interpretable_ml_materials"
+    ]
+  }
+}

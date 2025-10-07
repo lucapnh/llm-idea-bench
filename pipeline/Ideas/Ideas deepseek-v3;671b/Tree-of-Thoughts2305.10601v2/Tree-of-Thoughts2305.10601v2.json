@@ -1,0 +1,73 @@
+[
+    {
+        "Name": "mcts_llm_complex_math",
+        "Title": "Enhancing Complex Mathematical Problem Solving with Monte Carlo Tree Search-Guided LLMs",
+        "Short Hypothesis": "Integrating Monte Carlo Tree Search (MCTS) with Large Language Models (LLMs), guided by a novel heuristic evaluation mechanism, will significantly improve performance on complex mathematical problems in underrepresented domains like theoretical physics.",
+        "Related Work": "Recent works such as 'Accessing GPT-4 level Mathematical Olympiad Solutions via Monte Carlo Tree Self-refine with LLaMa-3 8B' and 'Ensembling Large Language Models with Process Reward-Guided Tree Search for Better Complex Reasoning' have demonstrated the effectiveness of combining MCTS with LLMs. However, these approaches primarily focus on general mathematical or reasoning tasks. Our proposal distinguishes itself by targeting underrepresented domains like theoretical physics and introducing a unique heuristic evaluation mechanism.",
+        "Abstract": "This project explores the integration of Monte Carlo Tree Search (MCTS) with Large Language Models (LLMs) to solve complex mathematical problems in underrepresented domains, such as theoretical physics. By incorporating a novel heuristic evaluation mechanism, we aim to enhance the reasoning capabilities of LLMs and improve their performance on challenging tasks. We will evaluate our approach using benchmark datasets from theoretical physics and advanced mathematics, comparing it against state-of-the-art methods."
+    },
+    {
+        "Name": "llm_verifier_aided_planning",
+        "Title": "Iterative Plan Refinement in LLMs Using External Verifiers for Robust Planning",
+        "Short Hypothesis": "Large Language Models (LLMs) can generate more robust and executable plans when augmented with external verifiers that provide iterative feedback, addressing their limitations in autonomous plan generation.",
+        "Related Work": "Existing work has shown that LLMs struggle with generating executable plans autonomously but can assist as heuristic guides. For example, 'On the Planning Abilities of Large Language Models' demonstrates that external verifiers improve plan quality by back-prompting LLMs. This proposal builds on this insight by formalizing a lightweight framework for iterative refinement.",
+        "Abstract": "Large Language Models (LLMs) have shown promise in heuristic planning but often fail to generate executable plans autonomously due to limitations in precise reasoning and validation. We propose a novel framework that integrates external verifiers with LLMs to iteratively refine generated plans, ensuring correctness and feasibility. The verifier provides feedback on plan errors, which is used to back-prompt the LLM for corrections. This iterative process continues until a valid plan is found or a maximum iteration limit is reached. Experiments are conducted on benchmark planning tasks (e.g., Blocks World, logistics) to evaluate the framework's effectiveness in improving plan quality and success rates compared to standalone LLMs.",
+        "Experiments": [
+            "Test the framework on standard planning benchmarks like Blocks World and logistics problems.",
+            "Compare the success rate of plans generated with and without external verifiers.",
+            "Measure computational overhead to ensure feasibility for practical applications."
+        ],
+        "Metrics": [
+            "Plan success rate: Percentage of valid, executable plans.",
+            "Iteration count: Average number of iterations needed for plan refinement.",
+            "Computational cost: Time and resources required for the iterative process."
+        ]
+    },
+    {
+        "Name": "graph_llm_multimodal_qa",
+        "Title": "Graph-Based Reasoning for Multi-Modal Question Answering with LLMs",
+        "Abstract": "This proposal explores the integration of graph-based reasoning with large language models (LLMs) for multi-modal question answering. By constructing visual-textual graphs that align image or video content with textual descriptions, we aim to enhance the reasoning capabilities of LLMs in tasks requiring joint understanding of both modalities. The proposed framework will explicitly model relationships between visual and textual elements using graph structures, enabling more accurate and interpretable answers. We hypothesize that this approach will outperform existing methods in multi-modal QA benchmarks by leveraging structured representations of cross-modal dependencies.",
+        "Hypothesis": "Integrating LLMs with visual-textual graphs for multi-modal question answering will improve reasoning accuracy and interpretability compared to unstructured or unimodal approaches.",
+        "Methods": [
+            "Construct visual-textual graphs from multimodal datasets (e.g., images/videos paired with textual descriptions).",
+            "Develop a graph-based reasoning framework that integrates these graphs with an LLM backbone.",
+            "Evaluate the proposed approach on multi-modal QA benchmarks, comparing it against baseline models."
+        ],
+        "Expected Outcome": "The proposed method will demonstrate improved accuracy and interpretability in multi-modal question answering tasks by leveraging structured visual-textual relationships.",
+        "Feasibility": "This proposal leverages existing multimodal datasets (e.g., Visual Question Answering datasets) and graph-based reasoning techniques, ensuring feasibility within academic lab resource constraints."
+    },
+    {
+        "Name": "adaptive_thought_refinement",
+        "Title": "Adaptive Thought Refinement for Large Language Models in Complex Reasoning Tasks",
+        "Short Hypothesis": "By dynamically refining intermediate reasoning steps based on confidence levels and semantic consistency, LLMs can achieve more efficient and accurate problem-solving.",
+        "Related Work": "Existing methods like Adaption-of-Thought (AdoT) and Thought Rollback (TR) focus on adapting to question difficulty or rolling back erroneous thoughts. However, they do not explicitly refine reasoning steps based on confidence and semantics. Our proposal introduces an adaptive refinement mechanism that optimizes both efficiency and accuracy by focusing on semantic consistency and confidence levels.",
+        "Abstract": "Large Language Models (LLMs) have shown promise in complex reasoning tasks, but their performance often suffers from inefficient exploration of reasoning paths or redundant intermediate steps. We propose Adaptive Thought Refinement (ATR), a novel framework that dynamically refines intermediate reasoning steps based on confidence levels and semantic consistency. ATR first evaluates the confidence level of each step and then consolidates semantically identical paths to reduce redundancy. This approach not only improves computational efficiency but also enhances accuracy by focusing on high-confidence, semantically consistent solutions. We validate ATR on mathematical reasoning and commonsense reasoning tasks, demonstrating significant improvements in both performance metrics compared to existing methods.",
+        "Experiments": [
+            "Implement ATR framework with a confidence-based gating mechanism to evaluate intermediate steps.",
+            "Test ATR on the GSM8K dataset for mathematical reasoning and the ARC dataset for commonsense reasoning.",
+            "Compare ATR against baseline methods like Chain-of-Thought (CoT) and Thought Rollback (TR) in terms of accuracy, computational cost, and semantic consistency."
+        ],
+        "Risk Factors and Limitations": [
+            "The effectiveness of confidence-based gating depends on the reliability of confidence estimation mechanisms.",
+            "Semantic consolidation may lead to loss of diverse reasoning paths if not properly managed.",
+            "Initial implementation complexity might be higher compared to simpler methods like CoT."
+        ]
+    },
+    {
+        "Name": "llm_guided_tree_search_for_code_generation",
+        "Title": "LLM-Guided Tree Search for Efficient Code Generation in Large-Scale Programming Tasks",
+        "Short Hypothesis": "Integrating Monte Carlo Tree Search (MCTS) with LLMs can significantly improve code generation efficiency and accuracy by systematically exploring the search space of potential solutions, leveraging heuristic feedback from execution-based environments.",
+        "Related Work": "Recent research has demonstrated the effectiveness of combining MCTS with LLMs for tasks like mathematical reasoning and path planning. However, applying this approach to large-scale code generation remains underexplored. While CodeTree (Li et al., 2024) introduced a tree-search framework for code generation, it primarily focuses on multi-stage debugging rather than leveraging execution-based feedback across the entire search space. Our proposal extends these ideas by explicitly integrating MCTS with LLMs to optimize exploration and exploitation in code generation tasks.",
+        "Abstract": "Large Language Models (LLMs) have shown remarkable capabilities in generating code for various programming tasks. However, they often struggle with efficiency and accuracy when tackling large-scale problems due to the vast search space of potential solutions. To address this challenge, we propose a novel framework that integrates Monte Carlo Tree Search (MCTS) with LLMs, enabling systematic exploration of the solution space guided by execution-based feedback. Our approach leverages MCTS's ability to balance exploration and exploitation while incorporating heuristic evaluations from the environment to refine generated code iteratively. We evaluate our method on benchmarks such as HumanEval and MBPP, demonstrating significant improvements in both success rates and computational efficiency compared to existing LLM-based approaches.",
+        "Experiments": [
+            "Implement an MCTS framework integrated with a pre-trained LLM (e.g., GPT-4) for code generation tasks.",
+            "Evaluate the system on standard benchmarks like HumanEval and MBPP, measuring success rate and execution time.",
+            "Compare performance against baseline methods such as single-model decoding and CodeTree.",
+            "Conduct ablation studies to assess the contributions of MCTS components (e.g., exploration vs. exploitation) and heuristic feedback mechanisms."
+        ],
+        "Citations": [
+            "Li et al., 2024, 'CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models'",
+            "Mu et al., 2025, 'Planning of Heuristics: Strategic Planning on Large Language Models with Monte Carlo Tree Search for Automating Heuristic Optimization'"
+        ]
+    }
+]

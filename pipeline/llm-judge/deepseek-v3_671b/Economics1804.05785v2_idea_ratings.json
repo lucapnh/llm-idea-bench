@@ -1,0 +1,147 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"topic_01",
+      "title":"Estimating Dynamic Treatment Effects in Event Studies with Heterogeneous Treatment Effects",
+      "keywords":[
+        "difference-in-differences",
+        "two-way fixed effects",
+        "event study",
+        "heterogeneous treatment effects",
+        "dynamic treatment effects",
+        "pretrend tests&#x20"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"topic_01",
+      "idea_id":"dynamic_treatment_effects_local_projections",
+      "title":"Estimating Dynamic Treatment Effects in Event Studies Using Local Projections",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":5,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.35,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Local projection (LP) estimators, combined with a flexible clean control condition, can provide a simple and robust alternative to traditional two-way fixed effects models for estimating dynamic heterogeneous treatment e",
+        "Related work: The proposed method builds on the work of Sun and Abraham (2018), who identified issues with TWFE models under heterogeneous treatment effects. It also draws inspiration from Dubé ",
+        "Experiments: Simulate staggered treatment adoption data with heterogeneous treatment effects across cohorts. Compare LP-DiD estimator performance against TWFE models in terms of bias, variance, and computational efficiency.; Apply th",
+        "Risks: The proposed method relies on a clean control condition, which may be challenging to define in some applications.; LP estimators require careful handling of pre-treatment outcomes "
+      ],
+      "red_flags":[
+        "Requires clean control condition definition"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"dynamic_treatment_effects_causal_graphs",
+      "title":"Estimating Dynamic Treatment Effects Using Causal Graphs in Event Studies",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":3,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.7,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Causal graphs can enhance the estimation of dynamic heterogeneous treatment effects by explicitly modeling dependencies and confounders, leading to more accurate causal inference in event studies."
+      ],
+      "red_flags":[
+        "Graph specification risk; unobserved confounding remains possible"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"dynamic_treatment_effects_rl",
+      "title":"Reinforcement Learning for Optimal Dynamic Treatment Regimes with Time-Varying Confounders",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":2,
+        "feasibility_resources":3,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.25,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Can reinforcement learning (RL) effectively optimize dynamic treatment regimes in the presence of time-varying confounders, outperforming traditional methods like double machine learning?",
+        "Related work: Existing approaches to dynamic treatment effects, such as those using double/debiased machine learning (e.g., Lewis & Syrgkanis, 2020; Bodory et al., 2020), focus on estimation rat",
+        "Experiments: Simulate a dynamic treatment regime scenario with time-varying confounders, generating synthetic data where treatments affect future outcomes and confounders evolve over time.; Implement an RL-based algorithm (e.g., Q-le",
+        "Risks: RL algorithms may require large amounts of training data, which could be challenging in settings with limited observational data.; The proposed method assumes that the reward funct"
+      ],
+      "red_flags":[
+        "Off-policy evaluation bias with observational data",
+        "High data requirements for RL"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"heterogeneous_baseline_trends",
+      "title":"Estimating Dynamic Treatment Effects with Heterogeneous Baseline Trends in Event Studies",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":4.2,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Accounting for heterogeneous baseline trends (pre-treatment dynamics) in event studies improves the accuracy and interpretability of dynamic treatment effect estimates, particularly when treatment effects vary across coh",
+        "Related work: Abraham & Sun (2018) highlight issues with fixed-effects models under heterogeneous treatment effects. Dubé et al. (2023) propose local projections for estimating dynamic effects b",
+        "Experiments: Simulate datasets with varying degrees of heterogeneity in baseline trends and treatment effects. Compare the proposed estimator’s performance against traditional methods (e.g., fixed-effects models, local projections) u",
+        "Risks: The proposed method may require larger sample sizes to accurately estimate unit-specific baseline trends, especially in settings with high dimensionality or limited pre-treatment d"
+      ],
+      "red_flags":[]
+    }
+  ],
+  "ranking_by_overall":[
+    "topic_01/dynamic_treatment_effects_local_projections",
+    "topic_01/heterogeneous_baseline_trends",
+    "topic_01/dynamic_treatment_effects_causal_graphs",
+    "topic_01/dynamic_treatment_effects_rl"
+  ],
+  "ranking_by_topic":{
+    "topic_01":[
+      "dynamic_treatment_effects_local_projections",
+      "heterogeneous_baseline_trends",
+      "dynamic_treatment_effects_causal_graphs",
+      "dynamic_treatment_effects_rl"
+    ]
+  }
+}

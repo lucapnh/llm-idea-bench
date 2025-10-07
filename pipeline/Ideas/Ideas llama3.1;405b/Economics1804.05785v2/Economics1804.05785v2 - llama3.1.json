@@ -1,0 +1,55 @@
+[
+    {
+        "Name": "heterogeneous_treatment_effects_with_machine_learning",
+        "Title": "Estimating Heterogeneous Treatment Effects with Machine Learning",
+        "Short Hypothesis": "Machine learning algorithms can be used to estimate heterogeneous treatment effects in the presence of staggered adoption and heterogeneous cohorts.",
+        "Related Work": "Abraham and Sun (2018) proposed an interaction-weighted estimator for estimating dynamic treatment effects. Our approach builds on this work by using machine learning algorithms to estimate the weights.",
+        "Methodology": "We will use a combination of causal machine learning algorithms, such as the DR-learner and R-learner, to estimate the heterogeneous treatment effects. We will also explore the use of orthogonal survival learners for estimating heterogeneous treatment effects from time-to-event data.",
+        "Expected Outcome": "Our approach is expected to provide more accurate estimates of heterogeneous treatment effects than traditional methods, especially in the presence of staggered adoption and heterogeneous cohorts."
+    },
+    {
+        "Name": "machine_learning_for_staggered_adoption_heterogeneous_treatment_effects",
+        "Title": "Machine Learning for Estimating Heterogeneous Treatment Effects with Staggered Adoption",
+        "Short Hypothesis": "Machine learning algorithms can be used to estimate heterogeneous treatment effects in the presence of staggered adoption, providing more accurate and interpretable results than traditional methods.",
+        "Related Work": "Recent studies have proposed machine learning-based methods for estimating heterogeneous treatment effects in the staggered adoption setting, such as MLDID and FETWFE. Our approach builds on these works by exploring the use of different machine learning algorithms and evaluating their performance in various scenarios.",
+        "Abstract": "This study proposes a machine learning-based approach for estimating heterogeneous treatment effects in the presence of staggered adoption. We explore the use of different machine learning algorithms, including neural networks and gradient boosting, to estimate treatment effects and evaluate their performance in various scenarios. Our approach provides more accurate and interpretable results than traditional methods, allowing policymakers to better understand the impact of interventions on different subgroups.",
+        "Experiments": [
+            "Evaluate the performance of different machine learning algorithms for estimating heterogeneous treatment effects in simulated datasets with staggered adoption.",
+            "Apply our approach to real-world datasets, such as the Brazil's Family Health Program data, to estimate heterogeneous treatment effects and compare the results with traditional methods."
+        ],
+        "Risk Factors and Limitations": [
+            "The accuracy of our approach relies on the quality of the data and the choice of machine learning algorithm.",
+            "Our approach may not be suitable for scenarios with limited data or complex treatment effects."
+        ]
+    },
+    {
+        "Name": "machine_learning_for_dynamic_treatment_effects",
+        "Title": "Estimating Dynamic Treatment Effects with Machine Learning: A Convex Average Approach",
+        "Short Hypothesis": "Machine learning algorithms can be used to estimate dynamic treatment effects in event studies with heterogeneous treatment effects, providing more accurate and interpretable results than traditional methods.",
+        "Related Work": "Abraham and Sun (2018) proposed an interaction-weighted estimator for estimating dynamic treatment effects. Our approach builds on this work by using machine learning algorithms to estimate the weights. Recent studies have also applied machine learning to predict dynamic cardiovascular risks and identify treatment responses (Huang et al., 2024).",
+        "Abstract": "This study proposes a machine learning-based approach for estimating dynamic treatment effects in event studies with heterogeneous treatment effects. We explore the use of different machine learning algorithms, including neural networks and gradient boosting, to estimate convex averages of cohort-specific treatment effects. Our approach provides more accurate and interpretable results than traditional methods, allowing policymakers to better understand the impact of interventions on different subgroups.",
+        "Experiments": [
+            "Evaluate the performance of different machine learning algorithms for estimating dynamic treatment effects in simulated datasets with staggered adoption.",
+            "Apply our approach to real-world datasets, such as the Health and Retirement Study, to estimate dynamic treatment effects and compare the results with traditional methods."
+        ],
+        "Risk Factors and Limitations": [
+            "The accuracy of our approach relies on the quality of the data and the choice of machine learning algorithm.",
+            "Our approach may not be suitable for scenarios with limited data or complex treatment effects."
+        ]
+    },
+    {
+        "Name": "causal_inference_with_staggered_adoption",
+        "Title": "Causal Inference with Staggered Adoption: A Machine Learning Approach for Estimating Heterogeneous Treatment Effects",
+        "Short Hypothesis": "This proposal aims to develop a novel machine learning approach for estimating heterogeneous treatment effects in the presence of staggered adoption, where units adopt treatments at different times.",
+        "Related Work": "Recent studies have proposed various methods for estimating heterogeneous treatment effects, but most of these approaches assume that all units are treated simultaneously. Our proposal addresses this limitation by extending existing machine learning algorithms to accommodate staggered adoption designs.",
+        "Abstract": "This project proposes a novel approach for causal inference with staggered adoption designs. We develop a machine learning algorithm that leverages Bayesian Additive Regression Trees (BART) to estimate heterogeneous treatment effects in the presence of staggered adoption. Our approach allows researchers to identify subgroups with varying treatment effects, even when units adopt treatments at different times.",
+        "Experiments": [
+            "Simulation study: Evaluate the performance of our proposed algorithm using simulated data with known treatment effects and staggered adoption designs.",
+            "Empirical application: Apply our algorithm to a real-world dataset with staggered adoption design, such as the Acute Respiratory Distress Syndrome Network (ARDSNetwork) ARDS respiratory management (ARMA) trial."
+        ],
+        "Risk Factors and Limitations": [
+            "Model misspecification: Our algorithm relies on BART, which may not capture complex relationships between variables.",
+            "Data quality issues: Poor data quality or limited sample size may compromise the accuracy of our estimates."
+        ]
+    }
+]

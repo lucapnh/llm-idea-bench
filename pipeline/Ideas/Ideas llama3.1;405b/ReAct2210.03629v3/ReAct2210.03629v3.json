@@ -1,0 +1,43 @@
+[
+    {
+        "Name": "embodied_reasoning",
+        "Title": "Embodied Reasoning in Large Language Models for Decision-Making and Control",
+        "Short Hypothesis": "Can large language models benefit from embodied cognition to improve decision-making and control in complex tasks?",
+        "Related Work": "While there is a significant body of work on embodied cognition, its application to large language models is still unexplored. This proposal aims to fill this gap by investigating the integration of embodied cognition with large language models for decision-making and control.",
+        "Abstract": "This proposal explores the concept of embodied reasoning in large language models. We hypothesize that incorporating embodied cognition into large language models can enhance their decision-making and control capabilities in complex tasks. To test this hypothesis, we will design a framework that integrates embodied cognition with large language models and evaluate its performance on various decision-making and control tasks.",
+        "Experiments": [
+            "Design an embodied reasoning framework for large language models",
+            "Evaluate the framework's performance on decision-making tasks",
+            "Compare the results with traditional language model-based approaches"
+        ],
+        "Risk Factors and Limitations": [
+            "The complexity of integrating embodied cognition with large language models",
+            "The need for significant computational resources to train and test the proposed framework"
+        ]
+    },
+    {
+        "Name": "neural_symbolic_integration_for_explainable_decision_making",
+        "Title": "Neural-Symbolic Integration for Explainable Decision-Making in Critical Domains",
+        "Short Hypothesis": "Can neural-symbolic integration enhance explainability and transparency in critical decision-making domains, such as healthcare and finance, by providing insights into the decision-making process of complex machine learning models?",
+        "Related Work": "Existing research has focused on developing explainable AI (XAI) techniques, such as LIME and SHAP, to provide insights into the decision-making process of machine learning models. However, these techniques have limitations, such as relying on heuristics and lacking formal guarantees. Neural-symbolic integration offers a promising approach to address these limitations by integrating symbolic reasoning with neural networks.",
+        "Abstract": "We propose a novel approach to explainable decision-making in critical domains, such as healthcare and finance, using neural-symbolic integration. Our approach combines the strengths of neural networks and symbolic reasoning to provide insights into the decision-making process of complex machine learning models. We evaluate our approach on several benchmark datasets and demonstrate its effectiveness in providing transparent and interpretable explanations.",
+        "Experiments": [
+            "Experiment 1: Evaluation of neural-symbolic integration on a healthcare dataset",
+            "Experiment 2: Comparison with state-of-the-art XAI techniques on a finance dataset",
+            "Experiment 3: Analysis of the interpretability and transparency of the proposed approach"
+        ],
+        "Risk Factors and Limitations": [
+            "Risk 1: Integration of neural and symbolic components may be challenging",
+            "Risk 2: Scalability of the approach to large datasets may be limited",
+            "Limitation 1: The approach may require significant computational resources"
+        ]
+    },
+    {
+        "Name": "adversarial_attacks_on_embodied_language_models",
+        "Title": "Adversarial Attacks on Embodied Language Models: A New Frontier in AI Security",
+        "Short Hypothesis": "We propose a novel research direction that explores the vulnerability of embodied language models to adversarial attacks, which can compromise their ability to generate safe and reliable actions in physically grounded environments.",
+        "Description": "Our idea is to investigate the robustness of embodied language models to adversarial perturbations on sensory input, which can lead to safety violations in human-robot interactions. We will develop a taxonomy of safety violations, create a benchmark for evaluating embodied safety, and design task-aware adversarial attacks that can compromise the reliability of these models.",
+        "Methodology": "We will employ a combination of theoretical and empirical methods, including the development of a principled taxonomy of safety violations, creation of a benchmark dataset (ANNIEBench), and design of task-aware adversarial attacks (ANNIE-Attack). We will also conduct experiments on representative embodied AI models to evaluate their robustness to our proposed attacks.",
+        "Expected Outcomes": "Our research aims to expose the vulnerability of embodied language models to adversarial attacks, highlighting the urgent need for security-driven defenses in the physical AI era. Our expected outcomes include a systematic study of adversarial safety attacks on embodied AI systems, a benchmark dataset for evaluating embodied safety, and a task-aware adversarial framework that can compromise the reliability of these models."
+    }
+]

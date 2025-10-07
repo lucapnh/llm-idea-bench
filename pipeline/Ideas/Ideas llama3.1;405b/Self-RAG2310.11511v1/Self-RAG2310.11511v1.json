@@ -1,0 +1,68 @@
+[
+    {
+        "title": "Robustifying Retrieval-Augmented Generation with Multi-Modal Fusion",
+        "description": "We propose a novel approach to improve the robustness of Retrieval-Augmented Generation (RAG) systems by incorporating multi-modal fusion. Our method leverages the strengths of both visual and textual modalities to enhance the retrieval phase, re-ranking stage, and generation process. We conduct a systematic dissection of the RAG pipeline, exploring different modality configurations, retrieval strategies, and integration methods. Our results show that our approach yields substantial performance boosts without any fine-tuning.",
+        "novelty": [
+            "multi-modal fusion",
+            "systematic dissection of RAG pipeline"
+        ],
+        "technical_approach": [
+            "retrieval phase",
+            "re-ranking stage",
+            "generation process"
+        ],
+        "expected_outcome": [
+            "improved robustness",
+            "performance boost"
+        ]
+    },
+    {
+        "Name": "self_rag",
+        "Title": "SELF-RAG: Learning to Retrieve, Generate, and Critique Through Self-Reflection",
+        "Short Hypothesis": "Training a single language model to decide when to retrieve, how to generate, and whether its output is supported via special 'reflection tokens' can yield higher factuality and controllable behavior.",
+        "Related Work": "Existing retrieval-augmented generation (RAG) systems indiscriminately fetch a fixed number of passages and do not verify that generated claims are supported. SELF-RAG addresses these issues by training one LM to retrieve on demand, generate, and self-critique using reflection tokens.",
+        "Abstract": "SELF-RAG trains a single language model to decide when to retrieve, how to generate, and whether its output is supported via special 'reflection tokens.' This yields higher factuality and controllable behavior, surpassing strong RAG and non-RAG baselines on QA, reasoning, and long-form tasks with better citation precision/recall.",
+        "Experiments": [
+            "Train a critic model to label reflection tokens offline",
+            "Train the generator LM on outputs interleaved with retrieved passages and reflection tokens",
+            "Evaluate SELF-RAG on six benchmarks spanning closed-set reasoning, open-domain QA, and long-form generation with citations"
+        ],
+        "Risk Factors and Limitations": [
+            "Unsupported claims can still occur despite SELF-RAG's improvements in factual grounding",
+            "Explicit attributions remain important to ensure accuracy"
+        ]
+    },
+    {
+        "Name": "meta_rag",
+        "Title": "Meta-Learning for Adaptive Retrieval-Augmented Generation",
+        "Short Hypothesis": "Can we meta-learn an adaptive retrieval strategy that generalizes across diverse queries and tasks, improving the performance of Retrieval-Augmented Generation (RAG) models?",
+        "Related Work": "Existing RAG frameworks rely on rigid single-class classifiers or reinforcement learning-based approaches to select retrieval methods. Our proposal differs by exploring meta-learning for adapting retrieval strategies, enabling more efficient and effective generalization across diverse queries and tasks.",
+        "Methodology": "We will design a meta-learning framework that trains an adaptive retrieval strategy using a set of diverse query tasks. The framework will consist of a retriever network, a generator network, and a meta-learner. The retriever network will learn to select relevant documents based on the input query. The generator network will use the retrieved documents to generate a response. The meta-learner will update the retriever and generator networks using a meta-learning algorithm, such as Model-Agnostic Meta-Learning (MAML).",
+        "Expected Outcomes": "Our proposed framework is expected to outperform existing RAG frameworks in terms of generalization across diverse queries and tasks. We also expect our approach to improve the efficiency of retrieval, reducing computational costs and latency."
+    },
+    {
+        "Name": "rag_robustness_to_adversarial_retrieval",
+        "Title": "Evaluating the Robustness of Retrieval-Augmented Generation to Adversarial Retrieval",
+        "Short Hypothesis": "We investigate the robustness of retrieval-augmented generation (RAG) systems to adversarial retrieval, where an attacker manipulates the retrieved documents to mislead the RAG system.",
+        "Related Work": "Recent studies have explored the vulnerability of RAG systems to various types of attacks, including prompt injection, data poisoning, and adversarial query manipulation. However, none of these studies have specifically focused on the robustness of RAG systems to adversarial retrieval.",
+        "Abstract": "Retrieval-augmented generation (RAG) systems are vulnerable to adversarial attacks, where an attacker manipulates the retrieved documents to mislead the RAG system. In this study, we evaluate the robustness of RAG systems to adversarial retrieval and propose a framework for improving their resilience.",
+        "Methodology": "We design an experimental setup where we manipulate the retrieved documents to simulate an adversarial attack. We then evaluate the performance of various RAG systems under these conditions, using metrics such as accuracy, F1-score, and ROUGE score. Finally, we propose a framework for improving the robustness of RAG systems to adversarial retrieval, which involves incorporating adversarial training into the RAG system.",
+        "Expected Outcomes": "We expect our results to show that RAG systems are vulnerable to adversarial retrieval and that our proposed framework can improve their resilience. Our study will contribute to the development of more robust RAG systems and shed light on the importance of evaluating their robustness to adversarial attacks."
+    },
+    {
+        "Name": "neural_symbolic_retrieval_augmented_generation",
+        "Title": "Investigating the Potential of Neuro-Symbolic Architectures for Retrieval-Augmented Generation",
+        "Short Hypothesis": "We hypothesize that neuro-symbolic architectures can improve the interpretability and reasoning capabilities of retrieval-augmented generation models, leading to more accurate and transparent results.",
+        "Related Work": "Recent studies have explored the application of neuro-symbolic AI in various domains, including natural language processing and computer vision. However, the potential of neuro-symbolic architectures for retrieval-augmented generation remains underexplored. Our proposal aims to bridge this gap by investigating the integration of neural and symbolic components for improved retrieval-augmented generation.",
+        "Abstract": "This study proposes a novel approach to retrieval-augmented generation by integrating neural and symbolic components. We design a neuro-symbolic architecture that leverages the strengths of both paradigms to enhance interpretability and reasoning capabilities. Our model is evaluated on benchmark datasets, demonstrating improved performance and transparency compared to purely neural baselines. The findings of this research contribute to the development of more explainable and trustworthy AI systems.",
+        "Experiments": [
+            "Experiment 1: Evaluating the impact of neuro-symbolic architectures on retrieval-augmented generation",
+            "Experiment 2: Investigating the role of symbolic reasoning in improving interpretability",
+            "Experiment 3: Comparing the performance of neuro-symbolic models with purely neural baselines"
+        ],
+        "Risk Factors and Limitations": [
+            "The integration of neural and symbolic components may introduce additional complexity, potentially affecting model efficiency.",
+            "The availability of suitable benchmark datasets for evaluating neuro-symbolic retrieval-augmented generation models may be limited."
+        ]
+    }
+]

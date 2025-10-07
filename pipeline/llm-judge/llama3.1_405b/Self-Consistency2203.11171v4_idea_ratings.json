@@ -1,0 +1,142 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"self_consistency",
+      "title":"Self-Consistency Improves Chain-of-Thought Reasoning in Language Models",
+      "keywords":[
+        "chain-of-thought prompting",
+        "self-consistency",
+        "reasoning in LLMs",
+        "decoding strategies",
+        "few-shot learning"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"self_consistency",
+      "idea_id":"llm_building_regulations",
+      "title":"Evaluating Large Language Models for Automating Building Regulations Compliance Checking",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.6,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Large language models can effectively translate building regulations into a computable representation using few-shot learning and chain-of-thought reasoning, improving automated compliance checking in the construction industry.",
+        "Abstract: This proposal investigates the feasibility of using large language models to automate the conversion of building regulations into a semantic and computable representation. We evaluate the performance ",
+        "Experiments: Evaluate the performance of LLMs in translating building regulations into LegalRuleML using few-shot learning; Investigate the effectiveness of chain-of-thought reasoning and self-consistency strategi",
+        "Risks: The complexity and nuances of building regulations may pose challenges for LLMs to accurately translate into a computable representation; The limited availability of training data and the need for car"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"self_consistency",
+      "idea_id":"adversarial_cot",
+      "title":"Adversarial Attacks on Chain-of-Thought Reasoning in Language Models",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":3
+      },
+      "overall_weighted_score":4.0,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Chain-of-thought reasoning in language models can be vulnerable to adversarial attacks, compromising their performance and reliability.",
+        "Abstract: This proposal explores the vulnerability of chain-of-thought (CoT) reasoning in language models to adversarial attacks. We will investigate the feasibility of crafting adversarial examples that compro",
+        "Experiments: Investigate the effectiveness of adversarial attacks on CoT reasoning using gradient-based methods; Examine the robustness of self-consistency and other decoding strategies against adversarial attacks",
+        "Risks: The difficulty in crafting effective adversarial examples for CoT reasoning may limit the scope of the study; The potential dependence on specific model architectures or training data may affect the g"
+      ],
+      "red_flags":[
+        "dual-use: enables development of attacks on reasoning models"
+      ]
+    },
+    {
+      "topic_id":"self_consistency",
+      "idea_id":"neural_symbolic_integration_for_reasoning",
+      "title":"Neural-Symbolic Integration for Reasoning in Language Models: A Study on Complex Question Answering",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":3,
+        "feasibility_resources":3,
+        "testability_falsifiability":4,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.5,
+      "verdict":"revise",
+      "justification_evidence":[
+        "We hypothesize that neural-symbolic integration can improve the performance of language models on complex question answering tasks by enabling more effective reasoning and inference.",
+        "Abstract: We propose a novel approach to complex question answering that integrates neural and symbolic methods to enable more effective reasoning and inference. Our approach leverages the strengths of both par",
+        "Experiments: Experiment 1: Evaluate the performance of our neural-symbolic integration approach on a benchmark dataset for complex question answering; Experiment 2: Investigate the effect of varying the level of s",
+        "Risks: The integration of neural and symbolic methods may introduce additional complexity and computational overhead; The effectiveness of our approach may depend on the quality and relevance of the symbolic"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"self_consistency",
+      "idea_id":"concept_based_llm_explainability",
+      "title":"Explaining Large Language Model Predictions through Concept-Based Analysis",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":3,
+        "feasibility_resources":4,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":3,
+        "clarity_specificity":3,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.4,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Can concept-based analysis provide insights into the decision-making process of large language models and improve their explainability?",
+        "Methodology: We propose a novel approach that leverages concept-based analysis to explain LLM predictions. Our method involves identifying high-level concepts in the input data and analyzing how they relate to the"
+      ],
+      "red_flags":[]
+    }
+  ],
+  "ranking_by_overall":[
+    "self_consistency/adversarial_cot",
+    "self_consistency/llm_building_regulations",
+    "self_consistency/neural_symbolic_integration_for_reasoning",
+    "self_consistency/concept_based_llm_explainability"
+  ],
+  "ranking_by_topic":{
+    "self_consistency":[
+      "adversarial_cot",
+      "llm_building_regulations",
+      "neural_symbolic_integration_for_reasoning",
+      "concept_based_llm_explainability"
+    ]
+  }
+}

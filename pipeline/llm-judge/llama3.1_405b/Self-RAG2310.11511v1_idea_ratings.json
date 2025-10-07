@@ -1,0 +1,173 @@
+{
+  "seed_summaries":[
+    {
+      "topic_id":"topic_01",
+      "title":"SELF-RAG: Learning to Retrieve, Generate, and Critique Through Self-Reflection",
+      "keywords":[
+        "retrieval-augmented generation (RAG)",
+        "self-reflection",
+        "reflection tokens",
+        "controllable decoding",
+        "factuality",
+        "citation accuracy"
+      ]
+    }
+  ],
+  "weights_used":{
+    "originality_novelty":0.2,
+    "relevance_alignment":0.15,
+    "feasibility_resources":0.15,
+    "testability_falsifiability":0.1,
+    "methodological_rigor":0.1,
+    "literature_grounding":0.1,
+    "potential_impact":0.1,
+    "clarity_specificity":0.05,
+    "safety_ethics_risk":0.05
+  },
+  "ideas":[
+    {
+      "topic_id":"topic_01",
+      "idea_id":"idea_01",
+      "title":null,
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":3,
+        "feasibility_resources":4,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":3,
+        "clarity_specificity":3,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.25,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Introduces multi-modal fusion across retrieval, re-ranking, and generation",
+        "Claims robustness and performance boosts without fine-tuning",
+        "Describes systematic dissection of RAG pipeline but limited specifics"
+      ],
+      "red_flags":[
+        "Vague evaluation setup and missing baselines/details"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"self_rag",
+      "title":"SELF-RAG: Learning to Retrieve, Generate, and Critique Through Self-Reflection",
+      "scores":{
+        "originality_novelty":5,
+        "relevance_alignment":5,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":4,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":4.35,
+      "verdict":"accept",
+      "justification_evidence":[
+        "Trains a single LM with reflection tokens to decide retrieve/generate/support",
+        "Two-stage training: distilled critic then generator interleaving tokens and passages",
+        "Evaluated across QA/reasoning/long-form with improved citation precision/recall",
+        "Acknowledges residual unsupported claims and need for attributions"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"meta_rag",
+      "title":"Meta-Learning for Adaptive Retrieval-Augmented Generation",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":4,
+        "feasibility_resources":3,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":3,
+        "safety_ethics_risk":5
+      },
+      "overall_weighted_score":3.55,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Meta-learning (e.g., MAML) to adapt retrieval strategies across tasks",
+        "Framework outlines retriever, generator, and meta-learner components",
+        "Claims generalization and efficiency improvements across diverse queries"
+      ],
+      "red_flags":[
+        "Complexity and potential instability of meta-optimization"
+      ]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"rag_robustness_to_adversarial_retrieval",
+      "title":"Evaluating the Robustness of Retrieval-Augmented Generation to Adversarial Retrieval",
+      "scores":{
+        "originality_novelty":3,
+        "relevance_alignment":4,
+        "feasibility_resources":4,
+        "testability_falsifiability":4,
+        "methodological_rigor":4,
+        "literature_grounding":3,
+        "potential_impact":4,
+        "clarity_specificity":4,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.7,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Defines adversarial retrieval threat model manipulating retrieved docs",
+        "Proposes experimental evaluation with accuracy/F1/ROUGE under attack",
+        "Includes adversarial training framework to improve robustness",
+        "Positions relative to prompt injection/data poisoning literature"
+      ],
+      "red_flags":[]
+    },
+    {
+      "topic_id":"topic_01",
+      "idea_id":"neural_symbolic_retrieval_augmented_generation",
+      "title":"Investigating the Potential of Neuro-Symbolic Architectures for Retrieval-Augmented Generation",
+      "scores":{
+        "originality_novelty":4,
+        "relevance_alignment":4,
+        "feasibility_resources":3,
+        "testability_falsifiability":3,
+        "methodological_rigor":3,
+        "literature_grounding":3,
+        "potential_impact":3,
+        "clarity_specificity":3,
+        "safety_ethics_risk":4
+      },
+      "overall_weighted_score":3.4,
+      "verdict":"revise",
+      "justification_evidence":[
+        "Proposes neuro-symbolic architecture to enhance interpretability/reasoning",
+        "Benchmark comparison vs purely neural baselines",
+        "Notes dataset suitability and complexity as limitations"
+      ],
+      "red_flags":[
+        "Added architectural complexity may reduce efficiency"
+      ]
+    }
+  ],
+  "ranking_by_overall":[
+    "topic_01/self_rag",
+    "topic_01/rag_robustness_to_adversarial_retrieval",
+    "topic_01/meta_rag",
+    "topic_01/neural_symbolic_retrieval_augmented_generation",
+    "topic_01/idea_01"
+  ],
+  "ranking_by_topic":{
+    "topic_01":[
+      "self_rag",
+      "rag_robustness_to_adversarial_retrieval",
+      "meta_rag",
+      "neural_symbolic_retrieval_augmented_generation",
+      "idea_01"
+    ]
+  }
+}

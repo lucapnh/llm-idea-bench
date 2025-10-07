@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "DynamicTreatmentEffectHeuristics",
+        "Title": "Harnessing Heuristic Aggregation for Dynamic Treatment Effects in Staggered Adoption Studies",
+        "Short Hypothesis": "Applying heuristic aggregation methods to the estimation of cohort-by-relative-time effects (CATTs) can provide a more robust and interpretable framework for understanding dynamic treatment effects in staggered adoption settings, especially when dealing with heterogeneous treatment impacts.",
+        "Related Work": "The proposed research builds upon the work of Sun and Abraham (2020), which highlighted the limitations of two-way fixed effects (TWFE) regression models in event studies. It extends their analysis by introducing heuristic aggregation techniques to estimate cohort-specific dynamic treatment effects, providing a more transparent approach than the TWFE model that avoids contamination issues.",
+        "Abstract": "In this research proposal, we address the challenges posed by heterogeneous treatment effects in staggered adoption designs through the application of heuristic aggregation methods. We hypothesize that combining cohort-by-relative-time effects (CATTs) using heuristics can yield more accurate and interpretable dynamic treatment effect estimates compared to traditional TWFE models. Our approach involves an initial estimation of CATTs, followed by a novel aggregation process that leverages heuristics to produce convex averages tailored to the specific characteristics of each adoption cohort. This method not only mitigates the 'contamination' issue inherent in TWFE but also enhances the interpretability of results. We will validate our proposal through empirical analysis using real-world data sets, such as the Health and Retirement Study (HRS), to demonstrate the practical application and advantages of heuristic aggregation over conventional methods.",
+        "Experiments": [
+            "Develop a computational framework for estimating CATTs with heterogeneous treatment effects using known heuristics.",
+            "Implement the proposed heuristic aggregation method in comparison to TWFE models on simulated data sets to evaluate performance under various scenarios of heterogeneity.",
+            "Apply the new methodology to real-world datasets, such as the HRS, to analyze dynamic treatment effects and compare results with existing TWFE analyses.",
+            "Conduct sensitivity analysis to assess the robustness of heuristic aggregation against different levels of heterogeneity and model specifications."
+        ],
+        "Risk Factors and Limitations": [
+            "The choice of heuristics may impact the accuracy of the estimated CATTs, requiring careful selection based on domain knowledge.",
+            "There is a risk that over-reliance on heuristics could lead to oversimplification or misspecification in complex heterogeneous treatment scenarios.",
+            "Empirical validation requires access to appropriate datasets with sufficient variability and coverage of adoption cohorts."
+        ]
+    }
+]
