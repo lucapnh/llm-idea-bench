@@ -14,7 +14,7 @@ from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 import requests
 from dateutil.tz import tzutc
 
-# -------------------- API setup --------------------
+#API setup
 
 API_BASE = "https://api.semanticscholar.org/graph/v1"
 DEFAULT_TIMEOUT = (10, 30)  # (connect, read) seconds
@@ -26,7 +26,7 @@ HEADERS_BASE = {
 def now_utc_year() -> int:
     return datetime.now(tzutc()).year
 
-# -------------------- Utilities --------------------
+#Utilities
 
 def log(msg: str, *, verbose: bool):
     if verbose:
@@ -66,7 +66,7 @@ def ensure_dir_for(path_prefix: str):
     if d and not os.path.exists(d):
         os.makedirs(d, exist_ok=True)
 
-# -------------------- HTTP / API layer --------------------
+#HTTP / API layer
 
 class S2Client:
     def __init__(self, api_key: str, verbose: bool, max_retries: int):
@@ -138,12 +138,12 @@ class S2Client:
         url = f"{API_BASE}{path}"
         return self._request("POST", url, json=json_body, params=params)
 
-# -------------------- API helpers --------------------
+#API helpers
 
 def page_items(
     client: S2Client,
     paper_id: str,
-    endpoint: str,   # "references" or "citations"
+    endpoint: str,  
     fields: str,
     *, limit: int = 1000, page_size: int = 100, sleep_after_page: float = 0.0,
 ) -> List[Dict[str, Any]]:
@@ -188,7 +188,7 @@ def search_title_one(client: S2Client, title: str) -> Tuple[str, Dict[str, Any]]
         return p.get("paperId") or "", p
     return "", {}
 
-# -------------------- Similarity metrics --------------------
+#Similarity metrics
 
 def jaccard(a: Set[str], b: Set[str]) -> float:
     if not a and not b:
@@ -224,7 +224,7 @@ def time_decayed_jaccard(a_items: Dict[str, Optional[int]], b_items: Dict[str, O
         union_sum += max(wa, wb)
     return inter_sum / union_sum if union_sum > 0 else 0.0
 
-# -------------------- Data shaping --------------------
+#Data shaping
 
 def build_meta_map_from_references(refs: Iterable[Dict[str, Any]]) -> Dict[str, Dict[str, Optional[Any]]]:
     out: Dict[str, Dict[str, Optional[Any]]] = {}
@@ -244,7 +244,7 @@ def build_meta_map_from_citations(cites: Iterable[Dict[str, Any]]) -> Dict[str, 
             out[pid] = {"title": cp.get("title"), "year": cp.get("year")}
     return out
 
-# -------------------- Batch enrichment for titles/years --------------------
+#Batch enrichment for titles/years
 
 def fetch_titles_for_ids(client: S2Client, ids: List[str]) -> Dict[str, Dict[str, Any]]:
     if not ids:
@@ -268,7 +268,7 @@ def fetch_titles_for_ids(client: S2Client, ids: List[str]) -> Dict[str, Dict[str
                     enriched[pid] = {"title": p.get("title"), "year": p.get("year")}
     return enriched
 
-# -------------------- SBERT (abstract) --------------------
+#SBERT
 
 @dataclass
 class SbertContext:
@@ -321,7 +321,7 @@ def sbert_cosine(ctx: Optional[SbertContext], a: Optional[str], b: Optional[str]
     res["cosine"] = max(0.0, min(1.0, cos))
     return res
 
-# -------------------- Core compare --------------------
+#Core compare
 
 def compare_papers(
     paper1: str,
@@ -451,7 +451,7 @@ def compare_papers(
         "exported_files": exported
     }
 
-# -------------------- CSV helpers --------------------
+#CSV helpers
 
 def write_overlap_csv(path: str, rows: List[Dict[str, Any]]):
     ensure_dir_for(path)
@@ -468,7 +468,7 @@ def rows_from_intersection(shared_ids: Set[str], meta_map: Dict[str, Dict[str, A
         rows.append({"paperId": pid, "title": meta.get("title"), "year": meta.get("year")})
     return rows
 
-# -------------------- New: evaluate logs --------------------
+#Evaluate logs
 
 def infer_idea_hint_from_filename(path: Path) -> str:
     name = path.stem
@@ -624,7 +624,7 @@ def evaluate_logs(
                 "joint_fraction_novel": None
             })
 
-    # write CSVs
+    #write CSVs
     def write_csv(path: str, rows: List[Dict[str, Any]]):
         ensure_dir_for(path)
         if not rows:
@@ -642,7 +642,7 @@ def evaluate_logs(
     write_csv(out_summary_csv, summary_rows)
     return out_csv, out_summary_csv
 
-# -------------------- CLI --------------------
+#CLI
 
 def build_arg_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Citation graph + SBERT + batch evaluation tool.")
