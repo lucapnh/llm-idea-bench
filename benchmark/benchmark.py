@@ -56,10 +56,8 @@ def prettify_label(name: str) -> str:
     if not isinstance(name, str): return str(name)
     raw = name.strip().lower().replace("-", "_")
     corrections = {
-        "literature_grouding": "Literature Grounding",
         "literature_grounding": "Literature Grounding",
         "clarity_specificity": "Clarity Specificity",
-        "safety_ethic_risk": "Safety Ethics Risk",
         "safety_ethics_risk": "Safety Ethics Risk",
         "feasibility_resource": "Feasibility Resources",
         "feasibility_resources": "Feasibility Resources",
