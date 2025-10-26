@@ -1,20 +1,20 @@
 === deepseekv2 ===
-ideas_total=159, judge_scored=159
-novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = -0.187
-Mean judge overall = 3.664 [3.604,3.721]
-Mean biblio_novelty_seed = 0.351 [0.337,0.365]
-Verdicts: {'revise': 128, 'reject': 25, 'accept': 6}
+ideas_total=39, judge_scored=39
+novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = 0.060
+Mean judge overall = 3.767 [3.637,3.896]
+Mean biblio_novelty_seed = 0.369 [0.334,0.408]
+Verdicts: {'revise': 32, 'reject': 5, 'accept': 2}
 
 === deepseekv3 ===
-ideas_total=251, judge_scored=251
-novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = 0.066
-Mean judge overall = 4.023 [3.981,4.063]
-Mean biblio_novelty_seed = 0.330 [0.320,0.342]
-Verdicts: {'revise': 180, 'accept': 70, 'reject': 1}
+ideas_total=53, judge_scored=53
+novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = 0.086
+Mean judge overall = 4.029 [3.939,4.117]
+Mean biblio_novelty_seed = 0.334 [0.305,0.365]
+Verdicts: {'revise': 34, 'accept': 18, 'reject': 1}
 
 === llama3.1 ===
-ideas_total=181, judge_scored=181
-novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = -0.112
-Mean judge overall = 3.682 [3.615,3.748]
-Mean biblio_novelty_seed = 0.354 [0.338,0.370]
-Verdicts: {'revise': 141, 'reject': 28, 'accept': 12}
+ideas_total=46, judge_scored=46
+novelty_col=biblio_novelty_seed, Spearman(judge, biblio_novelty_seed) = -0.159
+Mean judge overall = 3.676 [3.550,3.804]
+Mean biblio_novelty_seed = 0.357 [0.324,0.389]
+Verdicts: {'revise': 36, 'reject': 7, 'accept': 3}
