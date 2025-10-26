@@ -1,5 +1,3 @@
-
-# !/usr/bin/env python3
 import argparse, json, math, os, re, sys, glob
 from datetime import datetime
 import numpy as np
@@ -58,15 +56,16 @@ def prettify_label(name: str) -> str:
     if not isinstance(name, str): return str(name)
     raw = name.strip().lower().replace("-", "_")
     corrections = {
-        "literature_grounding": "literature_grounding",
-        "clarity_specificity": "clarity_specificity",
-        "safety_ethics_risk": "safety_ethics_risk",
-        "feasibility_resources": "feasibility_resources",
-        "testability_falsifiability": "testability_falsifiability",
-        "relevance_alignment": "relevance_alignment",
-        "methodological_rigor": "methodological_rigor",
-        "originality_novelty": "originality_novelty",
-        "potential_impact": "potential_impact",
+        "literature_grounding": "Literature Grounding",
+        "clarity_specificity": "Clarity Specificity",
+        "safety_ethics_risk": "Safety Ethics Risk",
+        "feasibility_resource": "Feasibility Resources",
+        "feasibility_resources": "Feasibility Resources",
+        "testability_falsifiability": "Testability Falsifiability",
+        "relevance_alignment": "Relevance Alignment",
+        "methodological_rigor": "Methodological Rigor",
+        "originality_novelty": "Originality Novelty",
+        "potential_impact": "Potential Impact",
     }
     if raw in corrections:
         return corrections[raw]
@@ -85,7 +84,7 @@ def break_ligatures(s: str) -> str:
     s = s.replace("fl", f"f{z}l")
     return s
 
-# ---------------- load LLM judge JSON ----------------
+# load LLM judge JSON 
 def load_llm_judges(ratings_dir):
     rows = []
     for path in glob.glob(os.path.join(ratings_dir, "**", "*.json"), recursive=True):
@@ -316,7 +315,7 @@ def plot_radar_subscores(df, out_dir):
     if not subcols: return
     raw_labels = [c.replace("score_","") for c in subcols]
     labels = [prettify_label(x) for x in raw_labels]
-    # Break ligatures to prevent 'fi'/'fl' disappearing
+    # Break ligatures to prevent disappearing
     labels = [break_ligatures(x) for x in labels]
     angles = np.linspace(0, 2*np.pi, len(subcols), endpoint=False).tolist()
     angles += angles[:1]
@@ -378,7 +377,6 @@ def plot_model_box(df, out_dir):
     plt.ylabel("LLM judge overall")
     plt.title("Model score distribution (overall)")
     savefig_noclash(out_dir, "box_overall_by_model")
-
 
 
 def plot_pairwise_rankcorr(df, out_dir):
