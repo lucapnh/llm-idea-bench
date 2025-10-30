@@ -39,9 +39,9 @@ The following example mirrors the command in your evaluation notes:
 
 ```bash
 python benchmark.py \
-  --ratings_dir /pfss/mlde/workspaces/mlde_wsp_PI_Mezini/lp41lapo/evaluation/ratings \
-  --biblio_csv /pfss/mlde/workspaces/mlde_wsp_PI_Mezini/lp41lapo/evaluation/biblio_summary/summary_llama3.1.csv \
-               /pfss/mlde/workspaces/mlde_wsp_PI_Mezini/lp41lapo/evaluation/biblio_summary/summary_all_deepseekv3.csv \
+  --ratings_dir /evaluation/ratings \
+  --biblio_csv /evaluation/biblio_summary/summary_llama3.1.csv \
+               /evaluation/biblio_summary/summary_all_deepseekv3.csv \
   --out_dir ./eval_out_v2
 ```
 
